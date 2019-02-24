@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="一道标准的练手dp好题。 下面提出标准最大子段和做法： 边读边做。 now代表目前加起来是多少。 读一个a now加一次。 如果now&amp;gt;ans ans=now 如果now&amp;lt;0 正常情况下这种方法不合理，但。。。。 有测试点#2. 全是负数！这个特殊情况一定要考虑！ 所以 代码来了： #include &amp;lt;cstdio&amp;gt;//标准输入输出库 int main(void){">
+  <meta name="description" content="一道标准的练手dp好题。 下面提出标准最大子段和做法： 边读边做。 now代表目前加起来是多少。 读一个a now加一次。 如果now&amp;gt;ans ans=now 如果now&amp;lt;0 正常情况下这种方法不合理，但。。。。 有测试点#2. 全是负数！这个特殊情况一定要考虑！ 所以 代码来了： 12345678910111213#include &amp;lt;cstdio&amp;gt;//标准输入输出库int">
 <meta name="keywords" content="题解,洛谷">
 <meta property="og:type" content="article">
 <meta property="og:title" content="题解 P1115 【最大子段和】">
 <meta property="og:url" content="http://yoursite.com/2019/01/17/题解-P1115-【最大子段和】/index.html">
 <meta property="og:site_name" content="yltx&#39;s blog">
-<meta property="og:description" content="一道标准的练手dp好题。 下面提出标准最大子段和做法： 边读边做。 now代表目前加起来是多少。 读一个a now加一次。 如果now&amp;gt;ans ans=now 如果now&amp;lt;0 正常情况下这种方法不合理，但。。。。 有测试点#2. 全是负数！这个特殊情况一定要考虑！ 所以 代码来了： #include &amp;lt;cstdio&amp;gt;//标准输入输出库 int main(void){">
+<meta property="og:description" content="一道标准的练手dp好题。 下面提出标准最大子段和做法： 边读边做。 now代表目前加起来是多少。 读一个a now加一次。 如果now&amp;gt;ans ans=now 如果now&amp;lt;0 正常情况下这种方法不合理，但。。。。 有测试点#2. 全是负数！这个特殊情况一定要考虑！ 所以 代码来了： 12345678910111213#include &amp;lt;cstdio&amp;gt;//标准输入输出库int">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-01-17T11:09:57.568Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="题解 P1115 【最大子段和】">
-<meta name="twitter:description" content="一道标准的练手dp好题。 下面提出标准最大子段和做法： 边读边做。 now代表目前加起来是多少。 读一个a now加一次。 如果now&amp;gt;ans ans=now 如果now&amp;lt;0 正常情况下这种方法不合理，但。。。。 有测试点#2. 全是负数！这个特殊情况一定要考虑！ 所以 代码来了： #include &amp;lt;cstdio&amp;gt;//标准输入输出库 int main(void){">
+<meta name="twitter:description" content="一道标准的练手dp好题。 下面提出标准最大子段和做法： 边读边做。 now代表目前加起来是多少。 读一个a now加一次。 如果now&amp;gt;ans ans=now 如果now&amp;lt;0 正常情况下这种方法不合理，但。。。。 有测试点#2. 全是负数！这个特殊情况一定要考虑！ 所以 代码来了： 12345678910111213#include &amp;lt;cstdio&amp;gt;//标准输入输出库int">
 
 
 
@@ -451,21 +451,7 @@
 <p>有测试点#2.</p>
 <p>全是负数！这个特殊情况一定要考虑！</p>
 <p>所以 代码来了：</p>
-<pre><code class="cpp">#include &lt;cstdio&gt;//标准输入输出库
-int main(void){
-    int n,a,ans=1&lt;&lt;31,now,c=1;//ans初值一定要给小一点（防#2)(int最大值是1&lt;&lt;31-1,所以1&lt;&lt;31直接跳负数
-    scanf (&quot;%d&quot;,&amp;n);//读入
-    while (n--){//既然边读边做，要n何用？
-        scanf (&quot;%d&quot;,&amp;a);//读入a
-        now+=a;//now加一下
-        if (now&gt;ans)ans=now;//注意这句和下句的顺序！如果反过来，就只有80分了（臭不要脸的测试点#2）
-        //同时找到了最大值
-        if (now&lt;0)now=0;//如果now小于0，这种方案肯定不可取，归0（屁股免打，下次再来）
-    }
-    printf (&quot;%d&quot;,ans);//输出
-}//只要你懂，代码其实可以很短。（自认为我的代码最短）
-</code></pre>
-
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;//标准输入输出库</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n,a,ans=<span class="number">1</span>&lt;&lt;<span class="number">31</span>,now,c=<span class="number">1</span>;<span class="comment">//ans初值一定要给小一点（防#2)(int最大值是1&lt;&lt;31-1,所以1&lt;&lt;31直接跳负数</span></span><br><span class="line">    <span class="built_in">scanf</span> (<span class="string">"%d"</span>,&amp;n);<span class="comment">//读入</span></span><br><span class="line">    <span class="keyword">while</span> (n--)&#123;<span class="comment">//既然边读边做，要n何用？</span></span><br><span class="line">        <span class="built_in">scanf</span> (<span class="string">"%d"</span>,&amp;a);<span class="comment">//读入a</span></span><br><span class="line">        now+=a;<span class="comment">//now加一下</span></span><br><span class="line">        <span class="keyword">if</span> (now&gt;ans)ans=now;<span class="comment">//注意这句和下句的顺序！如果反过来，就只有80分了（臭不要脸的测试点#2）</span></span><br><span class="line">        <span class="comment">//同时找到了最大值</span></span><br><span class="line">        <span class="keyword">if</span> (now&lt;<span class="number">0</span>)now=<span class="number">0</span>;<span class="comment">//如果now小于0，这种方案肯定不可取，归0（屁股免打，下次再来）</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span> (<span class="string">"%d"</span>,ans);<span class="comment">//输出</span></span><br><span class="line">&#125;<span class="comment">//只要你懂，代码其实可以很短。（自认为我的代码最短）</span></span><br></pre></td></tr></table></figure>
       
     </div>
 

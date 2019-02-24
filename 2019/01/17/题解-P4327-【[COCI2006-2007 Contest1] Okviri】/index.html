@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="此题其实就是一个模拟 但是不好写 我个人的想法是分组 如下图: ..#.. .#.. .*.. .#.. .#.#. #.#. *.*. #.#. #.X.# .X.* .X.* .X.# .#.#. #.#. *.*. #.#. ..#.. .#.. .*.. .#.. 第一组有5个字符,之后的每一组都只有4个 很显然,对于第一组,可以用赋初值的方法解决 之后的组,可以分为%3==2的和%3!=">
+  <meta name="description" content="此题其实就是一个模拟 但是不好写 我个人的想法是分组 如下图:12345..#.. .#.. .*.. .#...#.#. #.#. *.*. #.#.#.X.# .X.* .X.* .X.#.#.#. #.#. *.*. #.#...#.. .#.. .*.. .#.. 第一组有5个字符,之后的每一组都只有4个 很显然,对于第一组,可以用赋初值的方法解决 之后的组,可以分为%3==2的和%3!=">
 <meta name="keywords" content="题解,洛谷">
 <meta property="og:type" content="article">
 <meta property="og:title" content="题解 P4327 【[COCI2006-2007 Contest1] Okviri】">
 <meta property="og:url" content="http://yoursite.com/2019/01/17/题解-P4327-【[COCI2006-2007 Contest1] Okviri】/index.html">
 <meta property="og:site_name" content="yltx&#39;s blog">
-<meta property="og:description" content="此题其实就是一个模拟 但是不好写 我个人的想法是分组 如下图: ..#.. .#.. .*.. .#.. .#.#. #.#. *.*. #.#. #.X.# .X.* .X.* .X.# .#.#. #.#. *.*. #.#. ..#.. .#.. .*.. .#.. 第一组有5个字符,之后的每一组都只有4个 很显然,对于第一组,可以用赋初值的方法解决 之后的组,可以分为%3==2的和%3!=">
+<meta property="og:description" content="此题其实就是一个模拟 但是不好写 我个人的想法是分组 如下图:12345..#.. .#.. .*.. .#...#.#. #.#. *.*. #.#.#.X.# .X.* .X.* .X.#.#.#. #.#. *.*. #.#...#.. .#.. .*.. .#.. 第一组有5个字符,之后的每一组都只有4个 很显然,对于第一组,可以用赋初值的方法解决 之后的组,可以分为%3==2的和%3!=">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-01-17T09:13:00.292Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="题解 P4327 【[COCI2006-2007 Contest1] Okviri】">
-<meta name="twitter:description" content="此题其实就是一个模拟 但是不好写 我个人的想法是分组 如下图: ..#.. .#.. .*.. .#.. .#.#. #.#. *.*. #.#. #.X.# .X.* .X.* .X.# .#.#. #.#. *.*. #.#. ..#.. .#.. .*.. .#.. 第一组有5个字符,之后的每一组都只有4个 很显然,对于第一组,可以用赋初值的方法解决 之后的组,可以分为%3==2的和%3!=">
+<meta name="twitter:description" content="此题其实就是一个模拟 但是不好写 我个人的想法是分组 如下图:12345..#.. .#.. .*.. .#...#.#. #.#. *.*. #.#.#.X.# .X.* .X.* .X.#.#.#. #.#. *.*. #.#...#.. .#.. .*.. .#.. 第一组有5个字符,之后的每一组都只有4个 很显然,对于第一组,可以用赋初值的方法解决 之后的组,可以分为%3==2的和%3!=">
 
 
 
@@ -444,67 +444,12 @@
         <p>此题其实就是一个模拟</p>
 <p>但是不好写</p>
 <p>我个人的想法是分组</p>
-<p>如下图:</p>
-<pre><code>..#.. .#.. .*.. .#..
-.#.#. #.#. *.*. #.#.
-#.X.# .X.* .X.* .X.#
-.#.#. #.#. *.*. #.#.
-..#.. .#.. .*.. .#..
-</code></pre><p>第一组有5个字符,之后的每一组都只有4个</p>
+<p>如下图:<br><figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">..#.. .#.. .*.. .#..</span><br><span class="line">.#.#. #.#. *.*. #.#.</span><br><span class="line">#.X.# .X.* .X.* .X.#</span><br><span class="line">.#.#. #.#. *.*. #.#.</span><br><span class="line">..#.. .#.. .*.. .#..</span><br></pre></td></tr></table></figure></p>
+<p>第一组有5个字符,之后的每一组都只有4个</p>
 <p>很显然,对于第一组,可以用赋初值的方法解决</p>
 <p>之后的组,可以分为%3==2的和%3!=2的</p>
 <p>然后就是加上了</p>
-<p>具体见代码</p>
-<pre><code class="cpp">#include &lt;bits/stdc++.h&gt;
-using namespace std;
-string a[5]={&quot;..#..&quot;,&quot;.#.#.&quot;,&quot;#...#&quot;,&quot;.#.#.&quot;,&quot;..#..&quot;},c;
-//初值,输出如下:
-/*
-..#..
-.#.#.
-#...#
-.#.#.
-..#..
-*/
-//中间等会填
-int main(){
-//    freopen(&quot;P4327.in&quot;,&quot;r&quot;,stdin);
-//    freopen(&quot;P4327.out&quot;,&quot;w&quot;,stdout);
-    cin&gt;&gt;c;
-    a[2][2]=c[0];
-    //第一个框架填好
-    for (int i=1;i&lt;c.size();i++){
-    //c[0]已经填过,所以从1开始
-        if (i%3!=2){
-            a[0]+=&quot;.#..&quot;,a[1]+=&quot;#.#.&quot;;
-            //1和2行没有特殊情况,只要是#框架就行
-            if (a[2][a[2].size()-1]==&#39;#&#39;)a[2]+=&quot;.&quot;,a[2]+=c[i],a[2]+=&quot;.*&quot;;//特殊:如果上一个是#框架,那么这一个的下一个一定是*的,所以第3行最后一个字符填*
-            else a[2]+=&quot;.&quot;,a[2]+=c[i],a[2]+=&quot;.#&quot;;//不然填#
-            a[3]+=&quot;#.#.&quot;,a[4]+=&quot;.#..&quot;;//3和4行也没有什么特殊的
-        }else{
-            a[0]+=&quot;.*..&quot;,a[1]+=&quot;*.*.&quot;,a[2]+=&quot;.&quot;,a[2]+=c[i],a[2]+=&quot;.*&quot;;
-            a[3]+=&quot;*.*.&quot;,a[4]+=&quot;.*..&quot;;
-            //很像填#的,只不过改了一下字符,由于*的优先级高,所以没有任何问题
-        }
-    }
-    if (c.size()%3==2)a[2][c.size()*4]=&#39;#&#39;;
-    //注意!这里是此题的一个坑!如果最后字符个数%3=2,那么我的切片方法就会使得第3行最后一个字符是*!一定要注意!
-    //注意!这里是此题的一个坑!如果最后字符个数%3=2,那么我的切片方法就会使得第3行最后一个字符是*!一定要注意!
-    //注意!这里是此题的一个坑!如果最后字符个数%3=2,那么我的切片方法就会使得第3行最后一个字符是*!一定要注意!
-    //重要的事情说3遍
-    //一开始因为这个被卡了2次50 T-T
-    for (int i=0;i&lt;5;i++)cout&lt;&lt;a[i]&lt;&lt;endl;//模拟完了,愉快地输出
-    return 0;
-}/*
-理论上如下切片方式也是可行的:
-..#. ..#. ..*. ..#..
-.#.# .#.# .*.* .#.#.
-#.X. #.X. *.X. *.X.#
-.#.# .#.# .*.* .#.#.
-..#. ..#. ..*. ..#..
-但是好像没有我这种方便
-*/
-</code></pre>
+<p>具体见代码<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="built_in">string</span> a[<span class="number">5</span>]=&#123;<span class="string">"..#.."</span>,<span class="string">".#.#."</span>,<span class="string">"#...#"</span>,<span class="string">".#.#."</span>,<span class="string">"..#.."</span>&#125;,c;</span><br><span class="line"><span class="comment">//初值,输出如下:</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">..#..</span></span><br><span class="line"><span class="comment">.#.#.</span></span><br><span class="line"><span class="comment">#...#</span></span><br><span class="line"><span class="comment">.#.#.</span></span><br><span class="line"><span class="comment">..#..</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="comment">//中间等会填</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line"><span class="comment">//    freopen("P4327.in","r",stdin);</span></span><br><span class="line"><span class="comment">//    freopen("P4327.out","w",stdout);</span></span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;c;</span><br><span class="line">	a[<span class="number">2</span>][<span class="number">2</span>]=c[<span class="number">0</span>];</span><br><span class="line">    <span class="comment">//第一个框架填好</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;c.size();i++)&#123;</span><br><span class="line">    <span class="comment">//c[0]已经填过,所以从1开始</span></span><br><span class="line">		<span class="keyword">if</span> (i%<span class="number">3</span>!=<span class="number">2</span>)&#123;</span><br><span class="line">			a[<span class="number">0</span>]+=<span class="string">".#.."</span>,a[<span class="number">1</span>]+=<span class="string">"#.#."</span>;</span><br><span class="line">            <span class="comment">//1和2行没有特殊情况,只要是#框架就行</span></span><br><span class="line">			<span class="keyword">if</span> (a[<span class="number">2</span>][a[<span class="number">2</span>].size()<span class="number">-1</span>]==<span class="string">'#'</span>)a[<span class="number">2</span>]+=<span class="string">"."</span>,a[<span class="number">2</span>]+=c[i],a[<span class="number">2</span>]+=<span class="string">".*"</span>;<span class="comment">//特殊:如果上一个是#框架,那么这一个的下一个一定是*的,所以第3行最后一个字符填*</span></span><br><span class="line">			<span class="keyword">else</span> a[<span class="number">2</span>]+=<span class="string">"."</span>,a[<span class="number">2</span>]+=c[i],a[<span class="number">2</span>]+=<span class="string">".#"</span>;<span class="comment">//不然填#</span></span><br><span class="line">			a[<span class="number">3</span>]+=<span class="string">"#.#."</span>,a[<span class="number">4</span>]+=<span class="string">".#.."</span>;<span class="comment">//3和4行也没有什么特殊的</span></span><br><span class="line">		&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">			a[<span class="number">0</span>]+=<span class="string">".*.."</span>,a[<span class="number">1</span>]+=<span class="string">"*.*."</span>,a[<span class="number">2</span>]+=<span class="string">"."</span>,a[<span class="number">2</span>]+=c[i],a[<span class="number">2</span>]+=<span class="string">".*"</span>;</span><br><span class="line">			a[<span class="number">3</span>]+=<span class="string">"*.*."</span>,a[<span class="number">4</span>]+=<span class="string">".*.."</span>;</span><br><span class="line">            <span class="comment">//很像填#的,只不过改了一下字符,由于*的优先级高,所以没有任何问题</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (c.size()%<span class="number">3</span>==<span class="number">2</span>)a[<span class="number">2</span>][c.size()*<span class="number">4</span>]=<span class="string">'#'</span>;</span><br><span class="line">    <span class="comment">//注意!这里是此题的一个坑!如果最后字符个数%3=2,那么我的切片方法就会使得第3行最后一个字符是*!一定要注意!</span></span><br><span class="line">    <span class="comment">//注意!这里是此题的一个坑!如果最后字符个数%3=2,那么我的切片方法就会使得第3行最后一个字符是*!一定要注意!</span></span><br><span class="line">    <span class="comment">//注意!这里是此题的一个坑!如果最后字符个数%3=2,那么我的切片方法就会使得第3行最后一个字符是*!一定要注意!</span></span><br><span class="line">    <span class="comment">//重要的事情说3遍</span></span><br><span class="line">    <span class="comment">//一开始因为这个被卡了2次50 T-T</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">5</span>;i++)<span class="built_in">cout</span>&lt;&lt;a[i]&lt;&lt;<span class="built_in">endl</span>;<span class="comment">//模拟完了,愉快地输出</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;<span class="comment">/*</span></span><br><span class="line"><span class="comment">理论上如下切片方式也是可行的:</span></span><br><span class="line"><span class="comment">..#. ..#. ..*. ..#..</span></span><br><span class="line"><span class="comment">.#.# .#.# .*.* .#.#.</span></span><br><span class="line"><span class="comment">#.X. #.X. *.X. *.X.#</span></span><br><span class="line"><span class="comment">.#.# .#.# .*.* .#.#.</span></span><br><span class="line"><span class="comment">..#. ..#. ..*. ..#..</span></span><br><span class="line"><span class="comment">但是好像没有我这种方便</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure></p>
 
       
     </div>

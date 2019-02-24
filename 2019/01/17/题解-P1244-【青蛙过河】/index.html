@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="其实此题远不用那么麻烦 思路楼下已经说过,我这里就是提供一些写得更短的代码 Pascal var h,k:integer; begin read(h,k); writeln(1 shl h*(k+1)); end.  C++ #include&amp;lt;cstdio&amp;gt; using namespace std; int h,k; int main(){     scanf(&amp;quot;%d%d&amp;q">
+  <meta name="description" content="其实此题远不用那么麻烦 思路楼下已经说过,我这里就是提供一些写得更短的代码 Pascal 123456varh,k:integer;beginread(h,k);writeln(1 shl h*(k+1));end. C++ 12345678910#include&amp;lt;cstdio&amp;gt;using namespace std;int h,k;int main()&amp;#123;    scanf(">
 <meta name="keywords" content="题解,洛谷">
 <meta property="og:type" content="article">
 <meta property="og:title" content="题解 P1244 【青蛙过河】">
 <meta property="og:url" content="http://yoursite.com/2019/01/17/题解-P1244-【青蛙过河】/index.html">
 <meta property="og:site_name" content="yltx&#39;s blog">
-<meta property="og:description" content="其实此题远不用那么麻烦 思路楼下已经说过,我这里就是提供一些写得更短的代码 Pascal var h,k:integer; begin read(h,k); writeln(1 shl h*(k+1)); end.  C++ #include&amp;lt;cstdio&amp;gt; using namespace std; int h,k; int main(){     scanf(&amp;quot;%d%d&amp;q">
+<meta property="og:description" content="其实此题远不用那么麻烦 思路楼下已经说过,我这里就是提供一些写得更短的代码 Pascal 123456varh,k:integer;beginread(h,k);writeln(1 shl h*(k+1));end. C++ 12345678910#include&amp;lt;cstdio&amp;gt;using namespace std;int h,k;int main()&amp;#123;    scanf(">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-01-17T11:17:02.521Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="题解 P1244 【青蛙过河】">
-<meta name="twitter:description" content="其实此题远不用那么麻烦 思路楼下已经说过,我这里就是提供一些写得更短的代码 Pascal var h,k:integer; begin read(h,k); writeln(1 shl h*(k+1)); end.  C++ #include&amp;lt;cstdio&amp;gt; using namespace std; int h,k; int main(){     scanf(&amp;quot;%d%d&amp;q">
+<meta name="twitter:description" content="其实此题远不用那么麻烦 思路楼下已经说过,我这里就是提供一些写得更短的代码 Pascal 123456varh,k:integer;beginread(h,k);writeln(1 shl h*(k+1));end. C++ 12345678910#include&amp;lt;cstdio&amp;gt;using namespace std;int h,k;int main()&amp;#123;    scanf(">
 
 
 
@@ -444,26 +444,9 @@
         <p>其实此题远不用那么麻烦</p>
 <p>思路楼下已经说过,我这里就是提供一些写得更短的代码</p>
 <p>Pascal</p>
-<pre><code class="pas">var
-h,k:integer;
-begin
-read(h,k);
-writeln(1 shl h*(k+1));
-end.
-</code></pre>
+<figure class="highlight pas"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span></span><br><span class="line">h,k:integer;</span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line"><span class="keyword">read</span>(h,k);</span><br><span class="line">writeln(<span class="number">1</span> <span class="keyword">shl</span> h*(k+<span class="number">1</span>));</span><br><span class="line"><span class="keyword">end</span>.</span><br></pre></td></tr></table></figure>
 <p>C++</p>
-<pre><code class="cpp">#include&lt;cstdio&gt;
-using namespace std;
-int h,k;
-int main(){
-    scanf(&quot;%d%d&quot;,&amp;h,&amp;k);
-    int t=2*k+2;
-    for(int i=1;i&lt;=h;i++)t*=2;
-    printf(&quot;%d&quot;,t/2);
-    return 0;
-}
-</code></pre>
-
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> h,k;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;h,&amp;k);</span><br><span class="line">    <span class="keyword">int</span> t=<span class="number">2</span>*k+<span class="number">2</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=h;i++)t*=<span class="number">2</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d"</span>,t/<span class="number">2</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
 

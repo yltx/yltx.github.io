@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="其实这题是个背包（我用暴力只得了20分） S就是背包容量V，i就是重量，i的因子和就是价值。 这样一讲公式就出来了吧！ 公式： i为第一个数，j为第二个数，a[k]为k的因子和 dp[i]=max(dp[i-j]+a[j],dp[i]);  这个公式我想大家都能很方便地推出来。 接下来我要讲一讲本题一个很重要的优化，楼下们的代码中都或多或少的有，只是他们没有解释（大佬哪有时间解释） 于是，我这个蒟">
+  <meta name="description" content="其实这题是个背包（我用暴力只得了20分） S就是背包容量V，i就是重量，i的因子和就是价值。 这样一讲公式就出来了吧！ 公式： 12i为第一个数，j为第二个数，a[k]为k的因子和dp[i]=max(dp[i-j]+a[j],dp[i]); 这个公式我想大家都能很方便地推出来。 接下来我要讲一讲本题一个很重要的优化，楼下们的代码中都或多或少的有，只是他们没有解释（大佬哪有时间解释） 于是，我这个蒟">
 <meta name="keywords" content="题解,洛谷">
 <meta property="og:type" content="article">
 <meta property="og:title" content="题解 P1734 【最大约数和】">
 <meta property="og:url" content="http://yoursite.com/2019/01/17/题解-P1734-【最大约数和】/index.html">
 <meta property="og:site_name" content="yltx&#39;s blog">
-<meta property="og:description" content="其实这题是个背包（我用暴力只得了20分） S就是背包容量V，i就是重量，i的因子和就是价值。 这样一讲公式就出来了吧！ 公式： i为第一个数，j为第二个数，a[k]为k的因子和 dp[i]=max(dp[i-j]+a[j],dp[i]);  这个公式我想大家都能很方便地推出来。 接下来我要讲一讲本题一个很重要的优化，楼下们的代码中都或多或少的有，只是他们没有解释（大佬哪有时间解释） 于是，我这个蒟">
+<meta property="og:description" content="其实这题是个背包（我用暴力只得了20分） S就是背包容量V，i就是重量，i的因子和就是价值。 这样一讲公式就出来了吧！ 公式： 12i为第一个数，j为第二个数，a[k]为k的因子和dp[i]=max(dp[i-j]+a[j],dp[i]); 这个公式我想大家都能很方便地推出来。 接下来我要讲一讲本题一个很重要的优化，楼下们的代码中都或多或少的有，只是他们没有解释（大佬哪有时间解释） 于是，我这个蒟">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-01-17T11:16:05.219Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="题解 P1734 【最大约数和】">
-<meta name="twitter:description" content="其实这题是个背包（我用暴力只得了20分） S就是背包容量V，i就是重量，i的因子和就是价值。 这样一讲公式就出来了吧！ 公式： i为第一个数，j为第二个数，a[k]为k的因子和 dp[i]=max(dp[i-j]+a[j],dp[i]);  这个公式我想大家都能很方便地推出来。 接下来我要讲一讲本题一个很重要的优化，楼下们的代码中都或多或少的有，只是他们没有解释（大佬哪有时间解释） 于是，我这个蒟">
+<meta name="twitter:description" content="其实这题是个背包（我用暴力只得了20分） S就是背包容量V，i就是重量，i的因子和就是价值。 这样一讲公式就出来了吧！ 公式： 12i为第一个数，j为第二个数，a[k]为k的因子和dp[i]=max(dp[i-j]+a[j],dp[i]); 这个公式我想大家都能很方便地推出来。 接下来我要讲一讲本题一个很重要的优化，楼下们的代码中都或多或少的有，只是他们没有解释（大佬哪有时间解释） 于是，我这个蒟">
 
 
 
@@ -445,34 +445,16 @@
 <p>S就是背包容量V，i就是重量，i的因子和就是价值。</p>
 <p>这样一讲公式就出来了吧！</p>
 <p>公式：</p>
-<pre><code class="cpp">i为第一个数，j为第二个数，a[k]为k的因子和
-dp[i]=max(dp[i-j]+a[j],dp[i]);
-</code></pre>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">i为第一个数，j为第二个数，a[k]为k的因子和</span><br><span class="line">dp[i]=max(dp[i-j]+a[j],dp[i]);</span><br></pre></td></tr></table></figure>
 <p>这个公式我想大家都能很方便地推出来。</p>
 <p>接下来我要讲一讲本题一个很重要的优化，楼下们的代码中都或多或少的有，只是他们没有解释（大佬哪有时间解释）</p>
 <p>于是，我这个蒟蒻就来解释一下吧！</p>
 <p>本题一个很重要的优化就是：预处理！</p>
-<pre><code class="cpp">void prime(){
-    for (int i=1;i&lt;=n;i++)
-    for (int j=i*2;j&lt;=n;j+=i)a[j]+=i;
-}
-</code></pre>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">prime</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j=i*<span class="number">2</span>;j&lt;=n;j+=i)a[j]+=i;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>看到这段预处理代码，有没有想到筛法？</p>
 <p>没错，就是从筛法改过来的！</p>
 <p>这个是筛法↓</p>
-<pre><code class="cpp">bool s[10000]={1,1};//0和1啥都不是，定1！
-int a[10000],ps;//a数组存最后的质数，ps为这个数组的下标
-//全局数组初值全为0
-inline void $(){//不要在意函数名，这只是个筛法函数
-//财迷心窍的我
-    for (int j=2;j&lt;10000;j++)//暴力！汗！
-    if (!s[j]){//s[j]=0，表明j不是合数（合数为1）
-    a[ps++]=j;//纪录下j这个质数，下一个
-    for (int k=j*2;k&lt;10000;k+=j)//k=j*2省一个判断，每次+j，保证是j的倍数
-    s[k]=1;//既然是j的倍数，那一定是合数，标记！
-    }
-}
-</code></pre>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">bool</span> s[<span class="number">10000</span>]=&#123;<span class="number">1</span>,<span class="number">1</span>&#125;;<span class="comment">//0和1啥都不是，定1！</span></span><br><span class="line"><span class="keyword">int</span> a[<span class="number">10000</span>],ps;<span class="comment">//a数组存最后的质数，ps为这个数组的下标</span></span><br><span class="line"><span class="comment">//全局数组初值全为0</span></span><br><span class="line"><span class="keyword">inline</span> <span class="keyword">void</span> $()&#123;<span class="comment">//不要在意函数名，这只是个筛法函数</span></span><br><span class="line"><span class="comment">//财迷心窍的我</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j=<span class="number">2</span>;j&lt;<span class="number">10000</span>;j++)<span class="comment">//暴力！汗！</span></span><br><span class="line">    <span class="keyword">if</span> (!s[j])&#123;<span class="comment">//s[j]=0，表明j不是合数（合数为1）</span></span><br><span class="line">    a[ps++]=j;<span class="comment">//纪录下j这个质数，下一个</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> k=j*<span class="number">2</span>;k&lt;<span class="number">10000</span>;k+=j)<span class="comment">//k=j*2省一个判断，每次+j，保证是j的倍数</span></span><br><span class="line">    s[k]=<span class="number">1</span>;<span class="comment">//既然是j的倍数，那一定是合数，标记！</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>我将筛法改了一下，就有了这个函数。</p>
 <p>因为是要因子和，而合数因子也算在里面，所以不用判断质数，那个bool数组自然就不要了</p>
 <p>j=i*2表示j初值为i的2倍，j+=i则保证j是i的倍数，就加上i这个因子</p>

@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="我来这里发题解只是为了证明：某种被认为是非正解的算法，其实是可以AC的！ 先看：https://www.luogu.org/blog/user56917/solution-p1983 其实，我并没有改动多少，只是进行了几个很常用的优化：  避免重复定义变量 在原来的代码中，有一段是这样的： for(register int iii=1;iii&amp;lt;=m;iii++){      int cnt=">
+  <meta name="description" content="我来这里发题解只是为了证明：某种被认为是非正解的算法，其实是可以AC的！ 先看：https://www.luogu.org/blog/user56917/solution-p1983 其实，我并没有改动多少，只是进行了几个很常用的优化：  避免重复定义变量 在原来的代码中，有一段是这样的： 12for(register int iii=1;iii&amp;lt;=m;iii++)&amp;#123;      i">
 <meta name="keywords" content="题解,洛谷">
 <meta property="og:type" content="article">
 <meta property="og:title" content="题解 P1983 【车站分级】">
 <meta property="og:url" content="http://yoursite.com/2019/01/12/题解-P1983-【车站分级】/index.html">
 <meta property="og:site_name" content="yltx&#39;s blog">
-<meta property="og:description" content="我来这里发题解只是为了证明：某种被认为是非正解的算法，其实是可以AC的！ 先看：https://www.luogu.org/blog/user56917/solution-p1983 其实，我并没有改动多少，只是进行了几个很常用的优化：  避免重复定义变量 在原来的代码中，有一段是这样的： for(register int iii=1;iii&amp;lt;=m;iii++){      int cnt=">
+<meta property="og:description" content="我来这里发题解只是为了证明：某种被认为是非正解的算法，其实是可以AC的！ 先看：https://www.luogu.org/blog/user56917/solution-p1983 其实，我并没有改动多少，只是进行了几个很常用的优化：  避免重复定义变量 在原来的代码中，有一段是这样的： 12for(register int iii=1;iii&amp;lt;=m;iii++)&amp;#123;      i">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-01-17T08:37:04.079Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="题解 P1983 【车站分级】">
-<meta name="twitter:description" content="我来这里发题解只是为了证明：某种被认为是非正解的算法，其实是可以AC的！ 先看：https://www.luogu.org/blog/user56917/solution-p1983 其实，我并没有改动多少，只是进行了几个很常用的优化：  避免重复定义变量 在原来的代码中，有一段是这样的： for(register int iii=1;iii&amp;lt;=m;iii++){      int cnt=">
+<meta name="twitter:description" content="我来这里发题解只是为了证明：某种被认为是非正解的算法，其实是可以AC的！ 先看：https://www.luogu.org/blog/user56917/solution-p1983 其实，我并没有改动多少，只是进行了几个很常用的优化：  避免重复定义变量 在原来的代码中，有一段是这样的： 12for(register int iii=1;iii&amp;lt;=m;iii++)&amp;#123;      i">
 
 
 
@@ -459,11 +459,11 @@
 <ol>
 <li><p>避免重复定义变量</p>
 <p>在原来的代码中，有一段是这样的：</p>
-<pre><code class="cpp">for(register int iii=1;iii&lt;=m;iii++){
-     int cnt=get();
-</code></pre>
-<p>在这一段中，<code>cnt</code>被反复定义了$ m $次，导致了时间的浪费，因为这明明是一个可以一次解决的问题。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">register</span> <span class="keyword">int</span> iii=<span class="number">1</span>;iii&lt;=m;iii++)&#123;</span><br><span class="line">      <span class="keyword">int</span> cnt=get();</span><br></pre></td></tr></table></figure>
 </li>
+</ol>
+<p>  在这一段中，<code>cnt</code>被反复定义了$ m $次，导致了时间的浪费，因为这明明是一个可以一次解决的问题。</p>
+<ol start="2">
 <li><p>少写头文件</p>
 <p>你写的头文件中的函数每调用一次，编译器就载入一次，所以记住这个原则：</p>
 <p><strong>$ \text{函数能手打就手打，头文件能不调用就不调用} $</strong></p>
@@ -475,61 +475,7 @@
 </ol>
 <p>经过这几个优化，就可以AC了，第8个点只用了832ms。</p>
 <p>代码：</p>
-<pre><code class="cpp">#include&lt;cstdio&gt;
-#include&lt;cstring&gt;
-#define max(x,y) ((x)^(((x)^(y))&amp;(-((x)&lt;(y))))) //手写max
-template &lt;typename _Tp&gt;
-inline void read(_Tp &amp;x){
-    int w=1;char c=0;x=0;
-    while (c^&#39;-&#39;&amp;&amp;(c&lt;&#39;0&#39;||c&gt;&#39;9&#39;))c=getchar();
-    if (c==&#39;-&#39;)w=-1,c=getchar();
-    while (c&gt;=&#39;0&#39;&amp;&amp;c&lt;=&#39;9&#39;)x=(x&lt;&lt;1)+(x&lt;&lt;3)+(c^48),c=getchar();
-    x*=w;
-}
-inline void write(int n){
-    if(n==0) return;
-    write(n/10);
-    putchar(n%10+&#39;0&#39;);
-}//快读/快输
-int que[100000000],dis[2011],v[1011][1011],ints[10000],qian[1011][1011],n,m,ans,cnt;//变量尽量一次定义
-unsigned char bv[2011],G[1011][1011],st[2011];
-inline void add(int s,int t,int l){
-    G[s][t]=1;
-    v[s][t]=max(v[s][t],l);
-}
-int main(){
-    read(n),read(m);
-    for(register int iii=1;iii&lt;=m;iii++){
-        read(cnt);
-        memset(bv,0,sizeof(bv));
-        for(register int i=1;i&lt;=cnt;i++)read(ints[i]),bv[ints[i]]=1;
-        for(register int i=1;i&lt;=cnt;i++)
-        for(register int j=ints[1];j&lt;=ints[cnt];j++)if(!bv[j])add(j,ints[i],1);
-    }//register定义变量很快的
-    memset(bv,0,sizeof(bv));
-    for(register int i=1;i&lt;=n+1;i++)dis[i]=-1234567890;
-    register int head=0,tail=1;que[0]=n+1;
-    dis[n+1]=0;
-    for(register int i=1;i&lt;=n;i++)add(n+1,i,1);
-    for(register int i=1;i&lt;=n+1;i++)
-    for(register int j=1;j&lt;=n+1;j++)
-    if(i!=j&amp;&amp;G[i][j])qian[i][0]++,qian[i][qian[i][0]]=j;
-    do{
-        int me=que[head];head++;bv[me]=0;
-        for(register int j=1;j&lt;=qian[me][0];j++){
-            int i=qian[me][j];
-            if(dis[me]+v[me][i]&gt;dis[i]){
-                dis[i]=dis[me]+v[me][i];
-                if(!bv[i])bv[i]=1,que[tail++]=i;
-            }
-        }
-    }while(head&lt;tail);
-    for(register int i=1;i&lt;=n;i++)st[dis[i]]=1;
-    for(register int i=1;i&lt;=1000;i++)ans+=st[i];
-    write(ans);
-    return(0);
-}
-</code></pre>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> max(x,y) ((x)^(((x)^(y))&amp;(-((x)&lt;(y))))) <span class="comment">//手写max</span></span></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> _Tp&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">read</span><span class="params">(_Tp &amp;x)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> w=<span class="number">1</span>;<span class="keyword">char</span> c=<span class="number">0</span>;x=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (c^<span class="string">'-'</span>&amp;&amp;(c&lt;<span class="string">'0'</span>||c&gt;<span class="string">'9'</span>))c=getchar();</span><br><span class="line">    <span class="keyword">if</span> (c==<span class="string">'-'</span>)w=<span class="number">-1</span>,c=getchar();</span><br><span class="line">    <span class="keyword">while</span> (c&gt;=<span class="string">'0'</span>&amp;&amp;c&lt;=<span class="string">'9'</span>)x=(x&lt;&lt;<span class="number">1</span>)+(x&lt;&lt;<span class="number">3</span>)+(c^<span class="number">48</span>),c=getchar();</span><br><span class="line">    x*=w;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">write</span><span class="params">(<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(n==<span class="number">0</span>) <span class="keyword">return</span>;</span><br><span class="line">    write(n/<span class="number">10</span>);</span><br><span class="line">    <span class="built_in">putchar</span>(n%<span class="number">10</span>+<span class="string">'0'</span>);</span><br><span class="line">&#125;<span class="comment">//快读/快输</span></span><br><span class="line"><span class="keyword">int</span> que[<span class="number">100000000</span>],dis[<span class="number">2011</span>],v[<span class="number">1011</span>][<span class="number">1011</span>],ints[<span class="number">10000</span>],qian[<span class="number">1011</span>][<span class="number">1011</span>],n,m,ans,cnt;<span class="comment">//变量尽量一次定义</span></span><br><span class="line"><span class="keyword">unsigned</span> <span class="keyword">char</span> bv[<span class="number">2011</span>],G[<span class="number">1011</span>][<span class="number">1011</span>],st[<span class="number">2011</span>];</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> s,<span class="keyword">int</span> t,<span class="keyword">int</span> l)</span></span>&#123;</span><br><span class="line">    G[s][t]=<span class="number">1</span>;</span><br><span class="line">    v[s][t]=max(v[s][t],l);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    read(n),read(m);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">register</span> <span class="keyword">int</span> iii=<span class="number">1</span>;iii&lt;=m;iii++)&#123;</span><br><span class="line">        read(cnt);</span><br><span class="line">        <span class="built_in">memset</span>(bv,<span class="number">0</span>,<span class="keyword">sizeof</span>(bv));</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">register</span> <span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=cnt;i++)read(ints[i]),bv[ints[i]]=<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">register</span> <span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=cnt;i++)</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">register</span> <span class="keyword">int</span> j=ints[<span class="number">1</span>];j&lt;=ints[cnt];j++)<span class="keyword">if</span>(!bv[j])add(j,ints[i],<span class="number">1</span>);</span><br><span class="line">    &#125;<span class="comment">//register定义变量很快的</span></span><br><span class="line">    <span class="built_in">memset</span>(bv,<span class="number">0</span>,<span class="keyword">sizeof</span>(bv));</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">register</span> <span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n+<span class="number">1</span>;i++)dis[i]=<span class="number">-1234567890</span>;</span><br><span class="line">    <span class="keyword">register</span> <span class="keyword">int</span> head=<span class="number">0</span>,tail=<span class="number">1</span>;que[<span class="number">0</span>]=n+<span class="number">1</span>;</span><br><span class="line">    dis[n+<span class="number">1</span>]=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">register</span> <span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)add(n+<span class="number">1</span>,i,<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">register</span> <span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n+<span class="number">1</span>;i++)</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">register</span> <span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=n+<span class="number">1</span>;j++)</span><br><span class="line">    <span class="keyword">if</span>(i!=j&amp;&amp;G[i][j])qian[i][<span class="number">0</span>]++,qian[i][qian[i][<span class="number">0</span>]]=j;</span><br><span class="line">    <span class="keyword">do</span>&#123;</span><br><span class="line">        <span class="keyword">int</span> me=que[head];head++;bv[me]=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">register</span> <span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=qian[me][<span class="number">0</span>];j++)&#123;</span><br><span class="line">            <span class="keyword">int</span> i=qian[me][j];</span><br><span class="line">            <span class="keyword">if</span>(dis[me]+v[me][i]&gt;dis[i])&#123;</span><br><span class="line">                dis[i]=dis[me]+v[me][i];</span><br><span class="line">                <span class="keyword">if</span>(!bv[i])bv[i]=<span class="number">1</span>,que[tail++]=i;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;<span class="keyword">while</span>(head&lt;tail);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">register</span> <span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)st[dis[i]]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">register</span> <span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">1000</span>;i++)ans+=st[i];</span><br><span class="line">    write(ans);</span><br><span class="line">    <span class="keyword">return</span>(<span class="number">0</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>原解法：<a href="https://www.luogu.org/blog/user56917/solution-p1983" target="_blank" rel="noopener">这篇文章</a>摆在一起</p>
 
       

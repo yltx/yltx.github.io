@@ -457,23 +457,7 @@
 <p>其实模拟并不难，但是输入和输出有坑：</p>
 <h1 id="输入要加freopen-“input-txt”-”r”-stdin-输出要加freopen-“output-txt”-”w”-stdout"><a href="#输入要加freopen-“input-txt”-”r”-stdin-输出要加freopen-“output-txt”-”w”-stdout" class="headerlink" title="输入要加freopen(“input.txt”,”r”,stdin) 输出要加freopen(“output.txt”,”w”,stdout)"></a>输入要加freopen(“input.txt”,”r”,stdin) 输出要加freopen(“output.txt”,”w”,stdout)</h1><h1 id="输入要加freopen-“input-txt”-”r”-stdin-输出要加freopen-“output-txt”-”w”-stdout-1"><a href="#输入要加freopen-“input-txt”-”r”-stdin-输出要加freopen-“output-txt”-”w”-stdout-1" class="headerlink" title="输入要加freopen(“input.txt”,”r”,stdin) 输出要加freopen(“output.txt”,”w”,stdout)"></a>输入要加freopen(“input.txt”,”r”,stdin) 输出要加freopen(“output.txt”,”w”,stdout)</h1><h1 id="输入要加freopen-“input-txt”-”r”-stdin-输出要加freopen-“output-txt”-”w”-stdout-2"><a href="#输入要加freopen-“input-txt”-”r”-stdin-输出要加freopen-“output-txt”-”w”-stdout-2" class="headerlink" title="输入要加freopen(“input.txt”,”r”,stdin) 输出要加freopen(“output.txt”,”w”,stdout)"></a>输入要加freopen(“input.txt”,”r”,stdin) 输出要加freopen(“output.txt”,”w”,stdout)</h1><p>重要的事情说三遍</p>
 <p>代码：</p>
-<pre><code class="cpp">#include&lt;cstdio&gt;
-int n,a[105],l1,l2;
-int main(void){
-    freopen(&quot;input.txt&quot;,&quot;r&quot;,stdin);
-    freopen(&quot;output.txt&quot;,&quot;w&quot;,stdout);
-    scanf (&quot;%d&quot;,&amp;n);
-    for (int i=1;i&lt;=n;i++){
-        scanf(&quot;%1d&quot;,&amp;a[i]);
-        if(a[i]&amp;&amp;!l1)l1=i;//记录第一个1
-        else if (a[i]&amp;&amp;!l2)l2=i;//记录第2个1
-    }
-    for (int i=l2+1;i&lt;=n;i++)if (a[i]&amp;&amp;i-l2==l2-l1)l1=l2,l2=i;//间隔相同，更新
-    else if(a[i])return !printf (&quot;NO&quot;);//不相同直接退出
-    printf (&quot;YES&quot;);
-}
-</code></pre>
-
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="keyword">int</span> n,a[<span class="number">105</span>],l1,l2;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span>&#123;</span><br><span class="line">    freopen(<span class="string">"input.txt"</span>,<span class="string">"r"</span>,<span class="built_in">stdin</span>);</span><br><span class="line">    freopen(<span class="string">"output.txt"</span>,<span class="string">"w"</span>,<span class="built_in">stdout</span>);</span><br><span class="line">    <span class="built_in">scanf</span> (<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%1d"</span>,&amp;a[i]);</span><br><span class="line">        <span class="keyword">if</span>(a[i]&amp;&amp;!l1)l1=i;<span class="comment">//记录第一个1</span></span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (a[i]&amp;&amp;!l2)l2=i;<span class="comment">//记录第2个1</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=l2+<span class="number">1</span>;i&lt;=n;i++)<span class="keyword">if</span> (a[i]&amp;&amp;i-l2==l2-l1)l1=l2,l2=i;<span class="comment">//间隔相同，更新</span></span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(a[i])<span class="keyword">return</span> !<span class="built_in">printf</span> (<span class="string">"NO"</span>);<span class="comment">//不相同直接退出</span></span><br><span class="line">    <span class="built_in">printf</span> (<span class="string">"YES"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
 

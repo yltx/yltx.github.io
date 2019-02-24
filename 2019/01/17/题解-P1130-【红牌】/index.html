@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="纪念一下我做出的第一道DP题 此题很像数字三角形，只不过那题要求所经数值最大，这题最小。 ~~ 话说我觉得并没有什么方程…… ~~ 思路：从倒数第2步考虑，取两种方案中最小的一种，然后一直做到第一步，找最小值。 代码： #include &amp;lt;cstdio&amp;gt; #include &amp;lt;algorithm&amp;gt; #include &amp;lt;cstring&amp;gt; #include &amp;lt;s">
+  <meta name="description" content="纪念一下我做出的第一道DP题 此题很像数字三角形，只不过那题要求所经数值最大，这题最小。 ~~ 话说我觉得并没有什么方程…… ~~ 思路：从倒数第2步考虑，取两种方案中最小的一种，然后一直做到第一步，找最小值。 代码： 123456789101112131415161718192021#include &amp;lt;cstdio&amp;gt;#include &amp;lt;algorithm&amp;gt;#include">
 <meta name="keywords" content="题解,洛谷">
 <meta property="og:type" content="article">
 <meta property="og:title" content="题解 P1130 【红牌】">
 <meta property="og:url" content="http://yoursite.com/2019/01/17/题解-P1130-【红牌】/index.html">
 <meta property="og:site_name" content="yltx&#39;s blog">
-<meta property="og:description" content="纪念一下我做出的第一道DP题 此题很像数字三角形，只不过那题要求所经数值最大，这题最小。 ~~ 话说我觉得并没有什么方程…… ~~ 思路：从倒数第2步考虑，取两种方案中最小的一种，然后一直做到第一步，找最小值。 代码： #include &amp;lt;cstdio&amp;gt; #include &amp;lt;algorithm&amp;gt; #include &amp;lt;cstring&amp;gt; #include &amp;lt;s">
+<meta property="og:description" content="纪念一下我做出的第一道DP题 此题很像数字三角形，只不过那题要求所经数值最大，这题最小。 ~~ 话说我觉得并没有什么方程…… ~~ 思路：从倒数第2步考虑，取两种方案中最小的一种，然后一直做到第一步，找最小值。 代码： 123456789101112131415161718192021#include &amp;lt;cstdio&amp;gt;#include &amp;lt;algorithm&amp;gt;#include">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-01-17T10:17:52.087Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="题解 P1130 【红牌】">
-<meta name="twitter:description" content="纪念一下我做出的第一道DP题 此题很像数字三角形，只不过那题要求所经数值最大，这题最小。 ~~ 话说我觉得并没有什么方程…… ~~ 思路：从倒数第2步考虑，取两种方案中最小的一种，然后一直做到第一步，找最小值。 代码： #include &amp;lt;cstdio&amp;gt; #include &amp;lt;algorithm&amp;gt; #include &amp;lt;cstring&amp;gt; #include &amp;lt;s">
+<meta name="twitter:description" content="纪念一下我做出的第一道DP题 此题很像数字三角形，只不过那题要求所经数值最大，这题最小。 ~~ 话说我觉得并没有什么方程…… ~~ 思路：从倒数第2步考虑，取两种方案中最小的一种，然后一直做到第一步，找最小值。 代码： 123456789101112131415161718192021#include &amp;lt;cstdio&amp;gt;#include &amp;lt;algorithm&amp;gt;#include">
 
 
 
@@ -446,29 +446,7 @@
 <p>~~ 话说我觉得并没有什么方程…… ~~</p>
 <p>思路：从倒数第2步考虑，取两种方案中最小的一种，然后一直做到第一步，找最小值。</p>
 <p>代码：</p>
-<pre><code class="cpp">#include &lt;cstdio&gt;
-#include &lt;algorithm&gt;
-#include &lt;cstring&gt;
-#include &lt;string&gt;
-#include &lt;cmath&gt;
-#include &lt;iostream&gt;
-#include &lt;iomanip&gt;
-using namespace std;
-int n,m,a[2005][2005],ans=1&lt;&lt;30;//ans必须要定大，不然找不到最小值
-int main(){
-    scanf (&quot;%d%d&quot;,&amp;n,&amp;m);
-    for (int i=0;i&lt;m;i++)
-    for (int j=0;j&lt;n;j++)scanf (&quot;%d&quot;,&amp;a[i][j]);
-    for (int j=n-2;j&gt;=0;j--)//从倒数第2步开始，向第一步推进
-    //我用的是0下标
-    for (int i=0;i&lt;m;i++)
-    a[i][j]=min(a[(i+1)%m][j+1],a[i][j+1])+a[i][j];//取最小值，更新为之后的步骤的最小值
-    for (int i=0;i&lt;m;i++)ans=min(ans,a[i][0]);//找答案
-    printf (&quot;%d&quot;,ans);//结束
-    return 0;
-}
-</code></pre>
-
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iomanip&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> n,m,a[<span class="number">2005</span>][<span class="number">2005</span>],ans=<span class="number">1</span>&lt;&lt;<span class="number">30</span>;<span class="comment">//ans必须要定大，不然找不到最小值</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span> (<span class="string">"%d%d"</span>,&amp;n,&amp;m);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;m;i++)</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;n;j++)<span class="built_in">scanf</span> (<span class="string">"%d"</span>,&amp;a[i][j]);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j=n<span class="number">-2</span>;j&gt;=<span class="number">0</span>;j--)<span class="comment">//从倒数第2步开始，向第一步推进</span></span><br><span class="line">    <span class="comment">//我用的是0下标</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;m;i++)</span><br><span class="line">    a[i][j]=min(a[(i+<span class="number">1</span>)%m][j+<span class="number">1</span>],a[i][j+<span class="number">1</span>])+a[i][j];<span class="comment">//取最小值，更新为之后的步骤的最小值</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;m;i++)ans=min(ans,a[i][<span class="number">0</span>]);<span class="comment">//找答案</span></span><br><span class="line">    <span class="built_in">printf</span> (<span class="string">"%d"</span>,ans);<span class="comment">//结束</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
 

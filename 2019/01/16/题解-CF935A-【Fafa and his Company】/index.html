@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="数论题不是用来氵的 所以，我们果断地选择了分解质因数 于是就可以用公式： $$ n=(p_{1}^{a_{1}})(p_{2}^{a_{2}})…*(p_{k}^{a_{k}}) $$ n的因子个数$$ =(a_{1}+1)(a_{2}+1)…*(a_{k}+1) $$ 代码： #include &amp;lt;cstdio&amp;gt; int n,ans=1; int main(void){     sca">
+  <meta name="description" content="数论题不是用来氵的 所以，我们果断地选择了分解质因数 于是就可以用公式： $$ n=(p_{1}^{a_{1}})(p_{2}^{a_{2}})…*(p_{k}^{a_{k}}) $$ n的因子个数$$ =(a_{1}+1)(a_{2}+1)…*(a_{k}+1) $$ 代码： 1234567891011#include &amp;lt;cstdio&amp;gt;int n,ans=1;int main(voi">
 <meta name="keywords" content="题解,CF">
 <meta property="og:type" content="article">
 <meta property="og:title" content="题解 CF935A 【Fafa and his Company】">
 <meta property="og:url" content="http://yoursite.com/2019/01/16/题解-CF935A-【Fafa and his Company】/index.html">
 <meta property="og:site_name" content="yltx&#39;s blog">
-<meta property="og:description" content="数论题不是用来氵的 所以，我们果断地选择了分解质因数 于是就可以用公式： $$ n=(p_{1}^{a_{1}})(p_{2}^{a_{2}})…*(p_{k}^{a_{k}}) $$ n的因子个数$$ =(a_{1}+1)(a_{2}+1)…*(a_{k}+1) $$ 代码： #include &amp;lt;cstdio&amp;gt; int n,ans=1; int main(void){     sca">
+<meta property="og:description" content="数论题不是用来氵的 所以，我们果断地选择了分解质因数 于是就可以用公式： $$ n=(p_{1}^{a_{1}})(p_{2}^{a_{2}})…*(p_{k}^{a_{k}}) $$ n的因子个数$$ =(a_{1}+1)(a_{2}+1)…*(a_{k}+1) $$ 代码： 1234567891011#include &amp;lt;cstdio&amp;gt;int n,ans=1;int main(voi">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-01-17T08:35:05.785Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="题解 CF935A 【Fafa and his Company】">
-<meta name="twitter:description" content="数论题不是用来氵的 所以，我们果断地选择了分解质因数 于是就可以用公式： $$ n=(p_{1}^{a_{1}})(p_{2}^{a_{2}})…*(p_{k}^{a_{k}}) $$ n的因子个数$$ =(a_{1}+1)(a_{2}+1)…*(a_{k}+1) $$ 代码： #include &amp;lt;cstdio&amp;gt; int n,ans=1; int main(void){     sca">
+<meta name="twitter:description" content="数论题不是用来氵的 所以，我们果断地选择了分解质因数 于是就可以用公式： $$ n=(p_{1}^{a_{1}})(p_{2}^{a_{2}})…*(p_{k}^{a_{k}}) $$ n的因子个数$$ =(a_{1}+1)(a_{2}+1)…*(a_{k}+1) $$ 代码： 1234567891011#include &amp;lt;cstdio&amp;gt;int n,ans=1;int main(voi">
 
 
 
@@ -459,19 +459,7 @@
 <p>$$ n=(p_{1}^{a_{1}})<em>(p_{2}^{a_{2}})</em>…*(p_{k}^{a_{k}}) $$</p>
 <p>n的因子个数$$ =(a_{1}+1)<em>(a_{2}+1)</em>…*(a_{k}+1) $$</p>
 <p>代码：</p>
-<pre><code class="cpp">#include &lt;cstdio&gt;
-int n,ans=1;
-int main(void){
-    scanf (&quot;%d&quot;,&amp;n);
-    for (int i=2;i&lt;=n;i++)if (n%i==0){
-        int k=0;
-        while (n%i==0)n/=i,k++;//分解质因数，看有多少重
-        ans*=(k+1);
-    }
-    printf (&quot;%d&quot;,ans-1);
-}
-</code></pre>
-
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="keyword">int</span> n,ans=<span class="number">1</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span> (<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=n;i++)<span class="keyword">if</span> (n%i==<span class="number">0</span>)&#123;</span><br><span class="line">        <span class="keyword">int</span> k=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (n%i==<span class="number">0</span>)n/=i,k++;<span class="comment">//分解质因数，看有多少重</span></span><br><span class="line">        ans*=(k+<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span> (<span class="string">"%d"</span>,ans<span class="number">-1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
 

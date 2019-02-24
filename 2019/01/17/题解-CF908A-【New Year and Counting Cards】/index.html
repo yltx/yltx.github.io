@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="这回是真正的题解了 其实思路楼上已经说过，我只是来一发C++的 代码： #include &amp;lt;bits/stdc++.h&amp;gt; using namespace std; string s; int ans; bool k[256];//我选择了用桶进行优化，这样减少了代码，也变快了 int main(){     k[&amp;#39;a&amp;#39;]=k[&amp;#39;o&amp;#39;]=k[&amp;#39;e&amp;">
+  <meta name="description" content="这回是真正的题解了 其实思路楼上已经说过，我只是来一发C++的 代码： 123456789101112#include &amp;lt;bits/stdc++.h&amp;gt;using namespace std;string s;int ans;bool k[256];//我选择了用桶进行优化，这样减少了代码，也变快了int main()&amp;#123;    k[&apos;a&apos;]=k[&apos;o&apos;]=k[&apos;e&apos;]=k[&apos;i">
 <meta name="keywords" content="题解,CF">
 <meta property="og:type" content="article">
 <meta property="og:title" content="题解 CF908A 【New Year and Counting Cards】">
 <meta property="og:url" content="http://yoursite.com/2019/01/17/题解-CF908A-【New Year and Counting Cards】/index.html">
 <meta property="og:site_name" content="yltx&#39;s blog">
-<meta property="og:description" content="这回是真正的题解了 其实思路楼上已经说过，我只是来一发C++的 代码： #include &amp;lt;bits/stdc++.h&amp;gt; using namespace std; string s; int ans; bool k[256];//我选择了用桶进行优化，这样减少了代码，也变快了 int main(){     k[&amp;#39;a&amp;#39;]=k[&amp;#39;o&amp;#39;]=k[&amp;#39;e&amp;">
+<meta property="og:description" content="这回是真正的题解了 其实思路楼上已经说过，我只是来一发C++的 代码： 123456789101112#include &amp;lt;bits/stdc++.h&amp;gt;using namespace std;string s;int ans;bool k[256];//我选择了用桶进行优化，这样减少了代码，也变快了int main()&amp;#123;    k[&apos;a&apos;]=k[&apos;o&apos;]=k[&apos;e&apos;]=k[&apos;i">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-01-17T10:05:53.772Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="题解 CF908A 【New Year and Counting Cards】">
-<meta name="twitter:description" content="这回是真正的题解了 其实思路楼上已经说过，我只是来一发C++的 代码： #include &amp;lt;bits/stdc++.h&amp;gt; using namespace std; string s; int ans; bool k[256];//我选择了用桶进行优化，这样减少了代码，也变快了 int main(){     k[&amp;#39;a&amp;#39;]=k[&amp;#39;o&amp;#39;]=k[&amp;#39;e&amp;">
+<meta name="twitter:description" content="这回是真正的题解了 其实思路楼上已经说过，我只是来一发C++的 代码： 123456789101112#include &amp;lt;bits/stdc++.h&amp;gt;using namespace std;string s;int ans;bool k[256];//我选择了用桶进行优化，这样减少了代码，也变快了int main()&amp;#123;    k[&apos;a&apos;]=k[&apos;o&apos;]=k[&apos;e&apos;]=k[&apos;i">
 
 
 
@@ -444,20 +444,7 @@
         <p>这回是真正的题解了</p>
 <p>其实思路楼上已经说过，我只是来一发C++的</p>
 <p>代码：</p>
-<pre><code class="cpp">#include &lt;bits/stdc++.h&gt;
-using namespace std;
-string s;
-int ans;
-bool k[256];//我选择了用桶进行优化，这样减少了代码，也变快了
-int main(){
-    k[&#39;a&#39;]=k[&#39;o&#39;]=k[&#39;e&#39;]=k[&#39;i&#39;]=k[&#39;u&#39;]=k[&#39;1&#39;]=k[&#39;3&#39;]=k[&#39;5&#39;]=k[&#39;7&#39;]=k[&#39;9&#39;]=true;//打表，需要翻过来的定义为true（1）
-    cin&gt;&gt;s;
-    for (int i=0;i&lt;s.size();i++)ans+=(k[s[i]]);//直接进行计算
-    cout&lt;&lt;ans;
-    return 0;
-}
-</code></pre>
-
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="built_in">string</span> s;</span><br><span class="line"><span class="keyword">int</span> ans;</span><br><span class="line"><span class="keyword">bool</span> k[<span class="number">256</span>];<span class="comment">//我选择了用桶进行优化，这样减少了代码，也变快了</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    k[<span class="string">'a'</span>]=k[<span class="string">'o'</span>]=k[<span class="string">'e'</span>]=k[<span class="string">'i'</span>]=k[<span class="string">'u'</span>]=k[<span class="string">'1'</span>]=k[<span class="string">'3'</span>]=k[<span class="string">'5'</span>]=k[<span class="string">'7'</span>]=k[<span class="string">'9'</span>]=<span class="literal">true</span>;<span class="comment">//打表，需要翻过来的定义为true（1）</span></span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;s;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;s.size();i++)ans+=(k[s[i]]);<span class="comment">//直接进行计算</span></span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;ans;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
 

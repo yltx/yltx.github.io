@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="我发现楼下们是不是想得太多了…… 有必要用什么康托展开吗…… 既然我学的是c++，那当然要知道STL大法好 重点来了！ 思路： 用STL全排列函数，不断求上一个字典序，同时累加； 如果求不了了，说明这就是第一个字典序，就可以输出了。 AC代码（cpp）： prev\_permutation()函数用法：（）内为内存中的一段连续空间的起点和终点，每次调用都将指定内存中的值修改为上一个字典序，如果当前">
+  <meta name="description" content="我发现楼下们是不是想得太多了…… 有必要用什么康托展开吗…… 既然我学的是c++，那当然要知道STL大法好 重点来了！ 思路： 用STL全排列函数，不断求上一个字典序，同时累加； 如果求不了了，说明这就是第一个字典序，就可以输出了。 AC代码（cpp）： 123456789101112131415prev\_permutation()函数用法：（）内为内存中的一段连续空间的起点和终点，每次调用都将">
 <meta name="keywords" content="题解,洛谷">
 <meta property="og:type" content="article">
 <meta property="og:title" content="题解 P2524 【Uim的情人节礼物·其之弐】">
 <meta property="og:url" content="http://yoursite.com/2019/01/17/题解-P2524-【Uim的情人节礼物·其之弐】/index.html">
 <meta property="og:site_name" content="yltx&#39;s blog">
-<meta property="og:description" content="我发现楼下们是不是想得太多了…… 有必要用什么康托展开吗…… 既然我学的是c++，那当然要知道STL大法好 重点来了！ 思路： 用STL全排列函数，不断求上一个字典序，同时累加； 如果求不了了，说明这就是第一个字典序，就可以输出了。 AC代码（cpp）： prev\_permutation()函数用法：（）内为内存中的一段连续空间的起点和终点，每次调用都将指定内存中的值修改为上一个字典序，如果当前">
+<meta property="og:description" content="我发现楼下们是不是想得太多了…… 有必要用什么康托展开吗…… 既然我学的是c++，那当然要知道STL大法好 重点来了！ 思路： 用STL全排列函数，不断求上一个字典序，同时累加； 如果求不了了，说明这就是第一个字典序，就可以输出了。 AC代码（cpp）： 123456789101112131415prev\_permutation()函数用法：（）内为内存中的一段连续空间的起点和终点，每次调用都将">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-01-17T11:28:18.872Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="题解 P2524 【Uim的情人节礼物·其之弐】">
-<meta name="twitter:description" content="我发现楼下们是不是想得太多了…… 有必要用什么康托展开吗…… 既然我学的是c++，那当然要知道STL大法好 重点来了！ 思路： 用STL全排列函数，不断求上一个字典序，同时累加； 如果求不了了，说明这就是第一个字典序，就可以输出了。 AC代码（cpp）： prev\_permutation()函数用法：（）内为内存中的一段连续空间的起点和终点，每次调用都将指定内存中的值修改为上一个字典序，如果当前">
+<meta name="twitter:description" content="我发现楼下们是不是想得太多了…… 有必要用什么康托展开吗…… 既然我学的是c++，那当然要知道STL大法好 重点来了！ 思路： 用STL全排列函数，不断求上一个字典序，同时累加； 如果求不了了，说明这就是第一个字典序，就可以输出了。 AC代码（cpp）： 123456789101112131415prev\_permutation()函数用法：（）内为内存中的一段连续空间的起点和终点，每次调用都将">
 
 
 
@@ -449,23 +449,7 @@
 <p>用STL全排列函数，不断求上一个字典序，同时累加；</p>
 <p>如果求不了了，说明这就是第一个字典序，就可以输出了。</p>
 <p>AC代码（cpp）：</p>
-<pre><code class="cpp">prev\_permutation()函数用法：（）内为内存中的一段连续空间的起点和终点，每次调用都将指定内存中的值修改为上一个字典序，如果当前排列已是第一个，返回“false”。
-#include &lt;bits/stdc++.h&gt;//万能头文件
-using namespace std;//流读入要的一句话
-int n,ans;//n是个数，ans是答案
-char a[10005];//虽说n只有0~9，但由于我是直接从2525抄过来的程序，就懒得改了
-//由于输入没有“ ”，且n&lt;=9，所以a[i]一定是一位数，用char才行
-int main(void){
-    ios::sync\_with\_stdio(false);//毫无意（luan）义（yong）的流优化
-    cin&gt;&gt;n;
-    for (int i=0;i&lt;n;i++)cin&gt;&gt;a[i];
-    while (prev\_permutation(a,a+n))ans++;//如果函数返回值为0，就会退出，不然不断求上一个字典序，ans同时累加
-    cout&lt;&lt;ans+1;//该顺序也算一个，所以ans要加1（ans是之前的字典序数量）
-}
-PS：说我是在抄2525的代码？别说的那么难听行不？我只是代码的搬运工。
-想抄代码？恩哼哼^-^!
-</code></pre>
-
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">prev\_permutation()函数用法：（）内为内存中的一段连续空间的起点和终点，每次调用都将指定内存中的值修改为上一个字典序，如果当前排列已是第一个，返回“<span class="literal">false</span>”。</span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;//万能头文件</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;<span class="comment">//流读入要的一句话</span></span><br><span class="line"><span class="keyword">int</span> n,ans;<span class="comment">//n是个数，ans是答案</span></span><br><span class="line"><span class="keyword">char</span> a[<span class="number">10005</span>];<span class="comment">//虽说n只有0~9，但由于我是直接从2525抄过来的程序，就懒得改了</span></span><br><span class="line"><span class="comment">//由于输入没有“ ”，且n&lt;=9，所以a[i]一定是一位数，用char才行</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span>&#123;</span><br><span class="line">    ios::sync\_with\_stdio(<span class="literal">false</span>);<span class="comment">//毫无意（luan）义（yong）的流优化</span></span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)<span class="built_in">cin</span>&gt;&gt;a[i];</span><br><span class="line">    <span class="keyword">while</span> (prev\_permutation(a,a+n))ans++;<span class="comment">//如果函数返回值为0，就会退出，不然不断求上一个字典序，ans同时累加</span></span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;ans+<span class="number">1</span>;<span class="comment">//该顺序也算一个，所以ans要加1（ans是之前的字典序数量）</span></span><br><span class="line">&#125;</span><br><span class="line">PS：说我是在抄<span class="number">2525</span>的代码？别说的那么难听行不？我只是代码的搬运工。</span><br><span class="line">想抄代码？恩哼哼^-^!</span><br></pre></td></tr></table></figure>
       
     </div>
 

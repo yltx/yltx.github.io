@@ -599,10 +599,7 @@
               此题就是一个模拟题，但是如果一个个判断会很烦，而且代码量会很多，这里我就提出一种更好的方法：
 事先开一个数值数组，对特殊的字符位置赋值
 然后直接累加就好了。
-代码：
-#include&lt;bits/stdc++.h&gt;
-using namespace std;
-int ans,s[200];/
+代码：#include&lt;bits/stdc++.h&gt;using namespace std;int ans,s[200];//数值
               ...
             </p>
           <!--noindex-->
@@ -757,11 +754,7 @@ int ans,s[200];/
             <p>
               其实这题根本不用那么麻烦，只需一个数组即可。
 由于没有限制是最小回文串，所以输出原串后再输出它的翻转即可。
-这样的串一定是回文串。
-#include &lt;bits/stdc++.h&gt;
-using namespace std;
-string s;//一个串足矣
-int main(void){
+这样的串一定是回文串。#include &lt;bits/stdc++.h&gt;using namespace std;string s;//一个串足矣int main(void)&#123
               ...
             </p>
           <!--noindex-->
@@ -917,16 +910,9 @@ int main(void){
               其实此题远不用那么麻烦
 思路楼下已经说过,我这里就是提供一些写得更短的代码
 Pascal
-var
-h,k:integer;
-begin
-read(h,k);
-writeln(1 shl h*(k+1));
-end.
-
+varh,k:integer;beginread(h,k);writeln(1 shl h*(k+1));end.
 C++
-#include&lt;cstdio&gt;
-using namespac
+#include&lt;cstdio&gt;using namespace std;i
               ...
             </p>
           <!--noindex-->
@@ -1082,13 +1068,8 @@ using namespac
               此题其实就是一个模拟
 但是不好写
 我个人的想法是分组
-如下图:
-..#.. .#.. .*.. .#..
-.#.#. #.#. *.*. #.#.
-#.X.# .X.* .X.* .X.#
-.#.#. #.#. *.*. #.#.
-..#.. .#.. .*.. .#..
-第一组有5个字符,之后的每
+如下图:..#.. .#.. .*.. .#...#.#. #.#. *.*. #.#.#.X.# .X.* .X.* .X.#.#.#. #.#. *.*. #.#...#.. .#.. .*.. .#..
+第一组有5个字符,之后的每一组都只有
               ...
             </p>
           <!--noindex-->
@@ -1246,10 +1227,7 @@ using namespac
 思路：模拟
 可以在线做，对于每一个读入的ai，分类讨论
 详见代码
-#include &lt;cstdio&gt;
-int n,k,now,ans;
-int main(void){
-    scanf (&quot;%d%d&quot;,&amp
+#include &lt;cstdio&gt;int n,k,now,ans;int main(void)&#123;    scanf ("%d%d",&amp;n,&amp;
               ...
             </p>
           <!--noindex-->
@@ -1407,10 +1385,7 @@ int main(void){
 思路：模拟
 可以在线做，对于每一个读入的ai，分类讨论
 详见代码
-#include &lt;cstdio&gt;
-int n,k,now,ans;
-int main(void){
-    scanf (&quot;%d%d&quot;,&amp
+#include &lt;cstdio&gt;int n,k,now,ans;int main(void)&#123;    scanf ("%d%d",&amp;n,&amp;
               ...
             </p>
           <!--noindex-->
@@ -1748,12 +1723,7 @@ n的因子个数$$ =(a_{1}+1)(a_{2}+1)…*(a_{k}+1) $$
             <p>
               这题很简单啊，怎么没人发题解呢？
 所以我来一发很简单的模拟
-代码：（思路码里说）
-#include &lt;cstdio&gt;
-int s,ans,a[200005],n;
-int main(void){
-    scanf (&quot;%d&quot;,&amp;n);//读入不解释
-    
+代码：（思路码里说）#include &lt;cstdio&gt;int s,ans,a[200005],n;int main(void)&#123;    scanf ("%d",&amp;n);//读入不解释    for (int i
               ...
             </p>
           <!--noindex-->
@@ -1921,12 +1891,8 @@ int main(void){
               竟然没有C++党题解？
 数论楼下已证明过，我只是来一发代码
 代码太简单就不写注释了
-#include &lt;cstdio&gt;
-int n;
-int main(void){
-    scanf (&quot;%d&quot;,&amp;n);
-    printf (&quot;%d&quot;
-              ...
+#include &lt;cstdio&gt;int n;int main(void)&#123;    scanf ("%d",&amp;n);    printf ("%d",(n-4)/2);&#125;
+              
             </p>
           <!--noindex-->
           

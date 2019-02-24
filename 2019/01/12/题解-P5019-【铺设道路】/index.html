@@ -543,29 +543,7 @@
 <p>没事，设定一个极值，最后判一下，如果没变的话就从本次的结束点往后找啦~</p>
 <p>于是复杂度降到了$ O(n+\text{常数}) $，就AC了</p>
 <p>代码：</p>
-<pre><code class="cpp">#include &lt;bits/stdc++.h&gt;
-using namespace std;
-int n,d[100005],q=1;
-long long s,ans;
-int main(){
-    scanf (&quot;%d&quot;,&amp;n);
-    for (int i=1;i&lt;=n;i++)scanf (&quot;%d&quot;,&amp;d[i]),s+=d[i];//读入，统计和
-    int b=1;
-    while (d[b]==0)b++;//找开端
-    q=b;//下一个开端
-    while (s){
-        b=q;
-        int e=b,mn=1&lt;&lt;20;
-        while (d[e])mn=min(mn,d[e]),e++;//找最小值
-        ans+=mn,s-=mn*(e-b);//花mn天干，总和减去填的所有
-        q=1&lt;&lt;20;
-        for (int i=e-1;i&gt;=b;i--){d[i]-=mn;if (d[i]&gt;0)q=i;}//模拟减，同时找下一次的开端
-        if (q==1&lt;&lt;20)for (q=e+1;q&lt;=n;q++)if(d[q]&gt;0)break;
-    }
-    printf (&quot;%d&quot;,ans);
-}
-</code></pre>
-
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> n,d[<span class="number">100005</span>],q=<span class="number">1</span>;</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> s,ans;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span> (<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)<span class="built_in">scanf</span> (<span class="string">"%d"</span>,&amp;d[i]),s+=d[i];<span class="comment">//读入，统计和</span></span><br><span class="line">    <span class="keyword">int</span> b=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (d[b]==<span class="number">0</span>)b++;<span class="comment">//找开端</span></span><br><span class="line">    q=b;<span class="comment">//下一个开端</span></span><br><span class="line">    <span class="keyword">while</span> (s)&#123;</span><br><span class="line">    	b=q;</span><br><span class="line">        <span class="keyword">int</span> e=b,mn=<span class="number">1</span>&lt;&lt;<span class="number">20</span>;</span><br><span class="line">        <span class="keyword">while</span> (d[e])mn=min(mn,d[e]),e++;<span class="comment">//找最小值</span></span><br><span class="line">        ans+=mn,s-=mn*(e-b);<span class="comment">//花mn天干，总和减去填的所有</span></span><br><span class="line">        q=<span class="number">1</span>&lt;&lt;<span class="number">20</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=e<span class="number">-1</span>;i&gt;=b;i--)&#123;d[i]-=mn;<span class="keyword">if</span> (d[i]&gt;<span class="number">0</span>)q=i;&#125;<span class="comment">//模拟减，同时找下一次的开端</span></span><br><span class="line">        <span class="keyword">if</span> (q==<span class="number">1</span>&lt;&lt;<span class="number">20</span>)<span class="keyword">for</span> (q=e+<span class="number">1</span>;q&lt;=n;q++)<span class="keyword">if</span>(d[q]&gt;<span class="number">0</span>)<span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span> (<span class="string">"%d"</span>,ans);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
 

@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="这题呢，是一道水题，不过为什么没人做？？？ 读入9（3*3）个字符，每个有3种情况：  ‘-‘ 表示该位置没有棋子；  ‘O’ 表示该位置为小a的棋子；  ‘X’ 表示该位置为uim的棋子。   那么，我就在线做，读入，如果这个地方有子，就检查，如果是’X’，就看它所在行、列相差1，小a就赢了。 看这个图： -K- KOK -K-  其中K为行、列相差1的地方，如果这里有子，且总子数&amp;lt;4，小">
+  <meta name="description" content="这题呢，是一道水题，不过为什么没人做？？？ 读入9（3*3）个字符，每个有3种情况：  ‘-‘ 表示该位置没有棋子；  ‘O’ 表示该位置为小a的棋子；  ‘X’ 表示该位置为uim的棋子。   那么，我就在线做，读入，如果这个地方有子，就检查，如果是’X’，就看它所在行、列相差1，小a就赢了。 看这个图： 123-K-KOK-K- 其中K为行、列相差1的地方，如果这里有子，且总子数&amp;lt;4，小">
 <meta name="keywords" content="题解,洛谷">
 <meta property="og:type" content="article">
 <meta property="og:title" content="题解 P1917 【三子棋Ⅱ】">
 <meta property="og:url" content="http://yoursite.com/2019/01/17/题解-P1917-【三子棋Ⅱ】/index.html">
 <meta property="og:site_name" content="yltx&#39;s blog">
-<meta property="og:description" content="这题呢，是一道水题，不过为什么没人做？？？ 读入9（3*3）个字符，每个有3种情况：  ‘-‘ 表示该位置没有棋子；  ‘O’ 表示该位置为小a的棋子；  ‘X’ 表示该位置为uim的棋子。   那么，我就在线做，读入，如果这个地方有子，就检查，如果是’X’，就看它所在行、列相差1，小a就赢了。 看这个图： -K- KOK -K-  其中K为行、列相差1的地方，如果这里有子，且总子数&amp;lt;4，小">
+<meta property="og:description" content="这题呢，是一道水题，不过为什么没人做？？？ 读入9（3*3）个字符，每个有3种情况：  ‘-‘ 表示该位置没有棋子；  ‘O’ 表示该位置为小a的棋子；  ‘X’ 表示该位置为uim的棋子。   那么，我就在线做，读入，如果这个地方有子，就检查，如果是’X’，就看它所在行、列相差1，小a就赢了。 看这个图： 123-K-KOK-K- 其中K为行、列相差1的地方，如果这里有子，且总子数&amp;lt;4，小">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-01-17T11:06:27.777Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="题解 P1917 【三子棋Ⅱ】">
-<meta name="twitter:description" content="这题呢，是一道水题，不过为什么没人做？？？ 读入9（3*3）个字符，每个有3种情况：  ‘-‘ 表示该位置没有棋子；  ‘O’ 表示该位置为小a的棋子；  ‘X’ 表示该位置为uim的棋子。   那么，我就在线做，读入，如果这个地方有子，就检查，如果是’X’，就看它所在行、列相差1，小a就赢了。 看这个图： -K- KOK -K-  其中K为行、列相差1的地方，如果这里有子，且总子数&amp;lt;4，小">
+<meta name="twitter:description" content="这题呢，是一道水题，不过为什么没人做？？？ 读入9（3*3）个字符，每个有3种情况：  ‘-‘ 表示该位置没有棋子；  ‘O’ 表示该位置为小a的棋子；  ‘X’ 表示该位置为uim的棋子。   那么，我就在线做，读入，如果这个地方有子，就检查，如果是’X’，就看它所在行、列相差1，小a就赢了。 看这个图： 123-K-KOK-K- 其中K为行、列相差1的地方，如果这里有子，且总子数&amp;lt;4，小">
 
 
 
@@ -453,59 +453,25 @@
 </ul>
 <p>那么，我就在线做，读入，如果这个地方有子，就检查，如果是’X’，就看它所在行、列相差1，小a就赢了。</p>
 <p>看这个图：</p>
-<pre><code class="cpp">-K-
-KOK
--K-
-</code></pre>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">-K-</span><br><span class="line">KOK</span><br><span class="line">-K-</span><br></pre></td></tr></table></figure>
 <p>其中K为行、列相差1的地方，如果这里有子，且总子数&lt;4，小a先下，那么中心是小a（第一个子），4个K中的一个位置为uim的子，那么只要小a下在4脚处，那么他就赢了（自己想想）</p>
 <p>所以只要4个K中的任意一个位置有uim的子，uim就输了。</p>
 <p>为什么呢？</p>
 <p>取一种情况：</p>
-<pre><code class="cpp">- X -
-- O -
-- - -
-</code></pre>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">- X -</span><br><span class="line">- O -</span><br><span class="line">- - -</span><br></pre></td></tr></table></figure>
 <p>会演变为：</p>
-<pre><code class="cpp">- X O
-- O -
-- - -
-</code></pre>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">- X O</span><br><span class="line">- O -</span><br><span class="line">- - -</span><br></pre></td></tr></table></figure>
 <p>uim会这样堵：</p>
-<pre><code class="cpp">- X O
-- O -
-X - -
-</code></pre>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">- X O</span><br><span class="line">- O -</span><br><span class="line">X - -</span><br></pre></td></tr></table></figure>
 <p>这时，小a只需在这里下：</p>
-<pre><code class="cpp">- X O
-- O -
-X - O
-</code></pre>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">- X O</span><br><span class="line">- O -</span><br><span class="line">X - O</span><br></pre></td></tr></table></figure>
 <p>很明显，无论uim怎么下，小a都赢了。</p>
 <p>接下来几种情况，就像刚才的旋转，其结果都一样。</p>
 <p>所以我的方法是对的。</p>
 <p>不然输出不知道。</p>
 <p>话说我忍不住要吐槽题目：不知道用英文说应该是”I don’t know”，然而。kkk告诉我们：英语不要主语，don’t的写法是dont？？还有说好的小a蠢呢？？数据竟没有一个是uim赢。</p>
 <p>好了不说废话了，上代码。</p>
-<pre><code class="cpp">#include&lt;iostream&gt;
-using namespace std;
-char a;//在线做，数组都不要。
-int x,fl;//x为子的个数，fl是一个判断小a有没有赢的变量
-inline int ab(int a){return a&lt;0?-a:a;}//手写的绝对值函数
-int main(){
-    for(int i=0;i&lt;3;i++)
-    for(int j=0;j&lt;3;j++){
-    cin&gt;&gt;a;
-    if(a!=&#39;-&#39;){
-    x++;//a!=&#39;-&#39;表示这里有子，+1个
-    if(a==&#39;X&#39;&amp;&amp;ab(i-j)==1)fl=1;//判断，如果i和j相差正好1，小a就赢了，标记一下
-    }
-    }
-    if(fl)cout&lt;&lt;&quot;xiaoa will win.\n&quot;;//小a赢
-    else cout&lt;&lt;&quot;Dont know.\n&quot;;//不知道
-    cout&lt;&lt;x;//输出棋子数
-}
-</code></pre>
-
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">char</span> a;<span class="comment">//在线做，数组都不要。</span></span><br><span class="line"><span class="keyword">int</span> x,fl;<span class="comment">//x为子的个数，fl是一个判断小a有没有赢的变量</span></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">ab</span><span class="params">(<span class="keyword">int</span> a)</span></span>&#123;<span class="keyword">return</span> a&lt;<span class="number">0</span>?-a:a;&#125;<span class="comment">//手写的绝对值函数</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">3</span>;i++)</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;<span class="number">3</span>;j++)&#123;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;a;</span><br><span class="line">    <span class="keyword">if</span>(a!=<span class="string">'-'</span>)&#123;</span><br><span class="line">    x++;<span class="comment">//a!='-'表示这里有子，+1个</span></span><br><span class="line">    <span class="keyword">if</span>(a==<span class="string">'X'</span>&amp;&amp;ab(i-j)==<span class="number">1</span>)fl=<span class="number">1</span>;<span class="comment">//判断，如果i和j相差正好1，小a就赢了，标记一下</span></span><br><span class="line">    &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(fl)<span class="built_in">cout</span>&lt;&lt;<span class="string">"xiaoa will win.\n"</span>;<span class="comment">//小a赢</span></span><br><span class="line">    <span class="keyword">else</span> <span class="built_in">cout</span>&lt;&lt;<span class="string">"Dont know.\n"</span>;<span class="comment">//不知道</span></span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;x;<span class="comment">//输出棋子数</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
 

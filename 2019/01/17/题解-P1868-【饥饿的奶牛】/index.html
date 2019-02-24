@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="我用了楼下的dp方程终于做出了这题。 难啊，我来发个题解纪念一下我通过的第一道浅蓝色题目 不过，其实就是找最右的端点，然后从0一直找过去，每次都对该点求最好的吃的方法，最后ans找最大值。 也许你觉得我抄楼下的，其实我的确用了楼下的dp方程，但是我加了优化。 不说了上代码。 #include &amp;lt;cstdio&amp;gt; #include &amp;lt;algorithm&amp;gt; #include &amp;l">
+  <meta name="description" content="我用了楼下的dp方程终于做出了这题。 难啊，我来发个题解纪念一下我通过的第一道浅蓝色题目 不过，其实就是找最右的端点，然后从0一直找过去，每次都对该点求最好的吃的方法，最后ans找最大值。 也许你觉得我抄楼下的，其实我的确用了楼下的dp方程，但是我加了优化。 不说了上代码。 123456789101112131415161718192021222324252627282930313233#incl">
 <meta name="keywords" content="题解,洛谷">
 <meta property="og:type" content="article">
 <meta property="og:title" content="题解 P1868 【饥饿的奶牛】">
 <meta property="og:url" content="http://yoursite.com/2019/01/17/题解-P1868-【饥饿的奶牛】/index.html">
 <meta property="og:site_name" content="yltx&#39;s blog">
-<meta property="og:description" content="我用了楼下的dp方程终于做出了这题。 难啊，我来发个题解纪念一下我通过的第一道浅蓝色题目 不过，其实就是找最右的端点，然后从0一直找过去，每次都对该点求最好的吃的方法，最后ans找最大值。 也许你觉得我抄楼下的，其实我的确用了楼下的dp方程，但是我加了优化。 不说了上代码。 #include &amp;lt;cstdio&amp;gt; #include &amp;lt;algorithm&amp;gt; #include &amp;l">
+<meta property="og:description" content="我用了楼下的dp方程终于做出了这题。 难啊，我来发个题解纪念一下我通过的第一道浅蓝色题目 不过，其实就是找最右的端点，然后从0一直找过去，每次都对该点求最好的吃的方法，最后ans找最大值。 也许你觉得我抄楼下的，其实我的确用了楼下的dp方程，但是我加了优化。 不说了上代码。 123456789101112131415161718192021222324252627282930313233#incl">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-01-17T10:18:56.647Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="题解 P1868 【饥饿的奶牛】">
-<meta name="twitter:description" content="我用了楼下的dp方程终于做出了这题。 难啊，我来发个题解纪念一下我通过的第一道浅蓝色题目 不过，其实就是找最右的端点，然后从0一直找过去，每次都对该点求最好的吃的方法，最后ans找最大值。 也许你觉得我抄楼下的，其实我的确用了楼下的dp方程，但是我加了优化。 不说了上代码。 #include &amp;lt;cstdio&amp;gt; #include &amp;lt;algorithm&amp;gt; #include &amp;l">
+<meta name="twitter:description" content="我用了楼下的dp方程终于做出了这题。 难啊，我来发个题解纪念一下我通过的第一道浅蓝色题目 不过，其实就是找最右的端点，然后从0一直找过去，每次都对该点求最好的吃的方法，最后ans找最大值。 也许你觉得我抄楼下的，其实我的确用了楼下的dp方程，但是我加了优化。 不说了上代码。 123456789101112131415161718192021222324252627282930313233#incl">
 
 
 
@@ -446,41 +446,7 @@
 <p>不过，其实就是找最右的端点，然后从0一直找过去，每次都对该点求最好的吃的方法，最后ans找最大值。</p>
 <p>也许你觉得我抄楼下的，其实我的确用了楼下的dp方程，但是我加了优化。</p>
 <p>不说了上代码。</p>
-<pre><code class="cpp">#include &lt;cstdio&gt;
-#include &lt;algorithm&gt;
-#include &lt;cstring&gt;
-#include &lt;string&gt;
-#include &lt;cmath&gt;
-#include &lt;iostream&gt;
-#include &lt;iomanip&gt;
-using namespace std;
-int n,mx,dp[3000005],j,ans;//ans是答案，n是区间个数，j是一个下标，dp……用途如其名
-struct Cow{//结构体
-    int x,y,s;//x为左端点，y右，s为我的优化，即该区间的干草数
-}a[150005];
-inline bool cmp(Cow p,Cow q){return p.x!=q.x?p.x&lt;q.x:p.y&lt;q.y;}//排序
-int main(){
-    //freopen(&quot;P1868.in&quot;,&quot;r&quot;,stdin);
-    //freopen(&quot;P1868.out&quot;,&quot;w&quot;,stdout);
-    scanf (&quot;%d&quot;,&amp;n);
-    for (int i=0;i&lt;n;i++){
-    scanf (&quot;%d%d&quot;,&amp;a[i].x,&amp;a[i].y),a[i].s=a[i].y-a[i].x+1;//虽然我这个优化不大，但是我希望大家能学习这种类似于前缀和的思想
-    mx=max(mx,a[i].y);//找最右端点
-    }//注意！！不是排完序之后最后一个右端点就是最大的！！因为它只是左端点最大！！一定要注意！！我一开始没注意就只有73分
-    sort(a,a+n,cmp);//排序
-    for (int i=0;i&lt;=mx;i++){
-        dp[i]=max(dp[i],dp[i-1]);
-        while (a[j].x==i&amp;&amp;j&lt;n){
-            dp[a[j].y]=max(dp[a[j].y],dp[a[j].x-1]+a[j].s);//dp
-            j++;
-        }
-        ans=max(ans,dp[i]);//找最大值
-    }
-    printf (&quot;%d&quot;,ans);//输出
-    return 0;
-}
-</code></pre>
-
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iomanip&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> n,mx,dp[<span class="number">3000005</span>],j,ans;<span class="comment">//ans是答案，n是区间个数，j是一个下标，dp……用途如其名</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Cow</span>&#123;</span><span class="comment">//结构体</span></span><br><span class="line">    <span class="keyword">int</span> x,y,s;<span class="comment">//x为左端点，y右，s为我的优化，即该区间的干草数</span></span><br><span class="line">&#125;a[<span class="number">150005</span>];</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(Cow p,Cow q)</span></span>&#123;<span class="keyword">return</span> p.x!=q.x?p.x&lt;q.x:p.y&lt;q.y;&#125;<span class="comment">//排序</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="comment">//freopen("P1868.in","r",stdin);</span></span><br><span class="line">    <span class="comment">//freopen("P1868.out","w",stdout);</span></span><br><span class="line">    <span class="built_in">scanf</span> (<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">    <span class="built_in">scanf</span> (<span class="string">"%d%d"</span>,&amp;a[i].x,&amp;a[i].y),a[i].s=a[i].y-a[i].x+<span class="number">1</span>;<span class="comment">//虽然我这个优化不大，但是我希望大家能学习这种类似于前缀和的思想</span></span><br><span class="line">    mx=max(mx,a[i].y);<span class="comment">//找最右端点</span></span><br><span class="line">    &#125;<span class="comment">//注意！！不是排完序之后最后一个右端点就是最大的！！因为它只是左端点最大！！一定要注意！！我一开始没注意就只有73分</span></span><br><span class="line">    sort(a,a+n,cmp);<span class="comment">//排序</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=mx;i++)&#123;</span><br><span class="line">        dp[i]=max(dp[i],dp[i<span class="number">-1</span>]);</span><br><span class="line">        <span class="keyword">while</span> (a[j].x==i&amp;&amp;j&lt;n)&#123;</span><br><span class="line">            dp[a[j].y]=max(dp[a[j].y],dp[a[j].x<span class="number">-1</span>]+a[j].s);<span class="comment">//dp</span></span><br><span class="line">            j++;</span><br><span class="line">        &#125;</span><br><span class="line">        ans=max(ans,dp[i]);<span class="comment">//找最大值</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span> (<span class="string">"%d"</span>,ans);<span class="comment">//输出</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
 

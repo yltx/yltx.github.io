@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="先发翻译：给你一个数x（$ x&amp;lt;={10}^18$），可以对它的每一位数y进行翻转（将其替换为9-y），也可以不替换。求最小  正数这个请管理员放到题面上。  题解  这题其实不难，只需按题意模拟即可。 但是有坑点！那就是需要特判的情况： 首位为0（包括整个数为0的情况） 很明显，这种情况是不符合正数这一条件的 所以我在题面中标记了这个坑 注意了这点，代码就很好写了 上巨短代码： #incl">
+  <meta name="description" content="先发翻译：给你一个数x（$ x&amp;lt;={10}^18$），可以对它的每一位数y进行翻转（将其替换为9-y），也可以不替换。求最小  正数这个请管理员放到题面上。  题解  这题其实不难，只需按题意模拟即可。 但是有坑点！那就是需要特判的情况： 首位为0（包括整个数为0的情况） 很明显，这种情况是不符合正数这一条件的 所以我在题面中标记了这个坑 注意了这点，代码就很好写了 上巨短代码：123456">
 <meta name="keywords" content="题解,CF">
 <meta property="og:type" content="article">
 <meta property="og:title" content="题解 CF514A 【Chewbacca and Number】">
 <meta property="og:url" content="http://yoursite.com/2019/01/17/题解-CF514A-【Chewbacca and Number】/index.html">
 <meta property="og:site_name" content="yltx&#39;s blog">
-<meta property="og:description" content="先发翻译：给你一个数x（$ x&amp;lt;={10}^18$），可以对它的每一位数y进行翻转（将其替换为9-y），也可以不替换。求最小  正数这个请管理员放到题面上。  题解  这题其实不难，只需按题意模拟即可。 但是有坑点！那就是需要特判的情况： 首位为0（包括整个数为0的情况） 很明显，这种情况是不符合正数这一条件的 所以我在题面中标记了这个坑 注意了这点，代码就很好写了 上巨短代码： #incl">
+<meta property="og:description" content="先发翻译：给你一个数x（$ x&amp;lt;={10}^18$），可以对它的每一位数y进行翻转（将其替换为9-y），也可以不替换。求最小  正数这个请管理员放到题面上。  题解  这题其实不难，只需按题意模拟即可。 但是有坑点！那就是需要特判的情况： 首位为0（包括整个数为0的情况） 很明显，这种情况是不符合正数这一条件的 所以我在题面中标记了这个坑 注意了这点，代码就很好写了 上巨短代码：123456">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-01-17T09:42:43.319Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="题解 CF514A 【Chewbacca and Number】">
-<meta name="twitter:description" content="先发翻译：给你一个数x（$ x&amp;lt;={10}^18$），可以对它的每一位数y进行翻转（将其替换为9-y），也可以不替换。求最小  正数这个请管理员放到题面上。  题解  这题其实不难，只需按题意模拟即可。 但是有坑点！那就是需要特判的情况： 首位为0（包括整个数为0的情况） 很明显，这种情况是不符合正数这一条件的 所以我在题面中标记了这个坑 注意了这点，代码就很好写了 上巨短代码： #incl">
+<meta name="twitter:description" content="先发翻译：给你一个数x（$ x&amp;lt;={10}^18$），可以对它的每一位数y进行翻转（将其替换为9-y），也可以不替换。求最小  正数这个请管理员放到题面上。  题解  这题其实不难，只需按题意模拟即可。 但是有坑点！那就是需要特判的情况： 首位为0（包括整个数为0的情况） 很明显，这种情况是不符合正数这一条件的 所以我在题面中标记了这个坑 注意了这点，代码就很好写了 上巨短代码：123456">
 
 
 
@@ -452,17 +452,7 @@
 <p>很明显，这种情况是不符合<strong>正数</strong>这一条件的</p>
 <p>所以我在题面中标记了这个坑</p>
 <p>注意了这点，代码就很好写了</p>
-<p>上巨短代码：</p>
-<pre><code class="cpp">#include &lt;bits/stdc++.h&gt;
-using namespace std;
-char a[20];
-int main(void){
-    scanf (&quot;%s&quot;,a);
-    for (int i=0;a[i];i++)a[i]=min(a[i],char(9+&#39;0&#39;-a[i]+&#39;0&#39;));
-    if (a[0]==&#39;0&#39;)a[0]=&#39;9&#39;;
-    printf (&quot;%s&quot;,a);
-}
-</code></pre>
+<p>上巨短代码：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">char</span> a[<span class="number">20</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span> (<span class="string">"%s"</span>,a);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;a[i];i++)a[i]=min(a[i],<span class="keyword">char</span>(<span class="number">9</span>+<span class="string">'0'</span>-a[i]+<span class="string">'0'</span>));</span><br><span class="line">    <span class="keyword">if</span> (a[<span class="number">0</span>]==<span class="string">'0'</span>)a[<span class="number">0</span>]=<span class="string">'9'</span>;</span><br><span class="line">    <span class="built_in">printf</span> (<span class="string">"%s"</span>,a);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>

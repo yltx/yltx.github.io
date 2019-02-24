@@ -465,54 +465,7 @@
 <p>在一般情况下，尽量一次连2个；如果k不够用，则用原则2，将2次的连通并为一次。</p>
 <p>接下来就是难点：恶心<del>毒瘤</del>的保留p位小数的高精除。$ \color{black} \colorbox{black}{所以根本不用写700行代码啊？} $</p>
 <p>最优解的代码：（为了好看我改了一点）</p>
-<pre><code class="cpp">#include&lt;bits/stdc++.h&gt;
-int N,n,m,p;
-int h[8192],s[8192];//8192=2&lt;&lt;13
-double f[16][8192];
-int g[16][8192];
-int a[400];
-using namespace std;
-#define P pair&lt;int,double&gt;
-double operator%(const P&amp;a,const P&amp;b){
-    return (b.second-a.second)/(b.first-a.first);
-}//重载运算符
-void div(int x){
-    long long q=0;
-    for(int i=0;i&lt;=p;i++){
-        q=q*1000000000+a[i];a[i]=q/x;q%=x;
-    }
-}//恶心的除，用重载运算符实现
-int main(){
-    scanf(&quot;%d%d%d&quot;,&amp;N,&amp;m,&amp;p);p=p/9+1;
-    scanf(&quot;%d&quot;,&amp;h[n=1]);
-    for(int i=2;i&lt;=N;i++){
-        int t;scanf(&quot;%d&quot;,&amp;t);if(h[1]&lt;t)h[++n]=t;
-    }
-    sort(h+1,h+n+1);
-    if(m&gt;n)m=n;
-    for(int i=1;i&lt;=n;i++)f[0][i]=h[1],s[i]=s[i-1]+h[i];//前缀和
-    int l=14;if(l&gt;m)l=m;
-    for(int i=1;i&lt;=l;i++){
-        static P q[8024];
-        for(int j=2,l=1,r=0;j&lt;=n;j++){
-            P c=P(j-2,s[j-1]-f[i-1][j-1]);
-            for(;l&lt;r&amp;&amp;(q[r-1]%q[r])&gt;(q[r]%c);r--);
-            q[++r]=c;
-            P t=P(j,s[j]);
-            for(;l&lt;r&amp;&amp;(q[l]%t)&lt;(q[l+1]%t);l++);
-            g[i][j]=q[l].first+1;
-            f[i][j]=(q[l]%t);
-        }
-    }
-    int _[16];_[l]=n-(m-l);
-    for(int i=l;i;i--)_[i-1]=g[i][_[i]];
-    a[0]=h[1];
-    for(int i=1;i&lt;=l;i++)a[0]+=s[_[i]]-s[_[i-1]],div(_[i]-_[i-1]+1);
-    for(int i=_[l]+1;i&lt;=n;i++)a[0]+=h[i],div(2);//以上为贪心
-    printf(&quot;%d.&quot;,a[0]);
-    for(int i=1;i&lt;=p;i++)printf(&quot;%09d&quot;,a[i]);
-}
-</code></pre>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">int</span> N,n,m,p;</span><br><span class="line"><span class="keyword">int</span> h[<span class="number">8192</span>],s[<span class="number">8192</span>];<span class="comment">//8192=2&lt;&lt;13</span></span><br><span class="line"><span class="keyword">double</span> f[<span class="number">16</span>][<span class="number">8192</span>];</span><br><span class="line"><span class="keyword">int</span> g[<span class="number">16</span>][<span class="number">8192</span>];</span><br><span class="line"><span class="keyword">int</span> a[<span class="number">400</span>];</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> P pair<span class="meta-string">&lt;int,double&gt;</span></span></span><br><span class="line"><span class="keyword">double</span> <span class="keyword">operator</span>%(<span class="keyword">const</span> P&amp;a,<span class="keyword">const</span> P&amp;b)&#123;</span><br><span class="line">    <span class="keyword">return</span> (b.second-a.second)/(b.first-a.first);</span><br><span class="line">&#125;<span class="comment">//重载运算符</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">div</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;</span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> q=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=p;i++)&#123;</span><br><span class="line">        q=q*<span class="number">1000000000</span>+a[i];a[i]=q/x;q%=x;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;<span class="comment">//恶心的除，用重载运算符实现</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>,&amp;N,&amp;m,&amp;p);p=p/<span class="number">9</span>+<span class="number">1</span>;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;h[n=<span class="number">1</span>]);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=N;i++)&#123;</span><br><span class="line">        <span class="keyword">int</span> t;<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;t);<span class="keyword">if</span>(h[<span class="number">1</span>]&lt;t)h[++n]=t;</span><br><span class="line">    &#125;</span><br><span class="line">    sort(h+<span class="number">1</span>,h+n+<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">if</span>(m&gt;n)m=n;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)f[<span class="number">0</span>][i]=h[<span class="number">1</span>],s[i]=s[i<span class="number">-1</span>]+h[i];<span class="comment">//前缀和</span></span><br><span class="line">    <span class="keyword">int</span> l=<span class="number">14</span>;<span class="keyword">if</span>(l&gt;m)l=m;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=l;i++)&#123;</span><br><span class="line">        <span class="keyword">static</span> P q[<span class="number">8024</span>];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">2</span>,l=<span class="number">1</span>,r=<span class="number">0</span>;j&lt;=n;j++)&#123;</span><br><span class="line">            P c=P(j<span class="number">-2</span>,s[j<span class="number">-1</span>]-f[i<span class="number">-1</span>][j<span class="number">-1</span>]);</span><br><span class="line">            <span class="keyword">for</span>(;l&lt;r&amp;&amp;(q[r<span class="number">-1</span>]%q[r])&gt;(q[r]%c);r--);</span><br><span class="line">            q[++r]=c;</span><br><span class="line">            P t=P(j,s[j]);</span><br><span class="line">            <span class="keyword">for</span>(;l&lt;r&amp;&amp;(q[l]%t)&lt;(q[l+<span class="number">1</span>]%t);l++);</span><br><span class="line">            g[i][j]=q[l].first+<span class="number">1</span>;</span><br><span class="line">            f[i][j]=(q[l]%t);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> _[<span class="number">16</span>];_[l]=n-(m-l);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=l;i;i--)_[i<span class="number">-1</span>]=g[i][_[i]];</span><br><span class="line">    a[<span class="number">0</span>]=h[<span class="number">1</span>];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=l;i++)a[<span class="number">0</span>]+=s[_[i]]-s[_[i<span class="number">-1</span>]],div(_[i]-_[i<span class="number">-1</span>]+<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=_[l]+<span class="number">1</span>;i&lt;=n;i++)a[<span class="number">0</span>]+=h[i],div(<span class="number">2</span>);<span class="comment">//以上为贪心</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d."</span>,a[<span class="number">0</span>]);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=p;i++)<span class="built_in">printf</span>(<span class="string">"%09d"</span>,a[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>

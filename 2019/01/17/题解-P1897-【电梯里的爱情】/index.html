@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="恩？？ 没有C/C++党的桶题解？？？ 我来一发 核心思路： 读入每个楼层，如果没有去过，肯定要为他开一次门； 然后，标记一下； 有n个人，就一定要加ns；（每个人都要下啊） 再加上从0楼~最高楼再回来的时间（上6max,下4max,共10max） 输出。 OK  让路  上AC代码： #include &amp;lt;cstdio&amp;gt; int n,a,ans,max;//n是人数，a是这个人要去几层">
+  <meta name="description" content="恩？？ 没有C/C++党的桶题解？？？ 我来一发 核心思路： 读入每个楼层，如果没有去过，肯定要为他开一次门； 然后，标记一下； 有n个人，就一定要加ns；（每个人都要下啊） 再加上从0楼~最高楼再回来的时间（上6max,下4max,共10max） 输出。 OK  让路  上AC代码： 12345678910111213141516#include &amp;lt;cstdio&amp;gt;int n,a,an">
 <meta name="keywords" content="题解,洛谷">
 <meta property="og:type" content="article">
 <meta property="og:title" content="题解 P1897 【电梯里的爱情】">
 <meta property="og:url" content="http://yoursite.com/2019/01/17/题解-P1897-【电梯里的爱情】/index.html">
 <meta property="og:site_name" content="yltx&#39;s blog">
-<meta property="og:description" content="恩？？ 没有C/C++党的桶题解？？？ 我来一发 核心思路： 读入每个楼层，如果没有去过，肯定要为他开一次门； 然后，标记一下； 有n个人，就一定要加ns；（每个人都要下啊） 再加上从0楼~最高楼再回来的时间（上6max,下4max,共10max） 输出。 OK  让路  上AC代码： #include &amp;lt;cstdio&amp;gt; int n,a,ans,max;//n是人数，a是这个人要去几层">
+<meta property="og:description" content="恩？？ 没有C/C++党的桶题解？？？ 我来一发 核心思路： 读入每个楼层，如果没有去过，肯定要为他开一次门； 然后，标记一下； 有n个人，就一定要加ns；（每个人都要下啊） 再加上从0楼~最高楼再回来的时间（上6max,下4max,共10max） 输出。 OK  让路  上AC代码： 12345678910111213141516#include &amp;lt;cstdio&amp;gt;int n,a,an">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-01-17T11:30:49.961Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="题解 P1897 【电梯里的爱情】">
-<meta name="twitter:description" content="恩？？ 没有C/C++党的桶题解？？？ 我来一发 核心思路： 读入每个楼层，如果没有去过，肯定要为他开一次门； 然后，标记一下； 有n个人，就一定要加ns；（每个人都要下啊） 再加上从0楼~最高楼再回来的时间（上6max,下4max,共10max） 输出。 OK  让路  上AC代码： #include &amp;lt;cstdio&amp;gt; int n,a,ans,max;//n是人数，a是这个人要去几层">
+<meta name="twitter:description" content="恩？？ 没有C/C++党的桶题解？？？ 我来一发 核心思路： 读入每个楼层，如果没有去过，肯定要为他开一次门； 然后，标记一下； 有n个人，就一定要加ns；（每个人都要下啊） 再加上从0楼~最高楼再回来的时间（上6max,下4max,共10max） 输出。 OK  让路  上AC代码： 12345678910111213141516#include &amp;lt;cstdio&amp;gt;int n,a,an">
 
 
 
@@ -455,25 +455,7 @@
 <p>让路</p>
 <hr>
 <p>上AC代码：</p>
-<pre><code class="cpp">#include &lt;cstdio&gt;
-int n,a,ans,max;//n是人数，a是这个人要去几层，ans是答案，max是最高楼层
-bool s[100000000];//楼层桶（不可思议的100000000层大楼）
-int main(void){
-    s[0]=1;//注意！0层不需要开门！我一开始少了这句话丢了30分
-    scanf (&quot;%d&quot;,&amp;n);//读n
-    for (int i=0;i&lt;n;i++){
-        scanf (&quot;%d&quot;,&amp;a);//每次读一个人
-        if (!s[a])ans+=5;//!s[a]意思是这个楼层还没见过，当然要开一次门啦
-        s[a]=1;//不管怎样，标记一下
-        if (a&gt;max)max=a;//找最高楼层
-    }
-    ans+=n;//每个人都要下去，所以加的时间一定等于n
-    ans+=max*10;//上6下4，共10s，所以最高楼层*10
-    printf (&quot;%d&quot;,ans);//输出！
-}
-
-</code></pre>
-
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="keyword">int</span> n,a,ans,max;<span class="comment">//n是人数，a是这个人要去几层，ans是答案，max是最高楼层</span></span><br><span class="line"><span class="keyword">bool</span> s[<span class="number">100000000</span>];<span class="comment">//楼层桶（不可思议的100000000层大楼）</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span>&#123;</span><br><span class="line">    s[<span class="number">0</span>]=<span class="number">1</span>;<span class="comment">//注意！0层不需要开门！我一开始少了这句话丢了30分</span></span><br><span class="line">    <span class="built_in">scanf</span> (<span class="string">"%d"</span>,&amp;n);<span class="comment">//读n</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">        <span class="built_in">scanf</span> (<span class="string">"%d"</span>,&amp;a);<span class="comment">//每次读一个人</span></span><br><span class="line">        <span class="keyword">if</span> (!s[a])ans+=<span class="number">5</span>;<span class="comment">//!s[a]意思是这个楼层还没见过，当然要开一次门啦</span></span><br><span class="line">        s[a]=<span class="number">1</span>;<span class="comment">//不管怎样，标记一下</span></span><br><span class="line">        <span class="keyword">if</span> (a&gt;max)max=a;<span class="comment">//找最高楼层</span></span><br><span class="line">    &#125;</span><br><span class="line">    ans+=n;<span class="comment">//每个人都要下去，所以加的时间一定等于n</span></span><br><span class="line">    ans+=max*<span class="number">10</span>;<span class="comment">//上6下4，共10s，所以最高楼层*10</span></span><br><span class="line">    <span class="built_in">printf</span> (<span class="string">"%d"</span>,ans);<span class="comment">//输出！</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
 

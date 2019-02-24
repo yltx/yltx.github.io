@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="其实此题只用一个排序和一个id就能解决问题 代码： #include &amp;lt;bits/stdc++.h&amp;gt; using namespace std; int n,ans=INT_MAX; struct ${     int s,id; }a[100005];//结构体 inline bool cmp($ p,$ q){     if (p.s!=q.s)return p.s&amp;lt;q.s;">
+  <meta name="description" content="其实此题只用一个排序和一个id就能解决问题 代码：1234567891011121314151617#include &amp;lt;bits/stdc++.h&amp;gt;using namespace std;int n,ans=INT_MAX;struct $&amp;#123;    int s,id;&amp;#125;a[100005];//结构体inline bool cmp($ p,$ q)&amp;#123;">
 <meta name="keywords" content="题解,CF">
 <meta property="og:type" content="article">
 <meta property="og:title" content="题解 CF911A 【Nearest Minimums】">
 <meta property="og:url" content="http://yoursite.com/2019/01/16/题解-CF911A-【Nearest Minimums】/index.html">
 <meta property="og:site_name" content="yltx&#39;s blog">
-<meta property="og:description" content="其实此题只用一个排序和一个id就能解决问题 代码： #include &amp;lt;bits/stdc++.h&amp;gt; using namespace std; int n,ans=INT_MAX; struct ${     int s,id; }a[100005];//结构体 inline bool cmp($ p,$ q){     if (p.s!=q.s)return p.s&amp;lt;q.s;">
+<meta property="og:description" content="其实此题只用一个排序和一个id就能解决问题 代码：1234567891011121314151617#include &amp;lt;bits/stdc++.h&amp;gt;using namespace std;int n,ans=INT_MAX;struct $&amp;#123;    int s,id;&amp;#125;a[100005];//结构体inline bool cmp($ p,$ q)&amp;#123;">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-01-17T08:35:33.324Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="题解 CF911A 【Nearest Minimums】">
-<meta name="twitter:description" content="其实此题只用一个排序和一个id就能解决问题 代码： #include &amp;lt;bits/stdc++.h&amp;gt; using namespace std; int n,ans=INT_MAX; struct ${     int s,id; }a[100005];//结构体 inline bool cmp($ p,$ q){     if (p.s!=q.s)return p.s&amp;lt;q.s;">
+<meta name="twitter:description" content="其实此题只用一个排序和一个id就能解决问题 代码：1234567891011121314151617#include &amp;lt;bits/stdc++.h&amp;gt;using namespace std;int n,ans=INT_MAX;struct $&amp;#123;    int s,id;&amp;#125;a[100005];//结构体inline bool cmp($ p,$ q)&amp;#123;">
 
 
 
@@ -454,25 +454,7 @@
 
       
         <p>其实此题只用一个排序和一个id就能解决问题</p>
-<p>代码：</p>
-<pre><code class="cpp">#include &lt;bits/stdc++.h&gt;
-using namespace std;
-int n,ans=INT_MAX;
-struct ${
-    int s,id;
-}a[100005];//结构体
-inline bool cmp($ p,$ q){
-    if (p.s!=q.s)return p.s&lt;q.s;
-    return p.id&lt;q.id;
-}//排序
-int main(void){
-    scanf (&quot;%d&quot;,&amp;n);
-    for (int i=0;i&lt;n;i++)scanf (&quot;%d&quot;,&amp;a[i].s),a[i].id=i;
-    sort (a,a+n,cmp);
-    for (int i=0;i&lt;n&amp;&amp;a[i].s==a[i+1].s;i++)ans=min(ans,a[i+1].id-a[i].id);//找最小值
-    printf (&quot;%d&quot;,ans);
-}
-</code></pre>
+<p>代码：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> n,ans=INT_MAX;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> $&#123;</span></span><br><span class="line">    <span class="keyword">int</span> s,id;</span><br><span class="line">&#125;a[<span class="number">100005</span>];<span class="comment">//结构体</span></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">bool</span> <span class="title">cmp</span><span class="params">($ p,$ q)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (p.s!=q.s)<span class="keyword">return</span> p.s&lt;q.s;</span><br><span class="line">    <span class="keyword">return</span> p.id&lt;q.id;</span><br><span class="line">&#125;<span class="comment">//排序</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span> (<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)<span class="built_in">scanf</span> (<span class="string">"%d"</span>,&amp;a[i].s),a[i].id=i;</span><br><span class="line">    sort (a,a+n,cmp);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n&amp;&amp;a[i].s==a[i+<span class="number">1</span>].s;i++)ans=min(ans,a[i+<span class="number">1</span>].id-a[i].id);<span class="comment">//找最小值</span></span><br><span class="line">    <span class="built_in">printf</span> (<span class="string">"%d"</span>,ans);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>

@@ -450,26 +450,7 @@
 <p>当[l,r]中0的个数＞k时我们没有必要再回到l从头开始，可以只右移l，到[l,r]中0的个数≤k时为止（其实最后肯定=k，自己想想为什么！）</p>
 <p>于是复杂度降到了线性的$O(n)$，或成此题最优解？</p>
 <p>并不长的代码：</p>
-<pre><code class="cpp">#include &lt;bits/stdc++.h&gt;
-using namespace std;
-int a[300005],k,n,ans,cnt,ml,mr;
-int main(){
-    scanf (&quot;%d%d&quot;,&amp;n,&amp;k);
-    for (int i=1;i&lt;=n;i++)scanf (&quot;%d&quot;,&amp;a[i]);
-    for (int l=1,r=1;r&lt;=n;r++){//持续右移右端点
-        cnt+=!a[r];
-        if (cnt&gt;k){
-            cnt-=!a[l];
-            l++;
-        }//长了就右移左端点
-        if (r-l+1&gt;ans)ans=r-l+1,ml=l,mr=r;
-    }
-    for (;ml&lt;=mr;ml++)a[ml]=1;
-    printf (&quot;%d\n&quot;,ans);
-    for (int i=1;i&lt;=n;i++)printf (&quot;%d &quot;,a[i]);
-}
-</code></pre>
-
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> a[<span class="number">300005</span>],k,n,ans,cnt,ml,mr;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span> (<span class="string">"%d%d"</span>,&amp;n,&amp;k);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)<span class="built_in">scanf</span> (<span class="string">"%d"</span>,&amp;a[i]);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> l=<span class="number">1</span>,r=<span class="number">1</span>;r&lt;=n;r++)&#123;<span class="comment">//持续右移右端点</span></span><br><span class="line">        cnt+=!a[r];</span><br><span class="line">        <span class="keyword">if</span> (cnt&gt;k)&#123;</span><br><span class="line">            cnt-=!a[l];</span><br><span class="line">            l++;</span><br><span class="line">        &#125;<span class="comment">//长了就右移左端点</span></span><br><span class="line">        <span class="keyword">if</span> (r-l+<span class="number">1</span>&gt;ans)ans=r-l+<span class="number">1</span>,ml=l,mr=r;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (;ml&lt;=mr;ml++)a[ml]=<span class="number">1</span>;</span><br><span class="line">    <span class="built_in">printf</span> (<span class="string">"%d\n"</span>,ans);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)<span class="built_in">printf</span> (<span class="string">"%d "</span>,a[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
 

@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="这题竟然没有C++set的，STL会伤心的QAQ 我先讲一下本题的暴力做法 不解释，读入n个数据，然后对于每个m查找。 代码： #include &amp;lt;bits/stdc++.h&amp;gt; using namespace std; int n,m,a[100005],q; int main(){     scanf (&amp;quot;%d&amp;quot;,&amp;amp;n);     for (int i=1">
+  <meta name="description" content="这题竟然没有C++set的，STL会伤心的QAQ 我先讲一下本题的暴力做法 不解释，读入n个数据，然后对于每个m查找。 代码： 1234567891011121314#include &amp;lt;bits/stdc++.h&amp;gt;using namespace std;int n,m,a[100005],q;int main()&amp;#123;    scanf (&quot;%d&quot;,&amp;amp;n);    for">
 <meta name="keywords" content="题解,洛谷">
 <meta property="og:type" content="article">
 <meta property="og:title" content="题解 P1918 【保龄球】">
 <meta property="og:url" content="http://yoursite.com/2019/01/12/题解-P1918-【保龄球】/index.html">
 <meta property="og:site_name" content="yltx&#39;s blog">
-<meta property="og:description" content="这题竟然没有C++set的，STL会伤心的QAQ 我先讲一下本题的暴力做法 不解释，读入n个数据，然后对于每个m查找。 代码： #include &amp;lt;bits/stdc++.h&amp;gt; using namespace std; int n,m,a[100005],q; int main(){     scanf (&amp;quot;%d&amp;quot;,&amp;amp;n);     for (int i=1">
+<meta property="og:description" content="这题竟然没有C++set的，STL会伤心的QAQ 我先讲一下本题的暴力做法 不解释，读入n个数据，然后对于每个m查找。 代码： 1234567891011121314#include &amp;lt;bits/stdc++.h&amp;gt;using namespace std;int n,m,a[100005],q;int main()&amp;#123;    scanf (&quot;%d&quot;,&amp;amp;n);    for">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-01-17T08:36:59.323Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="题解 P1918 【保龄球】">
-<meta name="twitter:description" content="这题竟然没有C++set的，STL会伤心的QAQ 我先讲一下本题的暴力做法 不解释，读入n个数据，然后对于每个m查找。 代码： #include &amp;lt;bits/stdc++.h&amp;gt; using namespace std; int n,m,a[100005],q; int main(){     scanf (&amp;quot;%d&amp;quot;,&amp;amp;n);     for (int i=1">
+<meta name="twitter:description" content="这题竟然没有C++set的，STL会伤心的QAQ 我先讲一下本题的暴力做法 不解释，读入n个数据，然后对于每个m查找。 代码： 1234567891011121314#include &amp;lt;bits/stdc++.h&amp;gt;using namespace std;int n,m,a[100005],q;int main()&amp;#123;    scanf (&quot;%d&quot;,&amp;amp;n);    for">
 
 
 
@@ -457,25 +457,10 @@
 <p>我先讲一下本题的暴力做法</p>
 <p>不解释，读入n个数据，然后对于每个m查找。</p>
 <p>代码：</p>
-<pre><code class="cpp">#include &lt;bits/stdc++.h&gt;
-using namespace std;
-int n,m,a[100005],q;
-int main(){
-    scanf (&quot;%d&quot;,&amp;n);
-    for (int i=1;i&lt;=n;i++)scanf (&quot;%d&quot;,&amp;a[i]);
-    scanf (&quot;%d&quot;,&amp;q);
-    while (q--){
-        bool ok=0;
-        scanf (&quot;%d&quot;,&amp;m);
-        for (int i=1;i&lt;=n&amp;&amp;!ok;i++)if (a[i]==m)ok=printf (&quot;%d\n&quot;,i);
-        if (!ok)printf (&quot;0\n&quot;);
-    }
-}
-</code></pre>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> n,m,a[<span class="number">100005</span>],q;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span> (<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)<span class="built_in">scanf</span> (<span class="string">"%d"</span>,&amp;a[i]);</span><br><span class="line">    <span class="built_in">scanf</span> (<span class="string">"%d"</span>,&amp;q);</span><br><span class="line">    <span class="keyword">while</span> (q--)&#123;</span><br><span class="line">        <span class="keyword">bool</span> ok=<span class="number">0</span>;</span><br><span class="line">        <span class="built_in">scanf</span> (<span class="string">"%d"</span>,&amp;m);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n&amp;&amp;!ok;i++)<span class="keyword">if</span> (a[i]==m)ok=<span class="built_in">printf</span> (<span class="string">"%d\n"</span>,i);</span><br><span class="line">        <span class="keyword">if</span> (!ok)<span class="built_in">printf</span> (<span class="string">"0\n"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>非常简单，于是快乐的T了。</p>
 <p>观察一下，T的效率瓶颈在于</p>
-<pre><code class="cpp">for (int i=1;i&lt;=n&amp;&amp;!ok;i++)if (a[i]==m)ok=printf (&quot;%d\n&quot;,i);
-</code></pre>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n&amp;&amp;!ok;i++)<span class="keyword">if</span> (a[i]==m)ok=<span class="built_in">printf</span> (<span class="string">"%d\n"</span>,i);</span><br></pre></td></tr></table></figure>
 <p>这里是朴素的查找，最坏会退化到O(n)的级别</p>
 <p>那么如何优化呢？</p>
 <p>此处分出了2条思路：</p>
@@ -496,29 +481,7 @@ int main(){
 </li>
 </ul>
 <p>代码：</p>
-<pre><code class="cpp">// luogu-judger-enable-o2
-#include &lt;bits/stdc++.h&gt;
-using namespace std;
-set&lt;pair&lt;int,int&gt; &gt; st;//新建一个set
-int n,m,q,s;
-int main(){
-    ios::sync_with_stdio(false);
-    cin.tie(0),cout.tie(0);//加速流读入
-    cin&gt;&gt;n;
-    for (register int i=1;i&lt;=n;i++){
-        cin&gt;&gt;s;
-        st.insert(make_pair(s,i));//插入二元组
-    }
-    cin&gt;&gt;q;
-    while (q--){
-        cin&gt;&gt;m;
-        set&lt;pair&lt;int,int&gt; &gt;::iterator it=st.lower_bound(make_pair(m,0));
-        if (it-&gt;first==m)cout&lt;&lt;(it-&gt;second)&lt;&lt;endl;//如果能找到m，输出id；
-        else cout&lt;&lt;0&lt;&lt;endl;//找不到输出0
-    }
-}
-</code></pre>
-
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// luogu-judger-enable-o2</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="built_in">set</span>&lt;pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; &gt; st;<span class="comment">//新建一个set</span></span><br><span class="line"><span class="keyword">int</span> n,m,q,s;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">    <span class="built_in">cin</span>.tie(<span class="number">0</span>),<span class="built_in">cout</span>.tie(<span class="number">0</span>);<span class="comment">//加速流读入</span></span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        <span class="built_in">cin</span>&gt;&gt;s;</span><br><span class="line">        st.insert(make_pair(s,i));<span class="comment">//插入二元组</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;q;</span><br><span class="line">    <span class="keyword">while</span> (q--)&#123;</span><br><span class="line">        <span class="built_in">cin</span>&gt;&gt;m;</span><br><span class="line">        <span class="built_in">set</span>&lt;pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; &gt;::iterator it=st.lower_bound(make_pair(m,<span class="number">0</span>));</span><br><span class="line">        <span class="keyword">if</span> (it-&gt;first==m)<span class="built_in">cout</span>&lt;&lt;(it-&gt;second)&lt;&lt;<span class="built_in">endl</span>;<span class="comment">//如果能找到m，输出id；</span></span><br><span class="line">        <span class="keyword">else</span> <span class="built_in">cout</span>&lt;&lt;<span class="number">0</span>&lt;&lt;<span class="built_in">endl</span>;<span class="comment">//找不到输出0</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
 

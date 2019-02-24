@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="这题其实很简单。 首先，筛法筛一遍，打个bool质数表； 然后，读入n，i从4暴力到n！’-‘!^=^! 输出！ #include &amp;lt;cstdio&amp;gt;//标准输入输出库 int n,i=4;//直接定好 bool s[10000]={1,1};//0和1啥都不是，定1！ //全局数组初值全为0 inline void a(){//不要在意函数名，这只是个筛法函数     for (int">
+  <meta name="description" content="这题其实很简单。 首先，筛法筛一遍，打个bool质数表； 然后，读入n，i从4暴力到n！’-‘!^=^! 输出！ 1234567891011121314151617181920#include &amp;lt;cstdio&amp;gt;//标准输入输出库int n,i=4;//直接定好bool s[10000]=&amp;#123;1,1&amp;#125;;//0和1啥都不是，定1！//全局数组初值全为0inline voi">
 <meta name="keywords" content="题解,洛谷">
 <meta property="og:type" content="article">
 <meta property="og:title" content="题解 P1304 【哥德巴赫猜想】">
 <meta property="og:url" content="http://yoursite.com/2019/01/17/题解-P1304-【哥德巴赫猜想】/index.html">
 <meta property="og:site_name" content="yltx&#39;s blog">
-<meta property="og:description" content="这题其实很简单。 首先，筛法筛一遍，打个bool质数表； 然后，读入n，i从4暴力到n！’-‘!^=^! 输出！ #include &amp;lt;cstdio&amp;gt;//标准输入输出库 int n,i=4;//直接定好 bool s[10000]={1,1};//0和1啥都不是，定1！ //全局数组初值全为0 inline void a(){//不要在意函数名，这只是个筛法函数     for (int">
+<meta property="og:description" content="这题其实很简单。 首先，筛法筛一遍，打个bool质数表； 然后，读入n，i从4暴力到n！’-‘!^=^! 输出！ 1234567891011121314151617181920#include &amp;lt;cstdio&amp;gt;//标准输入输出库int n,i=4;//直接定好bool s[10000]=&amp;#123;1,1&amp;#125;;//0和1啥都不是，定1！//全局数组初值全为0inline voi">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-01-17T11:29:44.286Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="题解 P1304 【哥德巴赫猜想】">
-<meta name="twitter:description" content="这题其实很简单。 首先，筛法筛一遍，打个bool质数表； 然后，读入n，i从4暴力到n！’-‘!^=^! 输出！ #include &amp;lt;cstdio&amp;gt;//标准输入输出库 int n,i=4;//直接定好 bool s[10000]={1,1};//0和1啥都不是，定1！ //全局数组初值全为0 inline void a(){//不要在意函数名，这只是个筛法函数     for (int">
+<meta name="twitter:description" content="这题其实很简单。 首先，筛法筛一遍，打个bool质数表； 然后，读入n，i从4暴力到n！’-‘!^=^! 输出！ 1234567891011121314151617181920#include &amp;lt;cstdio&amp;gt;//标准输入输出库int n,i=4;//直接定好bool s[10000]=&amp;#123;1,1&amp;#125;;//0和1啥都不是，定1！//全局数组初值全为0inline voi">
 
 
 
@@ -445,28 +445,7 @@
 <p>首先，筛法筛一遍，打个bool质数表；</p>
 <p>然后，读入n，i从4暴力到n！’-‘!^=^!</p>
 <p>输出！</p>
-<pre><code class="cpp">#include &lt;cstdio&gt;//标准输入输出库
-int n,i=4;//直接定好
-bool s[10000]={1,1};//0和1啥都不是，定1！
-//全局数组初值全为0
-inline void a(){//不要在意函数名，这只是个筛法函数
-    for (int j=2;j&lt;10000;j++)//暴力！汗！
-    for (int k=j*2;k&lt;10000;k+=j)//k=j*2省一个判断，每次+j，保证是j的倍数
-    s[k]=1;//既然是j的倍数，那一定是合数，标记！
-}
-int main(void){
-    scanf (&quot;%d&quot;,&amp;n);
-    a();//预处理
-    for (;i&lt;=n;i+=2){//疯狂的暴力！i+=2保证是偶数
-        int j=2;//继续暴力
-        for (;s[j]||s[i-j];j++);//s[j]||s[i-j]两个都不能是合数，如果是，继续循环
-//合数为1，质数为0
-        printf (&quot;%d=%d+%d\n&quot;,i,j,i-j);//输出！
-    }
-}
-//话说：暴力出奇迹，0msAC！
-</code></pre>
-
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;//标准输入输出库</span></span></span><br><span class="line"><span class="keyword">int</span> n,i=<span class="number">4</span>;<span class="comment">//直接定好</span></span><br><span class="line"><span class="keyword">bool</span> s[<span class="number">10000</span>]=&#123;<span class="number">1</span>,<span class="number">1</span>&#125;;<span class="comment">//0和1啥都不是，定1！</span></span><br><span class="line"><span class="comment">//全局数组初值全为0</span></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">a</span><span class="params">()</span></span>&#123;<span class="comment">//不要在意函数名，这只是个筛法函数</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j=<span class="number">2</span>;j&lt;<span class="number">10000</span>;j++)<span class="comment">//暴力！汗！</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> k=j*<span class="number">2</span>;k&lt;<span class="number">10000</span>;k+=j)<span class="comment">//k=j*2省一个判断，每次+j，保证是j的倍数</span></span><br><span class="line">    s[k]=<span class="number">1</span>;<span class="comment">//既然是j的倍数，那一定是合数，标记！</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span> (<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">    a();<span class="comment">//预处理</span></span><br><span class="line">    <span class="keyword">for</span> (;i&lt;=n;i+=<span class="number">2</span>)&#123;<span class="comment">//疯狂的暴力！i+=2保证是偶数</span></span><br><span class="line">        <span class="keyword">int</span> j=<span class="number">2</span>;<span class="comment">//继续暴力</span></span><br><span class="line">        <span class="keyword">for</span> (;s[j]||s[i-j];j++);<span class="comment">//s[j]||s[i-j]两个都不能是合数，如果是，继续循环</span></span><br><span class="line"><span class="comment">//合数为1，质数为0</span></span><br><span class="line">        <span class="built_in">printf</span> (<span class="string">"%d=%d+%d\n"</span>,i,j,i-j);<span class="comment">//输出！</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//话说：暴力出奇迹，0msAC！</span></span><br></pre></td></tr></table></figure>
       
     </div>
 

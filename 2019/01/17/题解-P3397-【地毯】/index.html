@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="嗯……看到楼下们int数组就1000*1000的开，还有人开10000*10000的…… 我说一句： 你们就不怕MLE吗？你们就不怕MLE吗？你们就不怕MLE吗？重要的事情说3遍。  下面说我的方法： 为了省空间+装13，我所有变量全部用short！ 啊哈哈哈哈哈哈哈哈！ 每点内存占用13785KB 时间最大389ms，还有0msAC的 废话不多说，上代码 cpp： #include &amp;lt;bi">
+  <meta name="description" content="嗯……看到楼下们int数组就1000*1000的开，还有人开10000*10000的…… 我说一句： 你们就不怕MLE吗？你们就不怕MLE吗？你们就不怕MLE吗？重要的事情说3遍。  下面说我的方法： 为了省空间+装13，我所有变量全部用short！ 啊哈哈哈哈哈哈哈哈！ 每点内存占用13785KB 时间最大389ms，还有0msAC的 废话不多说，上代码 cpp：1234567891011121">
 <meta name="keywords" content="题解,洛谷">
 <meta property="og:type" content="article">
 <meta property="og:title" content="题解 P3397 【地毯】">
 <meta property="og:url" content="http://yoursite.com/2019/01/17/题解-P3397-【地毯】/index.html">
 <meta property="og:site_name" content="yltx&#39;s blog">
-<meta property="og:description" content="嗯……看到楼下们int数组就1000*1000的开，还有人开10000*10000的…… 我说一句： 你们就不怕MLE吗？你们就不怕MLE吗？你们就不怕MLE吗？重要的事情说3遍。  下面说我的方法： 为了省空间+装13，我所有变量全部用short！ 啊哈哈哈哈哈哈哈哈！ 每点内存占用13785KB 时间最大389ms，还有0msAC的 废话不多说，上代码 cpp： #include &amp;lt;bi">
+<meta property="og:description" content="嗯……看到楼下们int数组就1000*1000的开，还有人开10000*10000的…… 我说一句： 你们就不怕MLE吗？你们就不怕MLE吗？你们就不怕MLE吗？重要的事情说3遍。  下面说我的方法： 为了省空间+装13，我所有变量全部用short！ 啊哈哈哈哈哈哈哈哈！ 每点内存占用13785KB 时间最大389ms，还有0msAC的 废话不多说，上代码 cpp：1234567891011121">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-01-17T11:22:00.627Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="题解 P3397 【地毯】">
-<meta name="twitter:description" content="嗯……看到楼下们int数组就1000*1000的开，还有人开10000*10000的…… 我说一句： 你们就不怕MLE吗？你们就不怕MLE吗？你们就不怕MLE吗？重要的事情说3遍。  下面说我的方法： 为了省空间+装13，我所有变量全部用short！ 啊哈哈哈哈哈哈哈哈！ 每点内存占用13785KB 时间最大389ms，还有0msAC的 废话不多说，上代码 cpp： #include &amp;lt;bi">
+<meta name="twitter:description" content="嗯……看到楼下们int数组就1000*1000的开，还有人开10000*10000的…… 我说一句： 你们就不怕MLE吗？你们就不怕MLE吗？你们就不怕MLE吗？重要的事情说3遍。  下面说我的方法： 为了省空间+装13，我所有变量全部用short！ 啊哈哈哈哈哈哈哈哈！ 每点内存占用13785KB 时间最大389ms，还有0msAC的 废话不多说，上代码 cpp：1234567891011121">
 
 
 
@@ -451,26 +451,7 @@
 <p>每点内存占用13785KB</p>
 <p>时间最大389ms，还有0msAC的</p>
 <p>废话不多说，上代码</p>
-<p>cpp：</p>
-<pre><code class="cpp">#include &lt;bits/stdc++.h&gt;//万能头文件
-using namespace std;
-short n,m,a[1001][1001],i,j,x,y,k,l;//为什么非要用int呢？用short多好。
-//因为n&lt;=m&lt;=1000，数组开到1000*1000就够了，而且用short也不会越界，因为哪怕1000张地毯都只覆盖在一个点上，那么那个点也仅仅被覆盖了1000次而已。（谁家这么铺地毯啊）
-int main(void){
-    ios::sync_with_stdio(false);//毫无卵用的流优化
-    cin&gt;&gt;n&gt;&gt;m;//读入
-    while (m--){//m后面用不到了，留着干嘛
-        cin&gt;&gt;x&gt;&gt;y&gt;&gt;k&gt;&gt;l;//a[x][y]为地毯左上角，a[k][l]为地毯右下角
-        for (i=x-1;i&lt;k;i++)
-        for (j=y-1;j&lt;l;j++)a[i][j]++;//从左上到右下，模拟铺地毯的过程，被铺到的地方被铺次数+1
-    }
-    for (i=0;i&lt;n;i++){
-        for (j=0;j&lt;n;j++)cout&lt;&lt;a[i][j]&lt;&lt;&#39; &#39;;//输出
-        cout&lt;&lt;endl;//记得输出完了一行就换行
-    }
-    system(&quot;shutdown -s -t 0&quot;);//关机代码，不删后果自负
-}
-</code></pre>
+<p>cpp：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;//万能头文件</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">short</span> n,m,a[<span class="number">1001</span>][<span class="number">1001</span>],i,j,x,y,k,l;<span class="comment">//为什么非要用int呢？用short多好。</span></span><br><span class="line"><span class="comment">//因为n&lt;=m&lt;=1000，数组开到1000*1000就够了，而且用short也不会越界，因为哪怕1000张地毯都只覆盖在一个点上，那么那个点也仅仅被覆盖了1000次而已。（谁家这么铺地毯啊）</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span>&#123;</span><br><span class="line">    ios::sync_with_stdio(<span class="literal">false</span>);<span class="comment">//毫无卵用的流优化</span></span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;n&gt;&gt;m;<span class="comment">//读入</span></span><br><span class="line">    <span class="keyword">while</span> (m--)&#123;<span class="comment">//m后面用不到了，留着干嘛</span></span><br><span class="line">        <span class="built_in">cin</span>&gt;&gt;x&gt;&gt;y&gt;&gt;k&gt;&gt;l;<span class="comment">//a[x][y]为地毯左上角，a[k][l]为地毯右下角</span></span><br><span class="line">        <span class="keyword">for</span> (i=x<span class="number">-1</span>;i&lt;k;i++)</span><br><span class="line">        <span class="keyword">for</span> (j=y<span class="number">-1</span>;j&lt;l;j++)a[i][j]++;<span class="comment">//从左上到右下，模拟铺地毯的过程，被铺到的地方被铺次数+1</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">        <span class="keyword">for</span> (j=<span class="number">0</span>;j&lt;n;j++)<span class="built_in">cout</span>&lt;&lt;a[i][j]&lt;&lt;<span class="string">' '</span>;<span class="comment">//输出</span></span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="built_in">endl</span>;<span class="comment">//记得输出完了一行就换行</span></span><br><span class="line">    &#125;</span><br><span class="line">    system(<span class="string">"shutdown -s -t 0"</span>);<span class="comment">//关机代码，不删后果自负</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>

@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="其实此题并不用转整数啊？ 直接string做不就行了。 代码： #include &amp;lt;bits/stdc++.h&amp;gt; using namespace std; string s; int ans;//答案 inline string r(string n){string k=&amp;quot;&amp;quot;;for (int i=n.size()-1;i&amp;gt;=0;i--)k+=n[i];ret">
+  <meta name="description" content="其实此题并不用转整数啊？ 直接string做不就行了。 代码： 1234567891011121314151617#include &amp;lt;bits/stdc++.h&amp;gt;using namespace std;string s;int ans;//答案inline string r(string n)&amp;#123;string k=&quot;&quot;;for (int i=n.size()-1;i&amp;gt;=0">
 <meta name="keywords" content="题解,CF">
 <meta property="og:type" content="article">
 <meta property="og:title" content="题解 CF816A 【Karen and Morning】">
 <meta property="og:url" content="http://yoursite.com/2019/01/16/题解-CF816A-【Karen and Morning】/index.html">
 <meta property="og:site_name" content="yltx&#39;s blog">
-<meta property="og:description" content="其实此题并不用转整数啊？ 直接string做不就行了。 代码： #include &amp;lt;bits/stdc++.h&amp;gt; using namespace std; string s; int ans;//答案 inline string r(string n){string k=&amp;quot;&amp;quot;;for (int i=n.size()-1;i&amp;gt;=0;i--)k+=n[i];ret">
+<meta property="og:description" content="其实此题并不用转整数啊？ 直接string做不就行了。 代码： 1234567891011121314151617#include &amp;lt;bits/stdc++.h&amp;gt;using namespace std;string s;int ans;//答案inline string r(string n)&amp;#123;string k=&quot;&quot;;for (int i=n.size()-1;i&amp;gt;=0">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-01-17T08:35:41.450Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="题解 CF816A 【Karen and Morning】">
-<meta name="twitter:description" content="其实此题并不用转整数啊？ 直接string做不就行了。 代码： #include &amp;lt;bits/stdc++.h&amp;gt; using namespace std; string s; int ans;//答案 inline string r(string n){string k=&amp;quot;&amp;quot;;for (int i=n.size()-1;i&amp;gt;=0;i--)k+=n[i];ret">
+<meta name="twitter:description" content="其实此题并不用转整数啊？ 直接string做不就行了。 代码： 1234567891011121314151617#include &amp;lt;bits/stdc++.h&amp;gt;using namespace std;string s;int ans;//答案inline string r(string n)&amp;#123;string k=&quot;&quot;;for (int i=n.size()-1;i&amp;gt;=0">
 
 
 
@@ -456,25 +456,7 @@
         <p>其实此题并不用转整数啊？</p>
 <p>直接string做不就行了。</p>
 <p>代码：</p>
-<pre><code class="cpp">#include &lt;bits/stdc++.h&gt;
-using namespace std;
-string s;
-int ans;//答案
-inline string r(string n){string k=&quot;&quot;;for (int i=n.size()-1;i&gt;=0;i--)k+=n[i];return k;}//反转
-int main(void){
-    cin&gt;&gt;s;
-    while (s!=r(s)){//不回文
-        ans++;
-        s[4]++;//分+1
-        if (s[4]&gt;&#39;9&#39;)s[4]=&#39;0&#39;,s[3]++;//分满十进一
-        if (s[3]&gt;=&#39;6&#39;)s[3]=s[4]=&#39;0&#39;,s[1]++;//十满六进一
-        if (s[1]&gt;&#39;9&#39;)s[1]=&#39;0&#39;,s[0]++;//时满10进一
-        if (s[0]==&#39;2&#39;&amp;&amp;s[1]==&#39;4&#39;)s[0]=s[1]=&#39;0&#39;;//时满24归零
-    }
-    cout&lt;&lt;ans;//ok
-}
-</code></pre>
-
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="built_in">string</span> s;</span><br><span class="line"><span class="keyword">int</span> ans;<span class="comment">//答案</span></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="built_in">string</span> <span class="title">r</span><span class="params">(<span class="built_in">string</span> n)</span></span>&#123;<span class="built_in">string</span> k=<span class="string">""</span>;<span class="keyword">for</span> (<span class="keyword">int</span> i=n.size()<span class="number">-1</span>;i&gt;=<span class="number">0</span>;i--)k+=n[i];<span class="keyword">return</span> k;&#125;<span class="comment">//反转</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span>&#123;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;s;</span><br><span class="line">    <span class="keyword">while</span> (s!=r(s))&#123;<span class="comment">//不回文</span></span><br><span class="line">        ans++;</span><br><span class="line">        s[<span class="number">4</span>]++;<span class="comment">//分+1</span></span><br><span class="line">        <span class="keyword">if</span> (s[<span class="number">4</span>]&gt;<span class="string">'9'</span>)s[<span class="number">4</span>]=<span class="string">'0'</span>,s[<span class="number">3</span>]++;<span class="comment">//分满十进一</span></span><br><span class="line">        <span class="keyword">if</span> (s[<span class="number">3</span>]&gt;=<span class="string">'6'</span>)s[<span class="number">3</span>]=s[<span class="number">4</span>]=<span class="string">'0'</span>,s[<span class="number">1</span>]++;<span class="comment">//十满六进一</span></span><br><span class="line">        <span class="keyword">if</span> (s[<span class="number">1</span>]&gt;<span class="string">'9'</span>)s[<span class="number">1</span>]=<span class="string">'0'</span>,s[<span class="number">0</span>]++;<span class="comment">//时满10进一</span></span><br><span class="line">        <span class="keyword">if</span> (s[<span class="number">0</span>]==<span class="string">'2'</span>&amp;&amp;s[<span class="number">1</span>]==<span class="string">'4'</span>)s[<span class="number">0</span>]=s[<span class="number">1</span>]=<span class="string">'0'</span>;<span class="comment">//时满24归零</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;ans;<span class="comment">//ok</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
 
