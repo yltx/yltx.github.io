@@ -348,7 +348,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/17/题解-P1115-【最大子段和】/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/17/题解-P1917-【三子棋Ⅱ】/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="引领天下">
@@ -368,7 +368,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/01/17/题解-P1115-【最大子段和】/" class="post-title-link" itemprop="url">题解 P1115 【最大子段和】</a>
+                <a href="/2019/01/17/题解-P1917-【三子棋Ⅱ】/" class="post-title-link" itemprop="url">题解 P1917 【三子棋Ⅱ】</a>
               
             
           </h1>
@@ -393,7 +393,7 @@
                 
               
 
-              <time title="创建时间：2019-01-17 18:59:59 / 修改时间：19:09:57" itemprop="dateCreated datePublished" datetime="2019-01-17T18:59:59+08:00">2019-01-17</time>
+              <time title="创建时间：2019-01-17 19:04:59 / 修改时间：19:06:27" itemprop="dateCreated datePublished" datetime="2019-01-17T19:04:59+08:00">2019-01-17</time>
             
 
             
@@ -435,23 +435,341 @@
         
           
             <p>
-              一道标准的练手dp好题。
-下面提出标准最大子段和做法：
-边读边做。
-now代表目前加起来是多少。
-读一个a now加一次。
-如果now&gt;ans ans=now
-如果now&lt;0 正常情况下这种方法不合理，但。。。。
-有测试点#2.
-全是负数！这个特殊情况一定要考虑！
-所以 代码来了：
-#i
+              这题呢，是一道水题，不过为什么没人做？？？
+读入9（3*3）个字符，每个有3种情况：
+
+‘-‘ 表示该位置没有棋子；
+
+‘O’ 表示该位置为小a的棋子；
+
+‘X’ 表示该位置为uim的棋子。
+
+
+那么，我就在线做，读入，如果这个地方有子，就检查，如果是’X’，就看它所在行、列相差1，小a就赢了。
+看
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2019/01/17/题解-P1115-【最大子段和】/#more" rel="contents">
+              <a class="btn" href="/2019/01/17/题解-P1917-【三子棋Ⅱ】/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/17/题解-P2640-【神秘磁石】/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="引领天下">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="yltx's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/01/17/题解-P2640-【神秘磁石】/" class="post-title-link" itemprop="url">题解 P2640 【神秘磁石】</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-01-17 19:01:28 / 修改时间：19:01:48" itemprop="dateCreated datePublished" datetime="2019-01-17T19:01:28+08:00">2019-01-17</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>
+              来发一个比楼下们快的方法。
+本题我用的是筛法，但是。
+#我优化了！
+具体优化的方法呢，就是楼下们太暴力了，竟然直接暴力！（从1到n）
+然而。。。
+我有更快的方法！
+在筛法打质数表的时候，我不仅保留了bool数组（用来判断），我还开了一个整数数组，存了质数，这样，我就直接用质数表暴力，效率提高到了O(
+              ...
+            </p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/01/17/题解-P2640-【神秘磁石】/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/17/题解-P1157-【组合的输出】/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="引领天下">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="yltx's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/01/17/题解-P1157-【组合的输出】/" class="post-title-link" itemprop="url">题解 P1157 【组合的输出】</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-01-17 19:00:35 / 修改时间：19:00:43" itemprop="dateCreated datePublished" datetime="2019-01-17T19:00:35+08:00">2019-01-17</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>
+              这题其实就是搜索+回溯（可是我仍然写了2小时）
+这个题呢，我跟楼下们的思路有一些不一样：
+首先，第一组排列一定是1~k（前k个元素），于是进行一个预处理；
+接下来开始搜：
+先从第k个元素搜，搜完前k-1个元素为1~k时最后一个元素的所有情况（边搜边记）；
+搜完了（前k个元素填满了或任意一个元素&gt
+              ...
+            </p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/01/17/题解-P1157-【组合的输出】/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1551,322 +1869,6 @@ print(int(input())//int(input()))//注：在Python3里面，‘//’表示整除
           
             <div class="post-button text-center">
               <a class="btn" href="/2019/01/17/题解-SP3273-【ORDERSET - Order statistic set】/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/17/题解-CF908A-【New Year and Counting Cards】/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="引领天下">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="yltx's blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/01/17/题解-CF908A-【New Year and Counting Cards】/" class="post-title-link" itemprop="url">题解 CF908A 【New Year and Counting Cards】</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-01-17 17:53:06 / 修改时间：18:05:53" itemprop="dateCreated datePublished" datetime="2019-01-17T17:53:06+08:00">2019-01-17</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>
-              这回是真正的题解了
-其实思路楼上已经说过，我只是来一发C++的
-代码：
-#include &lt;bits/stdc++.h&gt;using namespace std;string s;int ans;bool k[256];//我选择了用桶进行优化，这样减少了代码，也变快了int main()
-              ...
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/01/17/题解-CF908A-【New Year and Counting Cards】/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/17/题解-CF870A-【Search for Pretty Integers】/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="引领天下">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="yltx's blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/01/17/题解-CF870A-【Search for Pretty Integers】/" class="post-title-link" itemprop="url">题解 CF870A 【Search for Pretty Integers】</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-01-17 17:43:42 / 修改时间：17:44:17" itemprop="dateCreated datePublished" datetime="2019-01-17T17:43:42+08:00">2019-01-17</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>
-              来一发不一样的思路
-你们都排序，可是我
-不排序！其实，对于这种判断一个数字有没有在两个数组里出现的题目用桶最方便具体做法：
-先读入两个数组，在桶中标记；
-然后从1扫到9，有同时出现的就输出
-不然找最小的
-上巨短代码
-#include &lt;cstdio&gt;int a[10],b[10],n,m
-              ...
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/01/17/题解-CF870A-【Search for Pretty Integers】/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>

@@ -348,7 +348,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/12/题解-CF723A-【The New Year Meeting Friends】/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/16/题解-P1451-【求细胞数量】/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="引领天下">
@@ -368,7 +368,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/01/12/题解-CF723A-【The New Year Meeting Friends】/" class="post-title-link" itemprop="url">题解 CF723A 【The New Year: Meeting Friends】</a>
+                <a href="/2019/01/16/题解-P1451-【求细胞数量】/" class="post-title-link" itemprop="url">题解 P1451 【求细胞数量】</a>
               
             
           </h1>
@@ -393,7 +393,7 @@
                 
               
 
-              <time title="创建时间：2019-01-12 16:36:33" itemprop="dateCreated datePublished" datetime="2019-01-12T16:36:33+08:00">2019-01-12</time>
+              <time title="创建时间：2019-01-16 21:47:09" itemprop="dateCreated datePublished" datetime="2019-01-16T21:47:09+08:00">2019-01-16</time>
             
 
             
@@ -410,7 +410,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-01-17 16:36:38" itemprop="dateModified" datetime="2019-01-17T16:36:38+08:00">2019-01-17</time>
+                <time title="修改时间：2019-01-17 16:36:01" itemprop="dateModified" datetime="2019-01-17T16:36:01+08:00">2019-01-17</time>
               
             
           </span>
@@ -447,20 +447,19 @@
         
           
             <p>
-              这题非常简单，就是一个数论
-首先，我们考虑最大和最小的两个数：
-如果要他们的差最小，那么集合点必须在他们之间（绝对值的几何意义）
-而这个点又可以设在中间值的点上，所以中间点的距离=0
-所以此题的答案=
-$ max(a,b,c)-min(a,b,c)$
+              怎么楼下都是bfs啊……
+忍不住来了一发dfs
+其实dfs也挺快的啊，0ms呢……
+思路也很简单，搞一个数组，不为0的地方就是细胞，然后dfs搜连通块，把搜到的都归0，保证不重复。。。
+然后就是循环找没被归0的，答案+1。
 代码：
-#include &lt;cstdio&
+#include &lt;bits/stdc++.h&gt;usin
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2019/01/12/题解-CF723A-【The New Year Meeting Friends】/#more" rel="contents">
+              <a class="btn" href="/2019/01/16/题解-P1451-【求细胞数量】/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -520,7 +519,7 @@ $ max(a,b,c)-min(a,b,c)$
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/12/题解-P1740-【Diamond A&B(1)】/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/16/题解-P4470-【[BJWC2018]售票】/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="引领天下">
@@ -540,7 +539,7 @@ $ max(a,b,c)-min(a,b,c)$
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/01/12/题解-P1740-【Diamond A&B(1)】/" class="post-title-link" itemprop="url">题解 P1740 【Diamond A&B(1)】</a>
+                <a href="/2019/01/16/题解-P4470-【[BJWC2018]售票】/" class="post-title-link" itemprop="url">题解 P4470 【[BJWC2018]售票】</a>
               
             
           </h1>
@@ -565,7 +564,7 @@ $ max(a,b,c)-min(a,b,c)$
                 
               
 
-              <time title="创建时间：2019-01-12 16:34:22" itemprop="dateCreated datePublished" datetime="2019-01-12T16:34:22+08:00">2019-01-12</time>
+              <time title="创建时间：2019-01-16 21:48:07" itemprop="dateCreated datePublished" datetime="2019-01-16T21:48:07+08:00">2019-01-16</time>
             
 
             
@@ -582,7 +581,7 @@ $ max(a,b,c)-min(a,b,c)$
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-01-17 16:36:49" itemprop="dateModified" datetime="2019-01-17T16:36:49+08:00">2019-01-17</time>
+                <time title="修改时间：2019-01-17 16:35:54" itemprop="dateModified" datetime="2019-01-17T16:35:54+08:00">2019-01-17</time>
               
             
           </span>
@@ -619,187 +618,17 @@ $ max(a,b,c)-min(a,b,c)$
         
           
             <p>
-              这题有毒。。。
-貌似就我一个是用C++写过的……
-楼下已经说过题目什么意思，我这里就来说一下怎么实现
-具体请看代码
-#include &lt;bits/stdc++.h&gt;using namespace std;int n;string a[1777];int main(void)&#123; 
-              ...
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/01/12/题解-P1740-【Diamond A&B(1)】/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/12/题解-P2152-【[SDOI2009]SuperGCD】/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="引领天下">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="yltx's blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/01/12/题解-P2152-【[SDOI2009]SuperGCD】/" class="post-title-link" itemprop="url">题解 P2152 【[SDOI2009]SuperGCD】</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-01-12 16:29:04" itemprop="dateCreated datePublished" datetime="2019-01-12T16:29:04+08:00">2019-01-12</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-01-17 16:37:09" itemprop="dateModified" datetime="2019-01-17T16:37:09+08:00">2019-01-17</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>
-              人生中第一篇$ \color{purple} \text{紫题} $的题解
-其实不得不指出楼下的一个错误：
-使用py3写辗转相除法并不会RE！！！
-甚至连函数都不用，只要一个循环就好。
+              抢到全网最优解之后发题解
+其实此题有一个很好用的命令：strncmp，可以直接比较两个字符串的前n位
+接下来就很方便了
 代码：
-a=int(input())b=int(input())while b&gt;0:    c=b//先记下
+#include &lt;cstdio&gt;#include &lt;cstring&gt;short n,l;char a[51][101],s[101],k[]=&#
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2019/01/12/题解-P2152-【[SDOI2009]SuperGCD】/#more" rel="contents">
+              <a class="btn" href="/2019/01/16/题解-P4470-【[BJWC2018]售票】/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -859,7 +688,7 @@ a=int(input())b=int(input())while b&gt;0:    c=b//先记下
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/12/题解-P1865-【A % B Problem】/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/16/题解-CF546A-【Soldier and Bananas】/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="引领天下">
@@ -879,7 +708,7 @@ a=int(input())b=int(input())while b&gt;0:    c=b//先记下
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/01/12/题解-P1865-【A % B Problem】/" class="post-title-link" itemprop="url">题解 P1865 【A % B Problem】</a>
+                <a href="/2019/01/16/题解-CF546A-【Soldier and Bananas】/" class="post-title-link" itemprop="url">题解 CF546A 【Soldier and Bananas】</a>
               
             
           </h1>
@@ -904,7 +733,7 @@ a=int(input())b=int(input())while b&gt;0:    c=b//先记下
                 
               
 
-              <time title="创建时间：2019-01-12 16:27:00" itemprop="dateCreated datePublished" datetime="2019-01-12T16:27:00+08:00">2019-01-12</time>
+              <time title="创建时间：2019-01-16 21:50:48" itemprop="dateCreated datePublished" datetime="2019-01-16T21:50:48+08:00">2019-01-16</time>
             
 
             
@@ -921,7 +750,7 @@ a=int(input())b=int(input())while b&gt;0:    c=b//先记下
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-01-17 16:36:53" itemprop="dateModified" datetime="2019-01-17T16:36:53+08:00">2019-01-17</time>
+                <time title="修改时间：2019-01-17 16:35:46" itemprop="dateModified" datetime="2019-01-17T16:35:46+08:00">2019-01-17</time>
               
             
           </span>
@@ -958,16 +787,17 @@ a=int(input())b=int(input())while b&gt;0:    c=b//先记下
         
           
             <p>
-              这题大家应该都能看出来要用筛法+前缀和吧……所以我觉得这题顶多普及-
-所以我来讲两个优化：
-1. 其实前缀和并不用再开一个数组2. 前缀和其实并不是非要套在循环里绕，完了再特判，只需要再开一个循环就可以了具体看代码：
-#include &lt;cstdio&gt;int n,m,l,r,a[1000
+              抢到全网最优解之后发题解
+其实此题有一个很好用的命令：strncmp，可以直接比较两个字符串的前n位
+接下来就很方便了
+代码：
+#include &lt;cstdio&gt;#include &lt;cstring&gt;short n,l;char a[51][101],s[101],k[]=&#
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2019/01/12/题解-P1865-【A % B Problem】/#more" rel="contents">
+              <a class="btn" href="/2019/01/16/题解-CF546A-【Soldier and Bananas】/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1027,7 +857,7 @@ a=int(input())b=int(input())while b&gt;0:    c=b//先记下
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/12/题解-P4711-【「化学」相对分子质量】/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/16/题解-CF816A-【Karen and Morning】/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="引领天下">
@@ -1047,7 +877,7 @@ a=int(input())b=int(input())while b&gt;0:    c=b//先记下
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/01/12/题解-P4711-【「化学」相对分子质量】/" class="post-title-link" itemprop="url">题解 P4711 【「化学」相对分子质量】</a>
+                <a href="/2019/01/16/题解-CF816A-【Karen and Morning】/" class="post-title-link" itemprop="url">题解 CF816A 【Karen and Morning】</a>
               
             
           </h1>
@@ -1072,7 +902,7 @@ a=int(input())b=int(input())while b&gt;0:    c=b//先记下
                 
               
 
-              <time title="创建时间：2019-01-12 16:26:02" itemprop="dateCreated datePublished" datetime="2019-01-12T16:26:02+08:00">2019-01-12</time>
+              <time title="创建时间：2019-01-16 21:51:58" itemprop="dateCreated datePublished" datetime="2019-01-16T21:51:58+08:00">2019-01-16</time>
             
 
             
@@ -1089,7 +919,7 @@ a=int(input())b=int(input())while b&gt;0:    c=b//先记下
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-01-17 16:34:25" itemprop="dateModified" datetime="2019-01-17T16:34:25+08:00">2019-01-17</time>
+                <time title="修改时间：2019-01-17 16:35:41" itemprop="dateModified" datetime="2019-01-17T16:35:41+08:00">2019-01-17</time>
               
             
           </span>
@@ -1126,20 +956,16 @@ a=int(input())b=int(input())while b&gt;0:    c=b//先记下
         
           
             <p>
-              恩这题其实并没有那么难，根本没有必要搞什么单调栈什么的，所以我来一发很短的题解。
-本题的思路就是逐个击破，我的思路是这样的：
-1.元素对于单个元素的处理应该是很简单的，因为我们有强大的map，一个表就结束了。
-2.下标这里我主要分两种情况看：
-
-对原子的下标
-
-只需要保存每个元素的值（last），如
+              其实此题并不用转整数啊？
+直接string做不就行了。
+代码：
+#include &lt;bits/stdc++.h&gt;using namespace std;string s;int ans;//答案inline string r(string n)&#123;string k="";for 
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2019/01/12/题解-P4711-【「化学」相对分子质量】/#more" rel="contents">
+              <a class="btn" href="/2019/01/16/题解-CF816A-【Karen and Morning】/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1199,7 +1025,7 @@ a=int(input())b=int(input())while b&gt;0:    c=b//先记下
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/12/题解-P2682-【土豆田】/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/16/题解-CF911A-【Nearest Minimums】/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="引领天下">
@@ -1219,7 +1045,7 @@ a=int(input())b=int(input())while b&gt;0:    c=b//先记下
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/01/12/题解-P2682-【土豆田】/" class="post-title-link" itemprop="url">题解 P2682 【土豆田】</a>
+                <a href="/2019/01/16/题解-CF911A-【Nearest Minimums】/" class="post-title-link" itemprop="url">题解 CF911A 【Nearest Minimums】</a>
               
             
           </h1>
@@ -1244,7 +1070,7 @@ a=int(input())b=int(input())while b&gt;0:    c=b//先记下
                 
               
 
-              <time title="创建时间：2019-01-12 16:25:00" itemprop="dateCreated datePublished" datetime="2019-01-12T16:25:00+08:00">2019-01-12</time>
+              <time title="创建时间：2019-01-16 21:53:04" itemprop="dateCreated datePublished" datetime="2019-01-16T21:53:04+08:00">2019-01-16</time>
             
 
             
@@ -1261,7 +1087,7 @@ a=int(input())b=int(input())while b&gt;0:    c=b//先记下
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-02-24 17:24:55" itemprop="dateModified" datetime="2019-02-24T17:24:55+08:00">2019-02-24</time>
+                <time title="修改时间：2019-01-17 16:35:33" itemprop="dateModified" datetime="2019-01-17T16:35:33+08:00">2019-01-17</time>
               
             
           </span>
@@ -1298,19 +1124,14 @@ a=int(input())b=int(input())while b&gt;0:    c=b//先记下
         
           
             <p>
-              经过看楼下的题解我也AC了
-AC记录：AC
-此题每问的做法楼下都已经讲过了，我就来一发具体的代码+写代码的技巧
-此题有一个坑点就是必须控制程序的运行次数，然而很多都不好卡。（比方说#2测试点我就卡了好久）
-以#2为例，将a*233分解为：
-$ a233=a128+a64+a32+a*8+a $
-如果
+              其实此题只用一个排序和一个id就能解决问题
+代码：#include &lt;bits/stdc++.h&gt;using namespace std;int n,ans=INT_MAX;struct $&#123;    int s,id;&#125;a[100005];//结构体inline bo
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2019/01/12/题解-P2682-【土豆田】/#more" rel="contents">
+              <a class="btn" href="/2019/01/16/题解-CF911A-【Nearest Minimums】/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1370,7 +1191,7 @@ $ a233=a128+a64+a32+a*8+a $
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/12/题解-P1721-【[NOI2016]国王饮水记】/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/16/题解-CF119A-【Epic Game】/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="引领天下">
@@ -1390,7 +1211,7 @@ $ a233=a128+a64+a32+a*8+a $
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/01/12/题解-P1721-【[NOI2016]国王饮水记】/" class="post-title-link" itemprop="url">题解 P1721 【[NOI2016]国王饮水记】</a>
+                <a href="/2019/01/16/题解-CF119A-【Epic Game】/" class="post-title-link" itemprop="url">题解 CF119A 【Epic Game】</a>
               
             
           </h1>
@@ -1415,7 +1236,7 @@ $ a233=a128+a64+a32+a*8+a $
                 
               
 
-              <time title="创建时间：2019-01-12 16:23:53" itemprop="dateCreated datePublished" datetime="2019-01-12T16:23:53+08:00">2019-01-12</time>
+              <time title="创建时间：2019-01-16 21:55:06" itemprop="dateCreated datePublished" datetime="2019-01-16T21:55:06+08:00">2019-01-16</time>
             
 
             
@@ -1432,7 +1253,7 @@ $ a233=a128+a64+a32+a*8+a $
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-01-17 16:36:44" itemprop="dateModified" datetime="2019-01-17T16:36:44+08:00">2019-01-17</time>
+                <time title="修改时间：2019-01-17 16:35:27" itemprop="dateModified" datetime="2019-01-17T16:35:27+08:00">2019-01-17</time>
               
             
           </span>
@@ -1469,17 +1290,15 @@ $ a233=a128+a64+a32+a*8+a $
         
           
             <p>
-              其实此题根本不用那么麻烦，一个贪心即可。
-贪心策略也很简单，就是原则1：能连2个不连3个
-为什么呢？我们举例验证。
-例：$n=3,h1=1,h2=1.7,h3=3$
-这时，如果连通1、2、3，水位为$ \frac{1+1.7+3}{3}=1.9 $，而如果连通1、3，水位为$ \frac{1+3}{
+              此题很简单，直接模拟即可。
+思路不多说，相信大家都知道。
+代码：#include &lt;cstdio&gt;int a,b,n;//同题面bool turn;//到谁了int gcd(int a,int b)&#123;return !b?a:gcd(b,a%b);&#125;//求最大公约数in
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2019/01/12/题解-P1721-【[NOI2016]国王饮水记】/#more" rel="contents">
+              <a class="btn" href="/2019/01/16/题解-CF119A-【Epic Game】/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1539,7 +1358,7 @@ $ a233=a128+a64+a32+a*8+a $
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/12/题解-P1983-【车站分级】/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/16/题解-CF659D-【Bicycle Race】/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="引领天下">
@@ -1559,7 +1378,7 @@ $ a233=a128+a64+a32+a*8+a $
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/01/12/题解-P1983-【车站分级】/" class="post-title-link" itemprop="url">题解 P1983 【车站分级】</a>
+                <a href="/2019/01/16/题解-CF659D-【Bicycle Race】/" class="post-title-link" itemprop="url">题解 CF659D 【Bicycle Race】</a>
               
             
           </h1>
@@ -1584,7 +1403,7 @@ $ a233=a128+a64+a32+a*8+a $
                 
               
 
-              <time title="创建时间：2019-01-12 16:21:26" itemprop="dateCreated datePublished" datetime="2019-01-12T16:21:26+08:00">2019-01-12</time>
+              <time title="创建时间：2019-01-16 21:55:55" itemprop="dateCreated datePublished" datetime="2019-01-16T21:55:55+08:00">2019-01-16</time>
             
 
             
@@ -1601,7 +1420,7 @@ $ a233=a128+a64+a32+a*8+a $
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-01-17 16:37:04" itemprop="dateModified" datetime="2019-01-17T16:37:04+08:00">2019-01-17</time>
+                <time title="修改时间：2019-01-17 16:35:21" itemprop="dateModified" datetime="2019-01-17T16:35:21+08:00">2019-01-17</time>
               
             
           </span>
@@ -1638,19 +1457,16 @@ $ a233=a128+a64+a32+a*8+a $
         
           
             <p>
-              我来这里发题解只是为了证明：某种被认为是非正解的算法，其实是可以AC的！
-先看：https://www.luogu.org/blog/user56917/solution-p1983
-其实，我并没有改动多少，只是进行了几个很常用的优化：
-
-避免重复定义变量
-在原来的代码中，有一段是这样的：
-for(
-              ...
+              竟然没有C++党题解？
+数论楼下已证明过，我只是来一发代码
+代码太简单就不写注释了
+#include &lt;cstdio&gt;int n;int main(void)&#123;    scanf ("%d",&amp;n);    printf ("%d",(n-4)/2);&#125;
+              
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2019/01/12/题解-P1983-【车站分级】/#more" rel="contents">
+              <a class="btn" href="/2019/01/16/题解-CF659D-【Bicycle Race】/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1710,7 +1526,7 @@ for(
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/12/题解-P4212-【外太空旅行】/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/16/题解-CF962A-【Equator】/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="引领天下">
@@ -1730,7 +1546,7 @@ for(
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/01/12/题解-P4212-【外太空旅行】/" class="post-title-link" itemprop="url">题解 P4212 【外太空旅行】</a>
+                <a href="/2019/01/16/题解-CF962A-【Equator】/" class="post-title-link" itemprop="url">题解 CF962A 【Equator】</a>
               
             
           </h1>
@@ -1755,7 +1571,7 @@ for(
                 
               
 
-              <time title="创建时间：2019-01-12 16:20:40" itemprop="dateCreated datePublished" datetime="2019-01-12T16:20:40+08:00">2019-01-12</time>
+              <time title="创建时间：2019-01-16 21:56:45" itemprop="dateCreated datePublished" datetime="2019-01-16T21:56:45+08:00">2019-01-16</time>
             
 
             
@@ -1772,7 +1588,7 @@ for(
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-01-17 16:34:13" itemprop="dateModified" datetime="2019-01-17T16:34:13+08:00">2019-01-17</time>
+                <time title="修改时间：2019-01-17 16:35:13" itemprop="dateModified" datetime="2019-01-17T16:35:13+08:00">2019-01-17</time>
               
             
           </span>
@@ -1809,16 +1625,15 @@ for(
         
           
             <p>
-              这题目其实是bitset的一个很好的应用，再结合一下楼下的随机数算法即可AC。
-注意一下，由于两个人之间要么是朋友要么是敌人，那么我们可以考虑将两个人之间的关系改为2进制。这就是bitset的原理。
-bitset很强大，可以对很多数据类型进行转换，重点是：支持运算操作！
-那么这题的做法就很显然了：直
+              这题很简单啊，怎么没人发题解呢？
+所以我来一发很简单的模拟
+代码：（思路码里说）#include &lt;cstdio&gt;int s,ans,a[200005],n;int main(void)&#123;    scanf ("%d",&amp;n);//读入不解释    for (int i
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2019/01/12/题解-P4212-【外太空旅行】/#more" rel="contents">
+              <a class="btn" href="/2019/01/16/题解-CF962A-【Equator】/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1878,7 +1693,7 @@ bitset很强大，可以对很多数据类型进行转换，重点是：支持�
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/12/题解-P4907-【A换B problem】/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/16/题解-CF935A-【Fafa and his Company】/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="引领天下">
@@ -1898,7 +1713,7 @@ bitset很强大，可以对很多数据类型进行转换，重点是：支持�
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/01/12/题解-P4907-【A换B problem】/" class="post-title-link" itemprop="url">题解 P4907 【A换B problem】</a>
+                <a href="/2019/01/16/题解-CF935A-【Fafa and his Company】/" class="post-title-link" itemprop="url">题解 CF935A 【Fafa and his Company】</a>
               
             
           </h1>
@@ -1923,7 +1738,7 @@ bitset很强大，可以对很多数据类型进行转换，重点是：支持�
                 
               
 
-              <time title="创建时间：2019-01-12 16:18:48" itemprop="dateCreated datePublished" datetime="2019-01-12T16:18:48+08:00">2019-01-12</time>
+              <time title="创建时间：2019-01-16 21:59:35" itemprop="dateCreated datePublished" datetime="2019-01-16T21:59:35+08:00">2019-01-16</time>
             
 
             
@@ -1940,7 +1755,7 @@ bitset很强大，可以对很多数据类型进行转换，重点是：支持�
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-01-17 16:37:19" itemprop="dateModified" datetime="2019-01-17T16:37:19+08:00">2019-01-17</time>
+                <time title="修改时间：2019-01-17 16:35:05" itemprop="dateModified" datetime="2019-01-17T16:35:05+08:00">2019-01-17</time>
               
             
           </span>
@@ -1977,17 +1792,186 @@ bitset很强大，可以对很多数据类型进行转换，重点是：支持�
         
           
             <p>
-              出题人来写一发题解
-此题主要就是搜索，为了提升难度，我还搞了一个恶心的读入
-接下来就是搜索了。
-具体码里说吧。
-#include &lt;bits/stdc++.h&gt;using namespace std;bool a[5][14];int ans,p,k,n,i,ant;char ch;st
+              数论题不是用来氵的
+所以，我们果断地选择了分解质因数
+于是就可以用公式：
+$$ n=(p_{1}^{a_{1}})(p_{2}^{a_{2}})…*(p_{k}^{a_{k}}) $$
+n的因子个数$$ =(a_{1}+1)(a_{2}+1)…*(a_{k}+1) $$
+代码：
+#include &
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2019/01/12/题解-P4907-【A换B problem】/#more" rel="contents">
+              <a class="btn" href="/2019/01/16/题解-CF935A-【Fafa and his Company】/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/12/NOIP2018颓废之路/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="引领天下">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="yltx's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/01/12/NOIP2018颓废之路/" class="post-title-link" itemprop="url">NOIP2018颓废之路</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-01-12 13:54:04" itemprop="dateCreated datePublished" datetime="2019-01-12T13:54:04+08:00">2019-01-12</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-01-17 16:34:57" itemprop="dateModified" datetime="2019-01-17T16:34:57+08:00">2019-01-17</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>
+              初赛上午颓了一上午有题。然后，什么资料没看，装作都懂的样子。
+下午进考点，与一个同学一起挤到前面，身后一群27中的占领了整条路。。。这就是搞OI和不搞OI的学校的区别吧。。。
+进考场，我很淡定的答题，完了4：00就写完了。于是检查结果改错了一道8分的题，听说不给带试卷，于是机智的我将答案抄到了我的课
+              ...
+            </p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/01/12/NOIP2018颓废之路/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
