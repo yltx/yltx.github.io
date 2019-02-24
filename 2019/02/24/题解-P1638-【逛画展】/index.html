@@ -96,20 +96,25 @@
 
 
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="yltx&#39;s blog">
-<meta property="og:url" content="http://yoursite.com/tags/题解/page/6/index.html">
+  <meta name="description" content="看了一下前面的题解都麻烦了，所以来一发简单的题解 因为是要求看的画是连续的，所以可以考虑尺取法（双指针法） 既然要求要看到M位画家的画，我们可以考虑维护一个区间[l,r]，保证这个区间是含有M位画家且以l开头最小的区间，则如果想更新答案获得更小区间，只能右移l，而不能左移r。 为什么呢？ 考虑反证法。 假设有一个区间[l,r-k]比[l,r]更优，则这段区间会在r=r-k的时候就被更新，所以左移r">
+<meta name="keywords" content="题解,洛谷">
+<meta property="og:type" content="article">
+<meta property="og:title" content="题解 P1638 【逛画展】">
+<meta property="og:url" content="http://yoursite.com/2019/02/24/题解-P1638-【逛画展】/index.html">
 <meta property="og:site_name" content="yltx&#39;s blog">
+<meta property="og:description" content="看了一下前面的题解都麻烦了，所以来一发简单的题解 因为是要求看的画是连续的，所以可以考虑尺取法（双指针法） 既然要求要看到M位画家的画，我们可以考虑维护一个区间[l,r]，保证这个区间是含有M位画家且以l开头最小的区间，则如果想更新答案获得更小区间，只能右移l，而不能左移r。 为什么呢？ 考虑反证法。 假设有一个区间[l,r-k]比[l,r]更优，则这段区间会在r=r-k的时候就被更新，所以左移r">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-02-24T08:11:59.095Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="yltx&#39;s blog">
+<meta name="twitter:title" content="题解 P1638 【逛画展】">
+<meta name="twitter:description" content="看了一下前面的题解都麻烦了，所以来一发简单的题解 因为是要求看的画是连续的，所以可以考虑尺取法（双指针法） 既然要求要看到M位画家的画，我们可以考虑维护一个区间[l,r]，保证这个区间是含有M位画家且以l开头最小的区间，则如果想更新答案获得更小区间，只能右移l，而不能左移r。 为什么呢？ 考虑反证法。 假设有一个区间[l,r-k]比[l,r]更优，则这段区间会在r=r-k的时候就被更新，所以左移r">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/题解/page/6/">
+  <link rel="canonical" href="http://yoursite.com/2019/02/24/题解-P1638-【逛画展】/">
 
 
 
@@ -119,7 +124,7 @@
   };
 </script>
 
-  <title>标签: 题解 | yltx's blog</title>
+  <title>题解 P1638 【逛画展】 | yltx's blog</title>
   
 
 
@@ -167,7 +172,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -239,7 +244,7 @@
         
         
           
-          <li class="menu-item menu-item-tags menu-item-active">
+          <li class="menu-item menu-item-tags">
 
     
     
@@ -286,25 +291,6 @@
   
     
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
   
 
   
@@ -350,294 +336,218 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block tag">
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>题解<small>标签</small>
-        </h1>
-      </div>
-
-      
-        
+  
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/24/题解-P1638-【逛画展】/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="引领天下">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="yltx's blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
-          <a class="post-title-link" href="/2019/01/12/题解-P2152-【[SDOI2009]SuperGCD】/" itemprop="url">
-            
-              <span itemprop="name">题解 P2152 【[SDOI2009]SuperGCD】</span>
-            
-          </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">题解 P1638 【逛画展】
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-01-12T16:29:04+08:00" content="2019-01-12">
-          01-12
-        </time>
-      </div>
+              
+            
+          </h1>
+        
 
-    </header>
-  </article>
+        <div class="post-meta">
+          <span class="post-time">
 
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-02-24 16:11:37 / 修改时间：16:11:59" itemprop="dateCreated datePublished" datetime="2019-02-24T16:11:37+08:00">2019-02-24</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/01/12/题解-P1865-【A % B Problem】/" itemprop="url">
-            
-              <span itemprop="name">题解 P1865 【A % B Problem】</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-01-12T16:27:00+08:00" content="2019-01-12">
-          01-12
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+      
 
       
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/01/12/题解-P4711-【「化学」相对分子质量】/" itemprop="url">
-            
-              <span itemprop="name">题解 P4711 【「化学」相对分子质量】</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-01-12T16:26:02+08:00" content="2019-01-12">
-          01-12
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/01/12/题解-P2682-【土豆田】/" itemprop="url">
-            
-              <span itemprop="name">题解 P2682 【土豆田】</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-01-12T16:25:00+08:00" content="2019-01-12">
-          01-12
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/01/12/题解-P1721-【[NOI2016]国王饮水记】/" itemprop="url">
-            
-              <span itemprop="name">题解 P1721 【[NOI2016]国王饮水记】</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-01-12T16:23:53+08:00" content="2019-01-12">
-          01-12
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/01/12/题解-P1983-【车站分级】/" itemprop="url">
-            
-              <span itemprop="name">题解 P1983 【车站分级】</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-01-12T16:21:26+08:00" content="2019-01-12">
-          01-12
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/01/12/题解-P4212-【外太空旅行】/" itemprop="url">
-            
-              <span itemprop="name">题解 P4212 【外太空旅行】</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-01-12T16:20:40+08:00" content="2019-01-12">
-          01-12
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/01/12/题解-P4907-【A换B problem】/" itemprop="url">
-            
-              <span itemprop="name">题解 P4907 【A换B problem】</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-01-12T16:18:48+08:00" content="2019-01-12">
-          01-12
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/01/12/题解-P5003-【跳舞的线-乱拐弯】/" itemprop="url">
-            
-              <span itemprop="name">题解 P5003 【跳舞的线 - 乱拐弯】</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-01-12T16:17:35+08:00" content="2019-01-12">
-          01-12
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/01/12/题解-P3386-【【模板】二分图匹配】/" itemprop="url">
-            
-              <span itemprop="name">题解 P3386 【【模板】二分图匹配】</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-01-12T16:15:23+08:00" content="2019-01-12">
-          01-12
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+        <p>看了一下前面的题解都麻烦了，所以来一发简单的题解</p>
+<p>因为是要求看的画是连续的，所以可以考虑尺取法（双指针法）</p>
+<p>既然要求要看到M位画家的画，我们可以考虑维护一个区间[l,r]，保证这个区间是含有M位画家且以l开头最小的区间，则如果想更新答案获得更小区间，只能右移l，而不能左移r。</p>
+<p>为什么呢？</p>
+<p>考虑反证法。</p>
+<p>假设有一个区间[l,r-k]比[l,r]更优，则这段区间会在r<br>=r-k的时候就被更新，所以左移r无用。</p>
+<p>所以r就满足单调性（只增不减），可以用尺取法做。</p>
+<p>代码：</p>
+<pre><code class="cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+const int MAXN=1000005;
+int n,m,a[MAXN],ans,b[MAXN],cnt,ansl,ansr;
+inline void I(int x){if(b[x]==0)cnt++;b[x]++;}//加入第x位画家的画
+inline void D(int x){if(b[x]==1)cnt--;b[x]--;}//删除第x位画家的画
+int main(){
+    scanf(&quot;%d%d&quot;,&amp;n,&amp;m);
+    for(int i=1;i&lt;=n;i++)scanf (&quot;%d&quot;,&amp;a[i]);
+    ans=n;
+    for(int r=1,l=1;r&lt;=n;r++){
+        I(a[r]);//首先插入a[r]的画
+        while(true){
+            D(a[l]);//先删a[l]的画
+            if(cnt==m)l++;//如果删了没事，加l
+            else{I(a[l]);break;}//删了有事，还留着
+        }
+        if(cnt==m&amp;&amp;r-l+1&lt;ans)ans=r-l+1,ansl=l,ansr=r;
+    }
+    if (ansl!=0)printf (&quot;%d %d&quot;,ansl,ansr);
+    else printf (&quot;1 %d&quot;,n);//输出+特判：选择任意一个≤n的区间不满足要求，则只好选择区间[1,n]
+    return 0;
+}
+</code></pre>
 
       
     </div>
 
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/题解/" rel="tag"># 题解</a>
+          
+            <a href="/tags/洛谷/" rel="tag"># 洛谷</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/02/10/题解-CF660C-【Hard-Process】/" rel="next" title="题解 CF660C 【Hard Process】">
+                <i class="fa fa-chevron-left"></i> 题解 CF660C 【Hard Process】
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/tags/题解/page/5/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/tags/题解/">1</a><span class="space">&hellip;</span><a class="page-number" href="/tags/题解/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/tags/题解/page/7/">7</a><a class="extend next" rel="next" href="/tags/题解/page/7/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
-  </nav>
 
+  </div>
 
 
           </div>
           
+
+  
+    <div class="comments" id="gitalk-container">
+    </div>
+
+  
+
+
 
         </div>
         
@@ -962,6 +872,10 @@
 
 
   
+  <script src="/js/src/scrollspy.js?v=7.0.0"></script>
+<script src="/js/src/post-details.js?v=7.0.0"></script>
+
+
 
   
 
@@ -972,6 +886,34 @@
 
   
 
+
+  
+    
+
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+
+
+<script src="//cdn.jsdelivr.net/npm/js-md5@0.7.3/src/md5.min.js"></script>
+
+<script>
+  var gitalk = new Gitalk({
+    clientID: '6d1778894840fddd5843',
+    clientSecret: '3eb8e6632f05711541482ef1815f1439ec922a6b',
+    repo: 'yltx.github.io',
+    owner: 'yltx',
+    admin: ['yltx'],
+    id: md5(location.pathname),
+    distractionFreeMode: 'true'
+  });
+  gitalk.render('gitalk-container');
+</script>
+
+  
 
 
   
@@ -1371,7 +1313,7 @@
   <script src="/lib/bookmark/bookmark.min.js?v=1.0"></script>
   <script>
   
-    bookmark.loadBookmark();
+    bookmark.scrollToMark('manual', "#更多");
   
   </script>
 
