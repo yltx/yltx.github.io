@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[Hello World]]></title>
-    <url>%2F2019%2F03%2F02%2Fhello-world%2F</url>
-    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+    <title><![CDATA[题解 P3377 【【模板】左偏树（可并堆）】]]></title>
+    <url>%2F2019%2F03%2F03%2F%E9%A2%98%E8%A7%A3-P3377-%E3%80%90%E3%80%90%E6%A8%A1%E6%9D%BF%E3%80%91%E5%B7%A6%E5%81%8F%E6%A0%91%EF%BC%88%E5%8F%AF%E5%B9%B6%E5%A0%86%EF%BC%89%E3%80%91%2F</url>
+    <content type="text"><![CDATA[折腾了几天终于把这个题A了。。。 看到手写左偏树/配对堆已经有很多题解了，而pbds却没有人介绍，我来介绍一发 首先，pbds是什么？ pbds是一个比STL还STL的库，里面封装了各种可并堆、红黑树等等数据结构，大大地方便了oier。 最重要的是，NOIP支持pbds了！既然如此那我们当然选择封装而不是手写 解下来的内容大佬请略过 具体的代码里说吧 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051#include &lt;bits/stdc++.h&gt;#include &lt;ext/pb_ds/priority_queue.hpp&gt;//引用pbds的库的堆#pragma GCC optimize(3)using namespace std;inline char nc()&#123; static char buf[100000],*p1=buf,*p2=buf; return p1==p2&amp;&amp;(p2=(p1=buf)+fread(buf,1,100000,stdin),p1==p2)?EOF:*p1++;&#125;template &lt;typename _Tp&gt;inline void read(_Tp &amp;x)&#123; int f=1;x=0;char ch=nc(); while(ch&lt;'0'||ch&gt;'9')&#123;if(ch=='-')f=-1;ch=nc();&#125; while(ch&gt;='0'&amp;&amp;ch&lt;='9')&#123;x=x*10+ch-'0';ch=nc();&#125; x*=f;&#125;inline void write(long long n)&#123; if(n==0) return; write(n/10); putchar(n%10+'0');&#125;struct $&#123; int s,id; inline bool operator &lt; (const $ &amp;p)const&#123;if (s!=p.s)return s&gt;p.s;else return id&gt;p.id;&#125;//注意！由于使用了pbds，只能重载运算符。而且pbds中的堆很毒瘤，它把&lt;重载成&gt;，然后排&gt;，所以重载的时候要注意反着重载&#125;;//结构体，存每个数的数值和idinline $ g(int a,int b)&#123;$ p;p.s=a,p.id=b;return p;&#125;//将2个int转成一个$__gnu_pbds::priority_queue&lt;$&gt; q[100005];//定义一个pbds的堆//使用__gnu_pbds::来引用pbds内的内容int n,m,f[100005],x;bool s[100005];//如果s[i]==1则i被删除int find(int n)&#123;return f[n]==n?n:f[n]=find(f[n]);&#125;//维护并查集，这里实际上可以路径压缩int main()&#123; read(n),read(m); for (int i=1;i&lt;=n;i++)read(x),q[i].push(g(x,i)),f[i]=i;//读入的同时对每个i建一个堆，同时初始化并查集 while (m--)&#123; read(x); if (x==1)&#123; int a,b; read(a),read(b); int fa=find(a),fb=find(b); if (fa==fb||s[a]||s[b])continue;//坑点1：注意不要把s[a]||s[b]写成了s[fa]||s[fb] if (q[fa].size()&gt;q[fb].size())f[fb]=fa,q[fa].join(q[fb]);//按堆的大小合并 else f[fa]=fb,q[fb].join(q[fa]); &#125;else&#123; int a; read(a); if (s[a])&#123;puts("-1");continue;&#125; int fa=find(a); write((q[fa].top()).s),puts(""),s[(q[fa].top()).id]=1,q[fa].pop();//同普通堆 &#125; &#125;&#125; 看了一下，我的代码应该算短的。而且开了O3之后，封装的也不慢，所以向大家强烈推荐pbds！]]></content>
+      <tags>
+        <tag>题解</tag>
+        <tag>洛谷</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[题解 P1638 【逛画展】]]></title>
