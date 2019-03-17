@@ -96,25 +96,25 @@
 
 
 
-  <meta name="description" content="看了一下前面的题解都麻烦了，所以来一发简单的题解 因为是要求看的画是连续的，所以可以考虑尺取法（双指针法） 既然要求要看到M位画家的画，我们可以考虑维护一个区间[l,r]，保证这个区间是含有M位画家且以l开头最小的区间，则如果想更新答案获得更小区间，只能右移l，而不能左移r。 为什么呢？ 考虑反证法。 假设有一个区间[l,r-k]比[l,r]更优，则这段区间会在r=r-k的时候就被更新，所以左移r">
-<meta name="keywords" content="题解,洛谷">
+  <meta name="description" content="这个题目实际上就是一个贪心 注意到合并的原则是当$ a_{i} \leq a_{j} $时才能合并，所以我们必须把小的先合并了，不然到后面越合并越大，小的就并不了了。 代码： 12345678910111213141516171819#include&amp;lt;cstdio&amp;gt;#define swap(x,y) x^=y^=x^=y#define set(x) ans1[++m]=p1,ans2[">
+<meta name="keywords" content="题解,CF">
 <meta property="og:type" content="article">
-<meta property="og:title" content="题解 P1638 【逛画展】">
-<meta property="og:url" content="http://yoursite.com/2019/02/24/题解-P1638-【逛画展】/index.html">
+<meta property="og:title" content="题解 CF341E 【Candies Game】">
+<meta property="og:url" content="http://yoursite.com/2019/03/17/题解-CF341E-【Candies-Game】/index.html">
 <meta property="og:site_name" content="yltx&#39;s blog">
-<meta property="og:description" content="看了一下前面的题解都麻烦了，所以来一发简单的题解 因为是要求看的画是连续的，所以可以考虑尺取法（双指针法） 既然要求要看到M位画家的画，我们可以考虑维护一个区间[l,r]，保证这个区间是含有M位画家且以l开头最小的区间，则如果想更新答案获得更小区间，只能右移l，而不能左移r。 为什么呢？ 考虑反证法。 假设有一个区间[l,r-k]比[l,r]更优，则这段区间会在r=r-k的时候就被更新，所以左移r">
+<meta property="og:description" content="这个题目实际上就是一个贪心 注意到合并的原则是当$ a_{i} \leq a_{j} $时才能合并，所以我们必须把小的先合并了，不然到后面越合并越大，小的就并不了了。 代码： 12345678910111213141516171819#include&amp;lt;cstdio&amp;gt;#define swap(x,y) x^=y^=x^=y#define set(x) ans1[++m]=p1,ans2[">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-24T09:06:24.485Z">
+<meta property="og:updated_time" content="2019-03-17T05:45:25.471Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="题解 P1638 【逛画展】">
-<meta name="twitter:description" content="看了一下前面的题解都麻烦了，所以来一发简单的题解 因为是要求看的画是连续的，所以可以考虑尺取法（双指针法） 既然要求要看到M位画家的画，我们可以考虑维护一个区间[l,r]，保证这个区间是含有M位画家且以l开头最小的区间，则如果想更新答案获得更小区间，只能右移l，而不能左移r。 为什么呢？ 考虑反证法。 假设有一个区间[l,r-k]比[l,r]更优，则这段区间会在r=r-k的时候就被更新，所以左移r">
+<meta name="twitter:title" content="题解 CF341E 【Candies Game】">
+<meta name="twitter:description" content="这个题目实际上就是一个贪心 注意到合并的原则是当$ a_{i} \leq a_{j} $时才能合并，所以我们必须把小的先合并了，不然到后面越合并越大，小的就并不了了。 代码： 12345678910111213141516171819#include&amp;lt;cstdio&amp;gt;#define swap(x,y) x^=y^=x^=y#define set(x) ans1[++m]=p1,ans2[">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/02/24/题解-P1638-【逛画展】/">
+  <link rel="canonical" href="http://yoursite.com/2019/03/17/题解-CF341E-【Candies-Game】/">
 
 
 
@@ -124,7 +124,7 @@
   };
 </script>
 
-  <title>题解 P1638 【逛画展】 | yltx's blog</title>
+  <title>题解 CF341E 【Candies Game】 | yltx's blog</title>
   
 
 
@@ -352,7 +352,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/24/题解-P1638-【逛画展】/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/17/题解-CF341E-【Candies-Game】/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="引领天下">
@@ -369,7 +369,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">题解 P1638 【逛画展】
+          <h1 class="post-title" itemprop="name headline">题解 CF341E 【Candies Game】
 
               
             
@@ -395,7 +395,7 @@
                 
               
 
-              <time title="创建时间：2019-02-24 16:11:37 / 修改时间：17:06:24" itemprop="dateCreated datePublished" datetime="2019-02-24T16:11:37+08:00">2019-02-24</time>
+              <time title="创建时间：2019-03-17 13:45:04 / 修改时间：13:45:25" itemprop="dateCreated datePublished" datetime="2019-03-17T13:45:04+08:00">2019-03-17</time>
             
 
             
@@ -441,15 +441,11 @@
       
 
       
-        <p>看了一下前面的题解都麻烦了，所以来一发简单的题解</p>
-<p>因为是要求看的画是连续的，所以可以考虑尺取法（双指针法）</p>
-<p>既然要求要看到M位画家的画，我们可以考虑维护一个区间[l,r]，保证这个区间是含有M位画家且以l开头最小的区间，则如果想更新答案获得更小区间，只能右移l，而不能左移r。</p>
-<p>为什么呢？</p>
-<p>考虑反证法。</p>
-<p>假设有一个区间[l,r-k]比[l,r]更优，则这段区间会在r<br>=r-k的时候就被更新，所以左移r无用。</p>
-<p>所以r就满足单调性（只增不减），可以用尺取法做。</p>
+        <p>这个题目实际上就是一个贪心</p>
+<p>注意到合并的原则是当$ a_{i} \leq a_{j} $时才能合并，所以我们必须把小的先合并了，不然到后面越合并越大，小的就并不了了。</p>
 <p>代码：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXN=<span class="number">1000005</span>;</span><br><span class="line"><span class="keyword">int</span> n,m,a[MAXN],ans,b[MAXN],cnt,ansl,ansr;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">I</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;<span class="keyword">if</span>(b[x]==<span class="number">0</span>)cnt++;b[x]++;&#125;<span class="comment">//加入第x位画家的画</span></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">D</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;<span class="keyword">if</span>(b[x]==<span class="number">1</span>)cnt--;b[x]--;&#125;<span class="comment">//删除第x位画家的画</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;n,&amp;m);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)<span class="built_in">scanf</span> (<span class="string">"%d"</span>,&amp;a[i]);</span><br><span class="line">    ans=n;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> r=<span class="number">1</span>,l=<span class="number">1</span>;r&lt;=n;r++)&#123;</span><br><span class="line">        I(a[r]);<span class="comment">//首先插入a[r]的画</span></span><br><span class="line">        <span class="keyword">while</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">            D(a[l]);<span class="comment">//先删a[l]的画</span></span><br><span class="line">            <span class="keyword">if</span>(cnt==m)l++;<span class="comment">//如果删了没事，加l</span></span><br><span class="line">            <span class="keyword">else</span>&#123;I(a[l]);<span class="keyword">break</span>;&#125;<span class="comment">//删了有事，还留着</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(cnt==m&amp;&amp;r-l+<span class="number">1</span>&lt;ans)ans=r-l+<span class="number">1</span>,ansl=l,ansr=r;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (ansl!=<span class="number">0</span>)<span class="built_in">printf</span> (<span class="string">"%d %d"</span>,ansl,ansr);</span><br><span class="line">    <span class="keyword">else</span> <span class="built_in">printf</span> (<span class="string">"1 %d"</span>,n);<span class="comment">//输出+特判：选择任意一个≤n的区间不满足要求，则只好选择区间[1,n]</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> swap(x,y) x^=y^=x^=y</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> set(x) ans1[++m]=p1,ans2[m]=x,a[x]-=a[p1],a[p1]&lt;&lt;=1</span></span><br><span class="line"><span class="keyword">int</span> i,j,n,m,p1,p2,p3,a[<span class="number">1001</span>],ans1[<span class="number">100000</span>],ans2[<span class="number">100000</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;<span class="built_in">scanf</span>(<span class="string">"%d"</span>,a+i++));</span><br><span class="line">	<span class="keyword">for</span>(p2=<span class="number">1</span>,p3=<span class="number">2</span>,i=<span class="number">3</span>;i&lt;=n;++i)</span><br><span class="line">		<span class="keyword">for</span>(p1=i;;)&#123;</span><br><span class="line">			<span class="keyword">if</span>(a[p1]&gt;a[p2])swap(p1,p2);</span><br><span class="line">			<span class="keyword">if</span>(a[p2]&gt;a[p3])swap(p2,p3);</span><br><span class="line">			<span class="keyword">if</span>(a[p1]&gt;a[p2])swap(p1,p2);<span class="comment">//交换，保证顺序</span></span><br><span class="line">			<span class="keyword">if</span>(a[p1]==<span class="number">0</span>)<span class="keyword">break</span>;<span class="comment">//空了</span></span><br><span class="line">			<span class="keyword">for</span>(j=a[p2]/a[p1];j;j&gt;&gt;=<span class="number">1</span>)<span class="keyword">if</span>(j&amp;<span class="number">1</span>)<span class="built_in">set</span>(p2);<span class="keyword">else</span> <span class="built_in">set</span>(p3);<span class="comment">//模拟合并</span></span><br><span class="line">		&#125;</span><br><span class="line">	<span class="keyword">if</span>((a[p1]==<span class="number">0</span>)+(a[p2]==<span class="number">0</span>)+(a[p3]==<span class="number">0</span>)!=<span class="number">1</span>)<span class="built_in">puts</span>(<span class="string">"-1"</span>);<span class="comment">//判断不可行</span></span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">for</span>(<span class="built_in">printf</span>(<span class="string">"%d\n"</span>,m),i=<span class="number">1</span>;i&lt;=m;++i)<span class="built_in">printf</span>(<span class="string">"%d %d\n"</span>,ans1[i],ans2[i]);<span class="comment">//输出</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -474,7 +470,7 @@
           
             <a href="/tags/题解/" rel="tag"># 题解</a>
           
-            <a href="/tags/洛谷/" rel="tag"># 洛谷</a>
+            <a href="/tags/CF/" rel="tag"># CF</a>
           
         </div>
       
@@ -487,8 +483,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/02/10/题解-CF660C-【Hard-Process】/" rel="next" title="题解 CF660C 【Hard Process】">
-                <i class="fa fa-chevron-left"></i> 题解 CF660C 【Hard Process】
+              <a href="/2019/03/17/真正的IO优化/" rel="next" title="真正的IO优化">
+                <i class="fa fa-chevron-left"></i> 真正的IO优化
               </a>
             
           </div>
@@ -496,10 +492,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/03/03/题解-P3377-【【模板】左偏树（可并堆）】/" rel="prev" title="题解 P3377 【【模板】左偏树（可并堆）】">
-                题解 P3377 【【模板】左偏树（可并堆）】 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
