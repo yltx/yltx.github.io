@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="经过看楼下的题解我也AC了 AC记录：AC 此题每问的做法楼下都已经讲过了，我就来一发具体的代码+写代码的技巧 此题有一个坑点就是必须控制程序的运行次数，然而很多都不好卡。（比方说#2测试点我就卡了好久） 以#2为例，将a*233分解为： $$ a233=a128+a64+a32+a*8+a $$ 如果用一个土豆，好像没办法卡进9cycles. 那么怎么办呢？ 我就把 $ a128+a $分配给1">
+  <meta name="description" content="经过看楼下的题解我也AC了 AC记录：AC 此题每问的做法楼下都已经讲过了，我就来一发具体的代码+写代码的技巧 此题有一个坑点就是必须控制程序的运行次数，然而很多都不好卡。（比方说#2测试点我就卡了好久） 以#2为例，将a*233分解为： $$ a*233=a*128+a*64+a*32+a*8+a $$ 如果用一个土豆，好像没办法卡进9cycles. 那么怎么办呢？ 我就把 $ a*128+a">
 <meta name="keywords" content="题解,洛谷">
 <meta property="og:type" content="article">
 <meta property="og:title" content="题解 P2682 【土豆田】">
 <meta property="og:url" content="http://yoursite.com/2019/01/12/题解-P2682-【土豆田】/index.html">
 <meta property="og:site_name" content="yltx&#39;s blog">
-<meta property="og:description" content="经过看楼下的题解我也AC了 AC记录：AC 此题每问的做法楼下都已经讲过了，我就来一发具体的代码+写代码的技巧 此题有一个坑点就是必须控制程序的运行次数，然而很多都不好卡。（比方说#2测试点我就卡了好久） 以#2为例，将a*233分解为： $$ a233=a128+a64+a32+a*8+a $$ 如果用一个土豆，好像没办法卡进9cycles. 那么怎么办呢？ 我就把 $ a128+a $分配给1">
+<meta property="og:description" content="经过看楼下的题解我也AC了 AC记录：AC 此题每问的做法楼下都已经讲过了，我就来一发具体的代码+写代码的技巧 此题有一个坑点就是必须控制程序的运行次数，然而很多都不好卡。（比方说#2测试点我就卡了好久） 以#2为例，将a*233分解为： $$ a*233=a*128+a*64+a*32+a*8+a $$ 如果用一个土豆，好像没办法卡进9cycles. 那么怎么办呢？ 我就把 $ a*128+a">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-12T11:57:45.146Z">
+<meta property="og:updated_time" content="2019-05-20T14:01:58.615Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="题解 P2682 【土豆田】">
-<meta name="twitter:description" content="经过看楼下的题解我也AC了 AC记录：AC 此题每问的做法楼下都已经讲过了，我就来一发具体的代码+写代码的技巧 此题有一个坑点就是必须控制程序的运行次数，然而很多都不好卡。（比方说#2测试点我就卡了好久） 以#2为例，将a*233分解为： $$ a233=a128+a64+a32+a*8+a $$ 如果用一个土豆，好像没办法卡进9cycles. 那么怎么办呢？ 我就把 $ a128+a $分配给1">
+<meta name="twitter:description" content="经过看楼下的题解我也AC了 AC记录：AC 此题每问的做法楼下都已经讲过了，我就来一发具体的代码+写代码的技巧 此题有一个坑点就是必须控制程序的运行次数，然而很多都不好卡。（比方说#2测试点我就卡了好久） 以#2为例，将a*233分解为： $$ a*233=a*128+a*64+a*32+a*8+a $$ 如果用一个土豆，好像没办法卡进9cycles. 那么怎么办呢？ 我就把 $ a*128+a">
 
 
 
@@ -412,7 +412,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-05-12 19:57:45" itemprop="dateModified" datetime="2019-05-12T19:57:45+08:00">2019-05-12</time>
+                <time title="修改时间：2019-05-20 22:01:58" itemprop="dateModified" datetime="2019-05-20T22:01:58+08:00">2019-05-20</time>
               
             
           </span>
@@ -458,10 +458,10 @@
 <p>此题每问的做法楼下都已经讲过了，我就来一发具体的代码+写代码的技巧</p>
 <p>此题有一个坑点就是必须控制程序的运行次数，然而很多都不好卡。（比方说#2测试点我就卡了好久）</p>
 <p>以#2为例，将a*233分解为：</p>
-<p>$$ a<em>233=a</em>128+a<em>64+a</em>32+a*8+a $$</p>
+<p>$$ a*233=a*128+a*64+a*32+a*8+a $$</p>
 <p>如果用一个土豆，好像没办法卡进9cycles.</p>
 <p>那么怎么办呢？</p>
-<p>我就把 $ a<em>128+a $分配给1号土豆，然后再负责加上2号土豆算的 $ a</em>64+a<em>32 $，把结果传回给2号土豆，2号土豆并负责加上3号土豆算的 $ a</em>8 $，最后的结果由4号土豆汇总并输出。</p>
+<p>我就把 $ a*128+a $分配给1号土豆，然后再负责加上2号土豆算的 $ a*64+a*32 $，把结果传回给2号土豆，2号土豆并负责加上3号土豆算的 $ a*8 $，最后的结果由4号土豆汇总并输出。</p>
 <p><del>答案：我等急死了</del></p>
 <hr>
 <p>答案：</p>
