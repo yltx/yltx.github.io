@@ -1636,7 +1636,7 @@ prev\_permutation()函数用
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/17/题解-P1244-【青蛙过河】/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/17/题解-P1734-【最大约数和】/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="引领天下">
@@ -1656,7 +1656,7 @@ prev\_permutation()函数用
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/01/17/题解-P1244-【青蛙过河】/" class="post-title-link" itemprop="url">题解 P1244 【青蛙过河】</a>
+                <a href="/2019/01/17/题解-P1734-【最大约数和】/" class="post-title-link" itemprop="url">题解 P1734 【最大约数和】</a>
               
             
           </h1>
@@ -1681,7 +1681,7 @@ prev\_permutation()函数用
                 
               
 
-              <time title="创建时间：2019-01-17 17:13:41 / 修改时间：19:17:02" itemprop="dateCreated datePublished" datetime="2019-01-17T17:13:41+08:00">2019-01-17</time>
+              <time title="创建时间：2019-01-17 19:14:41 / 修改时间：19:16:05" itemprop="dateCreated datePublished" datetime="2019-01-17T19:14:41+08:00">2019-01-17</time>
             
 
             
@@ -1723,18 +1723,19 @@ prev\_permutation()函数用
         
           
             <p>
-              其实此题远不用那么麻烦
-思路楼下已经说过,我这里就是提供一些写得更短的代码
-Pascal
-varh,k:integer;beginread(h,k);writeln(1 shl h*(k+1));end.
-C++
-#include&lt;cstdio&gt;using namespace std;i
+              其实这题是个背包（我用暴力只得了20分）
+S就是背包容量V，i就是重量，i的因子和就是价值。
+这样一讲公式就出来了吧！
+公式：
+i为第一个数，j为第二个数，a[k]为k的因子和dp[i]=max(dp[i-j]+a[j],dp[i]);
+这个公式我想大家都能很方便地推出来。
+接下来我要讲一讲本题一个
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2019/01/17/题解-P1244-【青蛙过河】/#more" rel="contents">
+              <a class="btn" href="/2019/01/17/题解-P1734-【最大约数和】/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
