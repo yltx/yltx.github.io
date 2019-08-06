@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[题解 P1801 【黑匣子_NOI导刊2010提高（06）】]]></title>
+    <url>%2F2019%2F08%2F06%2F%E9%A2%98%E8%A7%A3-P1801-%E3%80%90%E9%BB%91%E5%8C%A3%E5%AD%90-NOI%E5%AF%BC%E5%88%8A2010%E6%8F%90%E9%AB%98%EF%BC%8806%EF%BC%89%E3%80%91%2F</url>
+    <content type="text"><![CDATA[看到这个题面，不断加入元素，每次查询第k大，我就立刻想到了平衡树…… 然后又不会手码，于是想到了pbds的tree 然后就轻松的码出了30分的代码…… 问了别人才知道原来有重复元素，而且pbds的tree是不能插入重复元素的 那么，我们怎么解决呢？ 我想到了hash。 我们对每个元素维护一个二元组$\left(x,h\right)$，$x$表示元素本来的值，而$h$是我们通过hash搞出的一个唯一的随机值。 然后对每个u把没加进tree的元素加进去，然后直接利用tree求kth。 代码： 123456789101112131415161718192021222324252627282930// luogu-judger-enable-o2#include &lt;bits/stdc++.h&gt;#include &lt;bits/extc++.h&gt;using namespace std;using namespace __gnu_pbds;struct User&#123; int x,h; inline bool operator &lt; (const User&amp;p)const&#123;return x!=p.x?x&lt;p.x:h&lt;p.h;&#125;&#125;a[200005];//我们的二元组，注意，一定要满足单升，即：必须对任意两个元素的大小定义死tree&lt;User,null_type,less&lt;User&gt;,rb_tree_tag,tree_order_statistics_node_update&gt; t;//定义一个pbds的红黑树map&lt;int,bool&gt; mp;//判断一个hash值是否出现过了int m,n,i,u[200005],last=1,hh;inline int Hash(int x)&#123; while(mp[x])x=x+rand(); return x;&#125;//对每个x生成一个唯一的值hint main()&#123; scanf("%d%d",&amp;m,&amp;n); for (int j=1;j&lt;=m;j++)&#123; scanf("%d",&amp;a[j].x); hh=Hash(a[j].x); a[j].h=hh,mp[hh]=1; &#125;//读入的同时预处理好每个二元组 for (int j=1;j&lt;=n;j++)scanf("%d",&amp;u[j]);//读入的u实际上已经拍好序了 for (int j=1;j&lt;=n;j++)&#123; for (;last&lt;=u[j];last++)t.insert(a[last]);//插♂入 printf("%d\n",(*t.find_by_order(i++)).x);//直接查kth，返回的是地址，我们要先取*再加. //注意！tree中查第k个元素实际上是find_by_order(k-1) &#125;&#125;]]></content>
+      <tags>
+        <tag>洛谷</tag>
+        <tag>题解</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[睡前读物：我为何而OI]]></title>
     <url>%2F2019%2F08%2F03%2F%E7%9D%A1%E5%89%8D%E8%AF%BB%E7%89%A9%EF%BC%9A%E6%88%91%E4%B8%BA%E4%BD%95%E8%80%8COI%2F</url>
     <content type="text"><![CDATA[为了获得最佳的阅读体验，请在睡前阅读 有时候，我会莫名思考一些事情，于是有了这篇口胡的文章。 前言我为何而OI？ 我不清楚。 但我知道，我搞OI 我也应该去搞OI 哪怕没有别人的帮助 哪怕一个人孤独 我 注定OI OI黑历史为了您的阅读体验，本部分使用上帝视角。 四年级/2014四年级那个暑假，我爸问我： 你喜欢电脑吗？喜欢。那你叫你妈带你去市里报名。哦。 五年级/2015六年级/2016初一/2017]]></content>

@@ -100,20 +100,25 @@
 
 
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="yltx&#39;s blog">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="看到这个题面，不断加入元素，每次查询第k大，我就立刻想到了平衡树…… 然后又不会手码，于是想到了pbds的tree 然后就轻松的码出了30分的代码…… 问了别人才知道原来有重复元素，而且pbds的tree是不能插入重复元素的 那么，我们怎么解决呢？ 我想到了hash。 我们对每个元素维护一个二元组$\left(x,h\right)$，$x$表示元素本来的值，而$h$是我们通过hash搞出的一个唯一">
+<meta name="keywords" content="洛谷,题解">
+<meta property="og:type" content="article">
+<meta property="og:title" content="题解 P1801 【黑匣子_NOI导刊2010提高（06）】">
+<meta property="og:url" content="http://yoursite.com/2019/08/06/题解-P1801-【黑匣子-NOI导刊2010提高（06）】/index.html">
 <meta property="og:site_name" content="yltx&#39;s blog">
+<meta property="og:description" content="看到这个题面，不断加入元素，每次查询第k大，我就立刻想到了平衡树…… 然后又不会手码，于是想到了pbds的tree 然后就轻松的码出了30分的代码…… 问了别人才知道原来有重复元素，而且pbds的tree是不能插入重复元素的 那么，我们怎么解决呢？ 我想到了hash。 我们对每个元素维护一个二元组$\left(x,h\right)$，$x$表示元素本来的值，而$h$是我们通过hash搞出的一个唯一">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-08-06T08:10:47.644Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="yltx&#39;s blog">
+<meta name="twitter:title" content="题解 P1801 【黑匣子_NOI导刊2010提高（06）】">
+<meta name="twitter:description" content="看到这个题面，不断加入元素，每次查询第k大，我就立刻想到了平衡树…… 然后又不会手码，于是想到了pbds的tree 然后就轻松的码出了30分的代码…… 问了别人才知道原来有重复元素，而且pbds的tree是不能插入重复元素的 那么，我们怎么解决呢？ 我想到了hash。 我们对每个元素维护一个二元组$\left(x,h\right)$，$x$表示元素本来的值，而$h$是我们通过hash搞出的一个唯一">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/">
+  <link rel="canonical" href="http://yoursite.com/2019/08/06/题解-P1801-【黑匣子-NOI导刊2010提高（06）】/">
 
 
 
@@ -123,7 +128,7 @@
   };
 </script>
 
-  <title>yltx's blog</title>
+  <title>题解 P1801 【黑匣子_NOI导刊2010提高（06）】 | yltx's blog</title>
   
 
 
@@ -171,8 +176,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -210,7 +214,7 @@
         
         
           
-          <li class="menu-item menu-item-home menu-item-active">
+          <li class="menu-item menu-item-home">
 
     
     
@@ -352,857 +356,9 @@
           
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/03/睡前读物：我为何而OI/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="引领天下">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="yltx's blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/08/03/睡前读物：我为何而OI/" class="post-title-link" itemprop="url">睡前读物：我为何而OI</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-08-03 22:03:21 / 修改时间：22:09:44" itemprop="dateCreated datePublished" datetime="2019-08-03T22:03:21+08:00">2019-08-03</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>
-              为了获得最佳的阅读体验，请在睡前阅读
-有时候，我会莫名思考一些事情，于是有了这篇口胡的文章。
-前言我为何而OI？
-我不清楚。
-但我知道，我搞OI
-我也应该去搞OI
-哪怕没有别人的帮助
-哪怕一个人孤独
-我 注定OI
-OI黑历史为了您的阅读体验，本部分使用上帝视角。
-四年级/2014四年级那个暑假，我爸
-              ...
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/08/03/睡前读物：我为何而OI/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/16/某谷讲师语录/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="引领天下">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="yltx's blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/07/16/某谷讲师语录/" class="post-title-link" itemprop="url">某谷讲师语录</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-07-16 14:12:36 / 修改时间：14:26:44" itemprop="dateCreated datePublished" datetime="2019-07-16T14:12:36+08:00">2019-07-16</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>
-              RT.
-zzy(Created_equal1)
-我*
-
-太有毒了
-
-那我就当是我说的了
-
-你会发现这个a[2]特别牛*
-
-麻将个锤子
-
-怎么“lòng”
-
-你们一说上过了我就好慌
-
-先容我喝一口水
-
-怎么又要推笔记啊
-
-我学艺不精
-
-三分钟很长
-
-粗鄙之语，不足于耳啊
-
-我来在线丢人了
-
-我跟楼叉楼
-              ...
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/07/16/某谷讲师语录/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/18/博客搭建食用指北/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="引领天下">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="yltx's blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/01/18/博客搭建食用指北/" class="post-title-link" itemprop="url">Hexo博客搭建食用指北</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-01-18 19:10:39" itemprop="dateCreated datePublished" datetime="2019-01-18T19:10:39+08:00">2019-01-18</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-08-05 14:42:24" itemprop="dateModified" datetime="2019-08-05T14:42:24+08:00">2019-08-05</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>
-              最近打算自己搭个blog，于是就看了很多有关的文章
-比较有用的：https://ouuan.github.io/hexo博客搭建指北/
-嗯嗯有些不够详细的我来说一说
-updated on 2019.8.3 最近在修图片的锅，大部分图片已撤下，请过段时间再来看QAQ
-域名域名的申请土豪请略过，我这里谈
-              ...
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/01/18/博客搭建食用指北/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/12/省赛之旅/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="引领天下">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="yltx's blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/01/12/省赛之旅/" class="post-title-link" itemprop="url">省赛之旅</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-01-12 13:57:00" itemprop="dateCreated datePublished" datetime="2019-01-12T13:57:00+08:00">2019-01-12</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-01-17 16:34:50" itemprop="dateModified" datetime="2019-01-17T16:34:50+08:00">2019-01-17</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>
-              我要写一篇省赛的游记
-Day1周四。晚上疯狂地写完作业，到洛谷上颓了2小时。哎，明天就走，不能不刷题了，何况还报了高中。
-Day2周五上午早上下起了小雨，心情有点忧伤。本来请的是下午的假，现在因为怕堵车把上午3、4两节也请了。后来才发现我逃了一个听写
-第三节英语课。果断地收拾书包离开，先跟英语老师再
-              ...
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/01/12/省赛之旅/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/12/NOIP2018颓废之路/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="引领天下">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="yltx's blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/01/12/NOIP2018颓废之路/" class="post-title-link" itemprop="url">NOIP2018颓废之路</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-01-12 13:54:04" itemprop="dateCreated datePublished" datetime="2019-01-12T13:54:04+08:00">2019-01-12</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-01-17 16:34:57" itemprop="dateModified" datetime="2019-01-17T16:34:57+08:00">2019-01-17</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>
-              初赛上午颓了一上午有题。然后，什么资料没看，装作都懂的样子。
-下午进考点，与一个同学一起挤到前面，身后一群27中的占领了整条路。。。这就是搞OI和不搞OI的学校的区别吧。。。
-进考场，我很淡定的答题，完了4：00就写完了。于是检查结果改错了一道8分的题，听说不给带试卷，于是机智的我将答案抄到了我的课
-              ...
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/01/12/NOIP2018颓废之路/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
 
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -1234,10 +390,8 @@ Day2周五上午早上下起了小雨，心情有点忧伤。本来请的是下�
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/08/06/题解-P1801-【黑匣子-NOI导刊2010提高（06）】/" class="post-title-link" itemprop="url">题解 P1801 【黑匣子_NOI导刊2010提高（06）】</a>
+          <h1 class="post-title" itemprop="name headline">题解 P1801 【黑匣子_NOI导刊2010提高（06）】
+
               
             
           </h1>
@@ -1283,6 +437,13 @@ Day2周五上午早上下起了小雨，心情有点忧伤。本来请的是下�
           
 
           
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
 
           
 
@@ -1301,28 +462,16 @@ Day2周五上午早上下起了小雨，心情有点忧伤。本来请的是下�
       
 
       
-        
-          
-            <p>
-              看到这个题面，不断加入元素，每次查询第k大，我就立刻想到了平衡树……
-然后又不会手码，于是想到了pbds的tree
-然后就轻松的码出了30分的代码……
-问了别人才知道原来有重复元素，而且pbds的tree是不能插入重复元素的
-那么，我们怎么解决呢？
-我想到了hash。
-我们对每个元素维护一个二元组$
-              ...
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/08/06/题解-P1801-【黑匣子-NOI导刊2010提高（06）】/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
+        <p>看到这个题面，不断加入元素，每次查询第k大，我就立刻想到了平衡树……</p>
+<p>然后又不会手码，于是想到了pbds的tree</p>
+<p>然后就轻松的码出了30分的代码……</p>
+<p>问了别人才知道原来有重复元素，而且pbds的tree是不能插入重复元素的</p>
+<p>那么，我们怎么解决呢？</p>
+<p>我想到了hash。</p>
+<p>我们对每个元素维护一个二元组$\left(x,h\right)$，$x$表示元素本来的值，而$h$是我们通过hash搞出的一个唯一的随机值。</p>
+<p>然后对每个u把没加进tree的元素加进去，然后直接利用tree求kth。</p>
+<p>代码：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// luogu-judger-enable-o2</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/extc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> __gnu_pbds;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">User</span>&#123;</span></span><br><span class="line">    <span class="keyword">int</span> x,h;</span><br><span class="line">    <span class="keyword">inline</span> <span class="keyword">bool</span> <span class="keyword">operator</span> &lt; (<span class="keyword">const</span> User&amp;p)<span class="keyword">const</span>&#123;<span class="keyword">return</span> x!=p.x?x&lt;p.x:h&lt;p.h;&#125;</span><br><span class="line">&#125;a[<span class="number">200005</span>];<span class="comment">//我们的二元组，注意，一定要满足单升，即：必须对任意两个元素的大小定义死</span></span><br><span class="line">tree&lt;User,null_type,less&lt;User&gt;,rb_tree_tag,tree_order_statistics_node_update&gt; t;<span class="comment">//定义一个pbds的红黑树</span></span><br><span class="line"><span class="built_in">map</span>&lt;<span class="keyword">int</span>,<span class="keyword">bool</span>&gt; mp;<span class="comment">//判断一个hash值是否出现过了</span></span><br><span class="line"><span class="keyword">int</span> m,n,i,u[<span class="number">200005</span>],last=<span class="number">1</span>,hh;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">Hash</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(mp[x])x=x+rand();</span><br><span class="line">    <span class="keyword">return</span> x;</span><br><span class="line">&#125;<span class="comment">//对每个x生成一个唯一的值h</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;m,&amp;n);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=m;j++)&#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a[j].x);</span><br><span class="line">        hh=Hash(a[j].x);</span><br><span class="line">        a[j].h=hh,mp[hh]=<span class="number">1</span>;</span><br><span class="line">    &#125;<span class="comment">//读入的同时预处理好每个二元组</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=n;j++)<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;u[j]);<span class="comment">//读入的u实际上已经拍好序了</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=n;j++)&#123;</span><br><span class="line">        <span class="keyword">for</span> (;last&lt;=u[j];last++)t.insert(a[last]);<span class="comment">//插♂入</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,(*t.find_by_order(i++)).x);<span class="comment">//直接查kth，返回的是地址，我们要先取*再加.</span></span><br><span class="line">        <span class="comment">//注意！tree中查第k个元素实际上是find_by_order(k-1)</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -1343,333 +492,38 @@ Day2周五上午早上下起了小雨，心情有点忧伤。本来请的是下�
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/29/题解-P1335-【-NOI2013-小Q的修炼】/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="引领天下">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="yltx's blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/07/29/题解-P1335-【-NOI2013-小Q的修炼】/" class="post-title-link" itemprop="url">题解 P1335 【[NOI2013]小Q的修炼】</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-07-29 20:53:47" itemprop="dateCreated datePublished" datetime="2019-07-29T20:53:47+08:00">2019-07-29</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-08-03 21:42:10" itemprop="dateModified" datetime="2019-08-03T21:42:10+08:00">2019-08-03</time>
-              
-            
-          </span>
-
+        <div class="post-tags">
           
-
+            <a href="/tags/洛谷/" rel="tag"># 洛谷</a>
           
-            
-            
+            <a href="/tags/题解/" rel="tag"># 题解</a>
           
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
+      
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
+      
       
       
 
       
-        
-          <p>by dblark，目前只写了标准答案</p>
-<h1 id="P1335-NOI2013-小Q的修炼题解"><a href="#P1335-NOI2013-小Q的修炼题解" class="headerlink" title="P1335 [NOI2013]小Q的修炼题解"></a>P1335 [NOI2013]小Q的修炼题解</h1>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/07/29/题解-P1335-【-NOI2013-小Q的修炼】/#more" rel="contents">
-                阅读全文 &raquo;
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/08/03/睡前读物：我为何而OI/" rel="next" title="睡前读物：我为何而OI">
+                <i class="fa fa-chevron-left"></i> 睡前读物：我为何而OI
               </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/22/题解-P5315-【头像上传】/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="引领天下">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="yltx's blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/04/22/题解-P5315-【头像上传】/" class="post-title-link" itemprop="url">题解 P5315 【头像上传】</a>
-              
             
-          </h1>
-        
+          </div>
 
-        <div class="post-meta">
-          <span class="post-time">
+          <span class="post-nav-divider"></span>
 
+          <div class="post-nav-prev post-nav-item">
             
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-04-22 20:49:13 / 修改时间：20:49:27" itemprop="dateCreated datePublished" datetime="2019-04-22T20:49:13+08:00">2019-04-22</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <p>
-              这个题就是标准的模拟
-上来先把所有图的大小搞成&lt;=G
-然后判是不是&gt;=L
-然后输出就好
-#include &lt;bits/stdc++.h&gt;using namespace std;long long n,l,g,w,h;int main()&#123;    scanf ("%l
-              ...
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/04/22/题解-P5315-【头像上传】/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -1679,334 +533,19 @@ Day2周五上午早上下起了小雨，心情有点忧伤。本来请的是下�
   </article>
 
 
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/22/题解-CF493A-【Vasya-and-Football】/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="引领天下">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="yltx's blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/04/22/题解-CF493A-【Vasya-and-Football】/" class="post-title-link" itemprop="url">题解 CF493A 【Vasya and Football】</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-04-22 20:48:33 / 修改时间：20:48:48" itemprop="dateCreated datePublished" datetime="2019-04-22T20:48:33+08:00">2019-04-22</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>
-              这题其实就是模拟
-题目大意：已知有两个球队home和away，现在给出一些足球运动员被黄牌或红牌警告的时间，求每个队员第一次被红牌警告的时间。（2张黄牌会自动变成1张红牌）
-已经描述的很清楚了。
-具体看代码吧
-#include&lt;bits/stdc++.h&gt;using namespace 
-              ...
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/04/22/题解-CF493A-【Vasya-and-Football】/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/22/题解-CF201A-【Clear-Symmetry】/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="引领天下">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="yltx's blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/04/22/题解-CF201A-【Clear-Symmetry】/" class="post-title-link" itemprop="url">题解 CF201A 【Clear Symmetry】</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-04-22 20:47:38 / 修改时间：20:48:03" itemprop="dateCreated datePublished" datetime="2019-04-22T20:47:38+08:00">2019-04-22</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>
-              这个题目其实很简单
-一个(2*i+1)*(2*i+1)的对称矩阵最多容纳的1的数量=((2*i+1)*(2*i+1)+1)/2
-答案就是2*i+1
-所以暴力即可。
-特别的，当i=3时，由于边长为5的矩阵比较神奇，可以有多种排法，所以特判一下i=3时输出5。
-代码就不贴了
-
-              
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/04/22/题解-CF201A-【Clear-Symmetry】/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
-  </nav>
-
 
 
           </div>
           
+
+  
+    <div class="comments" id="gitalk-container">
+    </div>
+
+  
+
+
 
         </div>
         
@@ -2350,6 +889,10 @@ Day2周五上午早上下起了小雨，心情有点忧伤。本来请的是下�
 
 
   
+  <script src="/js/src/scrollspy.js?v=7.0.0"></script>
+<script src="/js/src/post-details.js?v=7.0.0"></script>
+
+
 
   
 
@@ -2360,6 +903,34 @@ Day2周五上午早上下起了小雨，心情有点忧伤。本来请的是下�
 
   
 
+
+  
+    
+
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+
+
+<script src="//cdn.jsdelivr.net/npm/js-md5@0.7.3/src/md5.min.js"></script>
+
+<script>
+  var gitalk = new Gitalk({
+    clientID: '6d1778894840fddd5843',
+    clientSecret: '3eb8e6632f05711541482ef1815f1439ec922a6b',
+    repo: 'yltx.github.io',
+    owner: 'yltx',
+    admin: ['yltx'],
+    id: md5(location.pathname),
+    distractionFreeMode: 'true'
+  });
+  gitalk.render('gitalk-container');
+</script>
+
+  
 
 
   
@@ -2696,28 +1267,6 @@ Day2周五上午早上下起了小雨，心情有点忧伤。本来请的是下�
 
   
   
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-  
 
   
     
@@ -2784,7 +1333,7 @@ Day2周五上午早上下起了小雨，心情有点忧伤。本来请的是下�
   <script src="/lib/bookmark/bookmark.min.js?v=1.0"></script>
   <script>
   
-    bookmark.loadBookmark();
+    bookmark.scrollToMark('manual', "#更多");
   
   </script>
 
