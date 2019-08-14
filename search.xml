@@ -1,6 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[题解 SP11814 【EKO - Eko】]]></title>
+    <url>%2F2019%2F08%2F14%2F%E9%A2%98%E8%A7%A3-SP11814-%E3%80%90EKO-Eko%E3%80%91%2F</url>
+    <content type="text"><![CDATA[康了一下题解相当不详细啊…… 这个题是裸的二分答案 直接用代码讲吧 1234567891011121314151617181920#include &lt;bits/stdc++.h&gt;using namespace std;int n,m;//n-&gt;N,m-&gt;Mlong long a[1000005],ans;//注意！每个数≤1000000000，会爆int（所以我们其实可以hack掉@炸毛的龙猫 的题解）inline bool check(long long d)&#123; long long cnt=0; for (int i=1;i&lt;=n;i++)cnt+=max(a[i]-d,(long long)0); return cnt&gt;=m;&#125;int main()&#123; scanf("%d%d",&amp;n,&amp;m); long long l=1,r=0,mid;//敲黑板：三年OI一场空，不开long long见祖宗 for (int i=1;i&lt;=n;i++)scanf("%lld",&amp;a[i]),r=max(r,a[i]);//很明显下界是1，上界我们定一个最大值 while(l&lt;=r)&#123;//有可能的区间 mid=(l+r)&gt;&gt;1; if (check(mid))ans=max(ans,mid),l=mid+1;//mid是一个可行的答案，那么可能的区间上调，同时更新答案 else r=mid-1;//否则可能的区间下调 &#125; printf("%lld",ans);&#125;]]></content>
+      <tags>
+        <tag>题解</tag>
+        <tag>SPOJ</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[题解 CF1200B 【Block Adventure】]]></title>
+    <url>%2F2019%2F08%2F14%2F%E9%A2%98%E8%A7%A3-CF1200B-%E3%80%90Block-Adventure%E3%80%91%2F</url>
+    <content type="text"><![CDATA[这个题实际上就是个贪心……题意我交了翻译，这里就不重复说了 很明显，由于包的容量是无限大的，所以我们只要能往包里塞砖块就往里面塞，因为多塞肯定不吃亏 于是得到贪心策略：能把当前的砖能拿的尽量拿走，如果高度不够补到打擦边球…… 具体看代码吧 1234567891011121314151617#include &lt;bits/stdc++.h&gt;using namespace std;int t,n,m,k,h[105];int main()&#123; scanf("%d",&amp;t); while(t--)&#123; scanf("%d%d%d",&amp;n,&amp;m,&amp;k); for (int i=1;i&lt;=n;i++)scanf("%d",&amp;h[i]); bool flag=1;//判断是否有解 for (int now=1;now&lt;n&amp;&amp;flag;now++)&#123; if (h[now]&gt;=h[now+1]-k)m+=min(h[now]-h[now+1]+k,h[now]);//能拿则多拿，但注意只能拿空，不能那成负的\滑稽 else m-=h[now+1]-h[now]-k,h[now]=h[now+1]-k;//高度不够则补到刚好可以跳过去 if (m&lt;0)flag=0;//砖头用完了都跳不过去，则肯定无解 &#125; puts(flag?"YES":"NO"); &#125;&#125;]]></content>
+      <tags>
+        <tag>题解</tag>
+        <tag>CF</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[题解 CF580E 【Kefa and Watch】]]></title>
+    <url>%2F2019%2F08%2F14%2F%E9%A2%98%E8%A7%A3-CF580E-%E3%80%90Kefa-and-Watch%E3%80%91%2F</url>
+    <content type="text"><![CDATA[这个题目其实很简单啊……看了一下题解基本上都做烦了，一个memcmp的水题，怎么还用到了什么线段树维护哈希？开玩笑。。。 注意到所有数字都在0~9之间，于是可以考虑把放在字符数组里，然后每次更新直接memcpy，查询memcmp。 然后就结束了？ 上代码。 12345678910111213#include&lt;bits/stdc++.h&gt;char s[100100];int main()&#123; int n,m,k,l,r,c,i,f; scanf("%d%d%d%s",&amp;n,&amp;m,&amp;k,s+1);//读入初始序列：直接转成char m+=k; for(i=0;i&lt;m;i++)&#123; scanf("%d%d%d%d",&amp;f,&amp;l,&amp;r,&amp;c); if(f==1) memset(s+l,c+'0',r-l+1);//修改 else puts(memcmp(s+l,s+l+c,r-l-c+1)?"NO":"YES");//查询 //哪有那么烦？ &#125;&#125;]]></content>
+      <tags>
+        <tag>题解</tag>
+        <tag>CF</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[题解 CF312A 【Whose sentence is it?】]]></title>
+    <url>%2F2019%2F08%2F14%2F%E9%A2%98%E8%A7%A3-CF312A-%E3%80%90Whose-sentence-is-it-%E3%80%91%2F</url>
+    <content type="text"><![CDATA[额，这题居然没有C++的题解。 分析： 字符串基本操作，没啥好说的，直接模拟即可。读入整个字符串，判断后5位即可。 代码： 123456789101112131415161718#include&lt;bits/stdc++.h&gt;using namespace std;int main()&#123; int n; char a[105]; scanf("%d",&amp;n); getchar(); while(n--)&#123; cin.getline(a,105); int len=strlen(a); if(a[len-1]=='.'&amp;&amp;a[len-2]=='a'&amp;&amp;a[len-3]=='l'&amp;&amp;a[len-4]=='a'&amp;&amp;a[len-5]=='l')//分类：以lala结尾 if(a[0]=='m'&amp;&amp;a[1]=='i'&amp;&amp;a[2]=='a'&amp;&amp;a[3]=='o'&amp;&amp;a[4]=='.')printf("OMG&gt;.&lt; I don't know!\n");//如果又有miao，就不知道是谁说的了 else printf("Freda's\n");//否则输出Freda's else if(a[0]=='m'&amp;&amp;a[1]=='i'&amp;&amp;a[2]=='a'&amp;&amp;a[3]=='o'&amp;&amp;a[4]=='.')//以miao开头 if(a[len-1]=='.'&amp;&amp;a[len-2]=='a'&amp;&amp;a[len-3]=='l'&amp;&amp;a[len-4]=='a'&amp;&amp;a[len-5]=='l')printf("OMG&gt;.&lt; I don't know!\n");//同理，如果又有lala，就不知道是谁的了 else printf("Rainbow's\n"); else printf("OMG&gt;.&lt; I don't know!\n"); &#125;&#125;]]></content>
+      <tags>
+        <tag>题解</tag>
+        <tag>CF</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[题解 CF317A 【Perfect Pair】]]></title>
+    <url>%2F2019%2F08%2F14%2F%E9%A2%98%E8%A7%A3-CF317A-%E3%80%90Perfect-Pair%E3%80%91%2F</url>
+    <content type="text"><![CDATA[讲道理，这个题其实真没什么好说的，就是直接模拟 基本思路很简单：每次挑小的换成和。 具体看代码吧 123456789101112131415161718192021222324252627#include&lt;bits/stdc++.h&gt;using namespace std;typedef long long llint;llint x,y,m,ans;int main()&#123; cin&gt;&gt;x&gt;&gt;y&gt;&gt;m; if (x&gt;=m||y&gt;=m)&#123; puts("0"); return 0; &#125;//如果直接符合，直接输出 if (x&lt;=0&amp;&amp;y&lt;=0)&#123; puts("-1"); return 0; &#125;//如果x、y都负，则不可能变成完美 if (x&gt;y)swap(x,y);//如果x比y大，换一下 if (x&lt;0)&#123; ans+=(-x)/y; x+=(-x)/y*y; &#125;//如果有个负的，想办法把他弄成正的（方法：始终加y） while(x&lt;m&amp;&amp;y&lt;m)&#123; if (x&gt;y) swap(x,y); x+=y; ans++; &#125;//模拟 cout&lt;&lt;ans&lt;&lt;endl; return 0;&#125;]]></content>
+      <tags>
+        <tag>题解</tag>
+        <tag>CF</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[题解 P5497 【[LnOI2019SP]龟速单项式变换(SMT)】]]></title>
+    <url>%2F2019%2F08%2F14%2F%E9%A2%98%E8%A7%A3-P5497-%E3%80%90-LnOI2019SP-%E9%BE%9F%E9%80%9F%E5%8D%95%E9%A1%B9%E5%BC%8F%E5%8F%98%E6%8D%A2-SMT-%E3%80%91%2F</url>
+    <content type="text"><![CDATA[QAQ我比赛的时候居然煞笔了没想出正解…… 我比赛的时候不想动脑子，这样打的： 123#include &lt;bits/stdc++.h&gt;using namespace std;int main()&#123;puts("YES");&#125; 70。。。 其实，大家想一下，如果$n&lt;m$，则肯定能构造一组数据，因为$x%m$的余数就有$m-1$种，所以必然能构造出一组数据。 于是得出结论1： $n&lt;m$时，答案为NO 那么我们可以大胆猜想，不用证明，$n≥m$时一定就是YES了 好吧我们来证一下 根据抽屉原理，当$n≥m$时，必然有一个余数出现了2次 设这两个余数相同的数分别为$x_i,x_j$，可以以$x_i$为一个元素构造出一个“司$m$序列”，于是有： $$ (sum_{1}+x_i)-(sum_{2}+x_j)\equiv 0(mod m) $$ 进一步： $$ sum_{1}+x_i\equiv sum_{2}+x_j (mod m) $$ 又因为 $$ x_i\equiv x_j (mod m)$$ 所以 $$ sum_{2}\equiv 0(mod m) $$ 于是可以针对$x_j$构造出一个“司$m$序列”。 命题得证。 于是得到结论： $n&lt;m$时，答案为NO；否则为YES 代码就不贴了，讲的这么清楚了应该都能自己写出来]]></content>
+      <tags>
+        <tag>洛谷</tag>
+        <tag>题解</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[题解 P1801 【黑匣子_NOI导刊2010提高（06）】]]></title>
     <url>%2F2019%2F08%2F06%2F%E9%A2%98%E8%A7%A3-P1801-%E3%80%90%E9%BB%91%E5%8C%A3%E5%AD%90-NOI%E5%AF%BC%E5%88%8A2010%E6%8F%90%E9%AB%98%EF%BC%8806%EF%BC%89%E3%80%91%2F</url>
     <content type="text"><![CDATA[看到这个题面，不断加入元素，每次查询第k大，我就立刻想到了平衡树…… 然后又不会手码，于是想到了pbds的tree 然后就轻松的码出了30分的代码…… 问了别人才知道原来有重复元素，而且pbds的tree是不能插入重复元素的 那么，我们怎么解决呢？ 我想到了hash。 我们对每个元素维护一个二元组$\left(x,h\right)$，$x$表示元素本来的值，而$h$是我们通过hash搞出的一个唯一的随机值。 然后对每个u把没加进tree的元素加进去，然后直接利用tree求kth。 代码： 123456789101112131415161718192021222324252627282930// luogu-judger-enable-o2#include &lt;bits/stdc++.h&gt;#include &lt;bits/extc++.h&gt;using namespace std;using namespace __gnu_pbds;struct User&#123; int x,h; inline bool operator &lt; (const User&amp;p)const&#123;return x!=p.x?x&lt;p.x:h&lt;p.h;&#125;&#125;a[200005];//我们的二元组，注意，一定要满足单升，即：必须对任意两个元素的大小定义死tree&lt;User,null_type,less&lt;User&gt;,rb_tree_tag,tree_order_statistics_node_update&gt; t;//定义一个pbds的红黑树map&lt;int,bool&gt; mp;//判断一个hash值是否出现过了int m,n,i,u[200005],last=1,hh;inline int Hash(int x)&#123; while(mp[x])x=x+rand(); return x;&#125;//对每个x生成一个唯一的值hint main()&#123; scanf("%d%d",&amp;m,&amp;n); for (int j=1;j&lt;=m;j++)&#123; scanf("%d",&amp;a[j].x); hh=Hash(a[j].x); a[j].h=hh,mp[hh]=1; &#125;//读入的同时预处理好每个二元组 for (int j=1;j&lt;=n;j++)scanf("%d",&amp;u[j]);//读入的u实际上已经拍好序了 for (int j=1;j&lt;=n;j++)&#123; for (;last&lt;=u[j];last++)t.insert(a[last]);//插♂入 printf("%d\n",(*t.find_by_order(i++)).x);//直接查kth，返回的是地址，我们要先取*再加. //注意！tree中查第k个元素实际上是find_by_order(k-1) &#125;&#125;]]></content>

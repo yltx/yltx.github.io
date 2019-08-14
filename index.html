@@ -1217,7 +1217,7 @@ Day2周五上午早上下起了小雨，心情有点忧伤。本来请的是下�
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/06/题解-P1801-【黑匣子-NOI导刊2010提高（06）】/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/14/题解-SP11814-【EKO-Eko】/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="引领天下">
@@ -1237,7 +1237,7 @@ Day2周五上午早上下起了小雨，心情有点忧伤。本来请的是下�
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/08/06/题解-P1801-【黑匣子-NOI导刊2010提高（06）】/" class="post-title-link" itemprop="url">题解 P1801 【黑匣子_NOI导刊2010提高（06）】</a>
+                <a href="/2019/08/14/题解-SP11814-【EKO-Eko】/" class="post-title-link" itemprop="url">题解 SP11814 【EKO - Eko】</a>
               
             
           </h1>
@@ -1262,7 +1262,7 @@ Day2周五上午早上下起了小雨，心情有点忧伤。本来请的是下�
                 
               
 
-              <time title="创建时间：2019-08-06 16:10:28 / 修改时间：16:10:47" itemprop="dateCreated datePublished" datetime="2019-08-06T16:10:28+08:00">2019-08-06</time>
+              <time title="创建时间：2019-08-14 17:00:34 / 修改时间：17:02:27" itemprop="dateCreated datePublished" datetime="2019-08-14T17:00:34+08:00">2019-08-14</time>
             
 
             
@@ -1304,19 +1304,16 @@ Day2周五上午早上下起了小雨，心情有点忧伤。本来请的是下�
         
           
             <p>
-              看到这个题面，不断加入元素，每次查询第k大，我就立刻想到了平衡树……
-然后又不会手码，于是想到了pbds的tree
-然后就轻松的码出了30分的代码……
-问了别人才知道原来有重复元素，而且pbds的tree是不能插入重复元素的
-那么，我们怎么解决呢？
-我想到了hash。
-我们对每个元素维护一个二元组$
+              康了一下题解相当不详细啊……
+这个题是裸的二分答案
+直接用代码讲吧
+#include &lt;bits/stdc++.h&gt;using namespace std;int n,m;//n-&gt;N,m-&gt;Mlong long a[1000005],ans;//注意！每个数≤1000000
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2019/08/06/题解-P1801-【黑匣子-NOI导刊2010提高（06）】/#more" rel="contents">
+              <a class="btn" href="/2019/08/14/题解-SP11814-【EKO-Eko】/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1376,7 +1373,7 @@ Day2周五上午早上下起了小雨，心情有点忧伤。本来请的是下�
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/29/题解-P1335-【-NOI2013-小Q的修炼】/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/14/题解-CF1200B-【Block-Adventure】/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="引领天下">
@@ -1396,7 +1393,7 @@ Day2周五上午早上下起了小雨，心情有点忧伤。本来请的是下�
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/07/29/题解-P1335-【-NOI2013-小Q的修炼】/" class="post-title-link" itemprop="url">题解 P1335 【[NOI2013]小Q的修炼】</a>
+                <a href="/2019/08/14/题解-CF1200B-【Block-Adventure】/" class="post-title-link" itemprop="url">题解 CF1200B 【Block Adventure】</a>
               
             
           </h1>
@@ -1421,169 +1418,7 @@ Day2周五上午早上下起了小雨，心情有点忧伤。本来请的是下�
                 
               
 
-              <time title="创建时间：2019-07-29 20:53:47" itemprop="dateCreated datePublished" datetime="2019-07-29T20:53:47+08:00">2019-07-29</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-08-03 21:42:10" itemprop="dateModified" datetime="2019-08-03T21:42:10+08:00">2019-08-03</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>by dblark，目前只写了标准答案</p>
-<h1 id="P1335-NOI2013-小Q的修炼题解"><a href="#P1335-NOI2013-小Q的修炼题解" class="headerlink" title="P1335 [NOI2013]小Q的修炼题解"></a>P1335 [NOI2013]小Q的修炼题解</h1>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/07/29/题解-P1335-【-NOI2013-小Q的修炼】/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/22/题解-P5315-【头像上传】/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="引领天下">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="yltx's blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/04/22/题解-P5315-【头像上传】/" class="post-title-link" itemprop="url">题解 P5315 【头像上传】</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-04-22 20:49:13 / 修改时间：20:49:27" itemprop="dateCreated datePublished" datetime="2019-04-22T20:49:13+08:00">2019-04-22</time>
+              <time title="创建时间：2019-08-14 17:00:02 / 修改时间：17:03:21" itemprop="dateCreated datePublished" datetime="2019-08-14T17:00:02+08:00">2019-08-14</time>
             
 
             
@@ -1625,174 +1460,17 @@ Day2周五上午早上下起了小雨，心情有点忧伤。本来请的是下�
         
           
             <p>
-              这个题就是标准的模拟
-上来先把所有图的大小搞成&lt;=G
-然后判是不是&gt;=L
-然后输出就好
-#include &lt;bits/stdc++.h&gt;using namespace std;long long n,l,g,w,h;int main()&#123;    scanf ("%l
-              ...
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/04/22/题解-P5315-【头像上传】/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/22/题解-CF493A-【Vasya-and-Football】/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="引领天下">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="yltx's blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/04/22/题解-CF493A-【Vasya-and-Football】/" class="post-title-link" itemprop="url">题解 CF493A 【Vasya and Football】</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-04-22 20:48:33 / 修改时间：20:48:48" itemprop="dateCreated datePublished" datetime="2019-04-22T20:48:33+08:00">2019-04-22</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>
-              这题其实就是模拟
-题目大意：已知有两个球队home和away，现在给出一些足球运动员被黄牌或红牌警告的时间，求每个队员第一次被红牌警告的时间。（2张黄牌会自动变成1张红牌）
-已经描述的很清楚了。
+              这个题实际上就是个贪心……题意我交了翻译，这里就不重复说了
+很明显，由于包的容量是无限大的，所以我们只要能往包里塞砖块就往里面塞，因为多塞肯定不吃亏
+于是得到贪心策略：能把当前的砖能拿的尽量拿走，如果高度不够补到打擦边球……
 具体看代码吧
-#include&lt;bits/stdc++.h&gt;using namespace 
+#include &lt;bits/stdc++.h&gt;
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2019/04/22/题解-CF493A-【Vasya-and-Football】/#more" rel="contents">
+              <a class="btn" href="/2019/08/14/题解-CF1200B-【Block-Adventure】/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1852,7 +1530,7 @@ Day2周五上午早上下起了小雨，心情有点忧伤。本来请的是下�
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/22/题解-CF201A-【Clear-Symmetry】/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/14/题解-CF580E-【Kefa-and-Watch】/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="引领天下">
@@ -1872,7 +1550,7 @@ Day2周五上午早上下起了小雨，心情有点忧伤。本来请的是下�
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/04/22/题解-CF201A-【Clear-Symmetry】/" class="post-title-link" itemprop="url">题解 CF201A 【Clear Symmetry】</a>
+                <a href="/2019/08/14/题解-CF580E-【Kefa-and-Watch】/" class="post-title-link" itemprop="url">题解 CF580E 【Kefa and Watch】</a>
               
             
           </h1>
@@ -1897,7 +1575,7 @@ Day2周五上午早上下起了小雨，心情有点忧伤。本来请的是下�
                 
               
 
-              <time title="创建时间：2019-04-22 20:47:38 / 修改时间：20:48:03" itemprop="dateCreated datePublished" datetime="2019-04-22T20:47:38+08:00">2019-04-22</time>
+              <time title="创建时间：2019-08-14 16:59:43 / 修改时间：17:03:04" itemprop="dateCreated datePublished" datetime="2019-08-14T16:59:43+08:00">2019-08-14</time>
             
 
             
@@ -1939,19 +1617,330 @@ Day2周五上午早上下起了小雨，心情有点忧伤。本来请的是下�
         
           
             <p>
-              这个题目其实很简单
-一个(2*i+1)*(2*i+1)的对称矩阵最多容纳的1的数量=((2*i+1)*(2*i+1)+1)/2
-答案就是2*i+1
-所以暴力即可。
-特别的，当i=3时，由于边长为5的矩阵比较神奇，可以有多种排法，所以特判一下i=3时输出5。
-代码就不贴了
-
-              
+              这个题目其实很简单啊……看了一下题解基本上都做烦了，一个memcmp的水题，怎么还用到了什么线段树维护哈希？开玩笑。。。
+注意到所有数字都在0~9之间，于是可以考虑把放在字符数组里，然后每次更新直接memcpy，查询memcmp。
+然后就结束了？
+上代码。
+#include&lt;bits/stdc
+              ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2019/04/22/题解-CF201A-【Clear-Symmetry】/#more" rel="contents">
+              <a class="btn" href="/2019/08/14/题解-CF580E-【Kefa-and-Watch】/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/14/题解-CF312A-【Whose-sentence-is-it-】/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="引领天下">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="yltx's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/08/14/题解-CF312A-【Whose-sentence-is-it-】/" class="post-title-link" itemprop="url">题解 CF312A 【Whose sentence is it?】</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-08-14 16:58:07 / 修改时间：17:02:48" itemprop="dateCreated datePublished" datetime="2019-08-14T16:58:07+08:00">2019-08-14</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>
+              额，这题居然没有C++的题解。
+分析：
+字符串基本操作，没啥好说的，直接模拟即可。读入整个字符串，判断后5位即可。
+代码：
+#include&lt;bits/stdc++.h&gt;using namespace std;int main()&#123;    int n;    char a[10
+              ...
+            </p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/08/14/题解-CF312A-【Whose-sentence-is-it-】/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/14/题解-CF317A-【Perfect-Pair】/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="引领天下">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="yltx's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/08/14/题解-CF317A-【Perfect-Pair】/" class="post-title-link" itemprop="url">题解 CF317A 【Perfect Pair】</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-08-14 16:57:51 / 修改时间：17:03:40" itemprop="dateCreated datePublished" datetime="2019-08-14T16:57:51+08:00">2019-08-14</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>
+              讲道理，这个题其实真没什么好说的，就是直接模拟
+基本思路很简单：每次挑小的换成和。
+具体看代码吧
+#include&lt;bits/stdc++.h&gt;using namespace std;typedef long long llint;llint x,y,m,ans;int main()&#
+              ...
+            </p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/08/14/题解-CF317A-【Perfect-Pair】/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -2047,7 +2036,7 @@ Day2周五上午早上下起了小雨，心情有点忧伤。本来请的是下�
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">83</span>
+                    <span class="site-state-item-count">89</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
