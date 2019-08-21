@@ -1,6 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[题解 CF1204C 【Anna, Svyatoslav and Maps】]]></title>
+    <url>%2F2019%2F08%2F21%2F%E9%A2%98%E8%A7%A3-CF1204C-%E3%80%90Anna-Svyatoslav-and-Maps%E3%80%91%2F</url>
+    <content type="text"><![CDATA[这个题其实还是挺简单的，但我还是想了很久而且还被hack了一次 思路：floyd+two-pointer+贪心 先floyd预处理出所有点之间的最短路，然后对于每个i找最靠后的j，满足$dis[p[i]][p[j+1]]&gt;=dis[i][j]+1$，即由p[i]到p[j+1]的最短路必过p[j] 然后把退出循环的p[j]塞进答案数组，因为这个p[j]必须要去一次。 代码： `cpp #include &lt;bits/stdc++.h&gt;using namespace std;int n,m,p[1000005],a[105][105];char x;vector ans;int main(){ ios::sync_with_stdio(false);cin.tie(0),cout.tie(0); cin&gt;&gt;n; for (int i=1;i&lt;=n;i++) for (int j=1;j&lt;=n;j++)a[i][j]=1926817;//初始化 for (int i=1;i&lt;=n;i++) for (int j=1;j&lt;=n;j++){ cin&gt;&gt;x; if(x==’1’)a[i][j]=1;//读入图 } for (int i=1;i&lt;=n;i++)a[i][i]=0; for (int k=1;k&lt;=n;k++) for (int i=1;i&lt;=n;i++) for (int j=1;j&lt;=n;j++)a[i][j]=min(a[i][j],a[i][k]+a[k][j]);//Floyd求最短路 cin&gt;&gt;m; for (int i=1;i&lt;=m;i++)cin&gt;&gt;p[i]; int i=1,j=2;ans.push_back(p[1]);//p[1]是必到的 for (;i&lt;=m&amp;&amp;j&lt;=m;){ while(j&lt;m&amp;&amp;a[p[i]][p[j+1]]&gt;=a[p[i]][p[j]]+1)j++;//j&lt;m保证了下标不越界，我们要找能满足p[i]到p[j+1]的最短路必过p[j]的最后一个j ans.push_back(p[i=j++]);//p[j]要停一次，不然的话可能下一次最短路不过p[j] } cout&lt;&lt;ans.size()&lt;&lt;endl; for (vector::iterator it=ans.begin();it!=ans.end();it++)cout&lt;&lt;*it&lt;&lt;’ ‘;//输出}]]></content>
+      <tags>
+        <tag>题解</tag>
+        <tag>CF</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[题解 CF1204B 【Mislove Has Lost an Array】]]></title>
+    <url>%2F2019%2F08%2F21%2F%E9%A2%98%E8%A7%A3-CF1204B-%E3%80%90Mislove-Has-Lost-an-Array%E3%80%91%2F</url>
+    <content type="text"><![CDATA[这个题实际上就是贪心 思路：先取2的0到l-1次方，保证至少有l个不同的数，算出基本答案； 然后对于最小的答案，剩下的n-l个数全部填1，对于最大的答案，我们补全2的r-1次方，然后对于剩下的n-r个数全部填$2^{r-1}$ 代码： 12345678910111213#include &lt;bits/stdc++.h&gt;using namespace std;typedef long long ll;ll n,l,r,cnt=1,ansn,ansx;//注意，防爆intint main()&#123; cin&gt;&gt;n&gt;&gt;l&gt;&gt;r; for (int i=1;i&lt;=l;i++)ansn+=cnt,cnt*=2; ansx=ansn,ansn+=n-l;//计算出基本答案后直接算出最小答案 for (int i=l+1;i&lt;=r;i++)ansx+=cnt,cnt*=2; cnt/=2; ansx+=(n-r)*cnt;//补上n-r个数 cout&lt;&lt;ansn&lt;&lt;' '&lt;&lt;ansx;&#125;]]></content>
+      <tags>
+        <tag>题解</tag>
+        <tag>CF</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[题解 CF1204A 【BowWow and the Timetable】]]></title>
+    <url>%2F2019%2F08%2F21%2F%E9%A2%98%E8%A7%A3-CF1204A-%E3%80%90BowWow-and-the-Timetable%E3%80%91%2F</url>
+    <content type="text"><![CDATA[这个题有数论写法，但赛场上与其花不少时间推柿子还不如直接暴力 具体看代码吧 123456789101112n=int(input()) # 读入ni=1ans=0while n&gt;0: if n%2==1: ans+=i i*=2 n=n//10 # 手动转十进制，注意由于给出的就是二进制而我们存成了10进制，所以每次/10才能去掉最后一位k=0while 4**k&lt;ans: k+=1 # 枚举print(k)]]></content>
+      <tags>
+        <tag>题解</tag>
+        <tag>CF</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[题解 CF1206A 【Choose Two Numbers】]]></title>
     <url>%2F2019%2F08%2F19%2F%E9%A2%98%E8%A7%A3-CF1206A-%E3%80%90Choose-Two-Numbers%E3%80%91%2F</url>
     <content type="text"><![CDATA[这题其实完全可以桶解决 具体看代码吧 123456789101112#include&lt;bits/stdc++.h&gt;using namespace std;int n,m,a[105],b[105];bool s[505];//桶，因为a,b&lt;=200，所以和实际上&lt;=400int main()&#123; scanf("%d",&amp;n); for (int i=1;i&lt;=n;i++)scanf("%d",&amp;a[i]),s[a[i]]=1;//丢进桶 scanf("%d",&amp;m); for (int i=1;i&lt;=m;i++)scanf("%d",&amp;b[i]),s[b[i]]=1;//丢进桶*2 for (int i=1;i&lt;=n;i++) for (int j=1;j&lt;=m;j++)if(!s[a[i]+b[j]])return !printf("%d %d",a[i],b[j]);//枚举，在a和b中各选一个，利用桶判有没有出现过&#125;]]></content>
