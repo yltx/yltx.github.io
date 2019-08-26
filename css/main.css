@@ -1901,7 +1901,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ab74ff;
+  background: #ff69cf;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2918,4 +2918,7 @@ body {
 }
 .open:after {
   content: "▲";
+}
+#music163player {
+  margin-top: 30px;
 }
