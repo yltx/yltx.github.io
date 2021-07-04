@@ -1,23 +1,574 @@
-{% extends '_layout.swig' %}
-{% import '_macro/post.swig' as post_template %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
 
-{% block title %}{{ page.title }} | {{ title }}{% endblock %}
 
-{% block page_class %}page-post-detail{% endblock %}
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
-{% block content %}
+<link rel="stylesheet" href="/css/main.css">
 
-  <div id="posts" class="posts-expand">
-    {{ post_template.render(page) }}
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/all.min.css" integrity="sha256-2H3fkXt6FEmrReK448mDVGKb3WW2ZZw35gI7vqHOE4Y=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"yoursite.com","root":"/","images":"/images","scheme":"Mist","version":"8.6.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<meta name="description" content="为了获得最佳的阅读体验，请在睡前阅读 有时候，我会莫名思考一些事情，于是有了这篇口胡的文章。 前言我为何而OI？ 我不清楚。 但我知道，我搞OI 我也应该去搞OI 哪怕没有别人的帮助 哪怕一个人孤独 我 注定OI OI黑历史为了您的阅读体验，本部分使用上帝视角。 四年级&#x2F;2014四年级那个暑假，我爸问我：  你喜欢电脑吗？喜欢。那你叫你妈带你去市里报名。哦。  然后我就去市里报了名，然后参加了市里">
+<meta property="og:type" content="article">
+<meta property="og:title" content="睡前读物：我为何而OI">
+<meta property="og:url" content="http://yoursite.com/2019/08/03/%E7%9D%A1%E5%89%8D%E8%AF%BB%E7%89%A9%EF%BC%9A%E6%88%91%E4%B8%BA%E4%BD%95%E8%80%8COI/index.html">
+<meta property="og:site_name" content="yltx&#39;s blog">
+<meta property="og:description" content="为了获得最佳的阅读体验，请在睡前阅读 有时候，我会莫名思考一些事情，于是有了这篇口胡的文章。 前言我为何而OI？ 我不清楚。 但我知道，我搞OI 我也应该去搞OI 哪怕没有别人的帮助 哪怕一个人孤独 我 注定OI OI黑历史为了您的阅读体验，本部分使用上帝视角。 四年级&#x2F;2014四年级那个暑假，我爸问我：  你喜欢电脑吗？喜欢。那你叫你妈带你去市里报名。哦。  然后我就去市里报了名，然后参加了市里">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-08-03T14:03:21.000Z">
+<meta property="article:modified_time" content="2021-01-28T03:04:18.044Z">
+<meta property="article:author" content="引领天下">
+<meta property="article:tag" content="其他">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://yoursite.com/2019/08/03/%E7%9D%A1%E5%89%8D%E8%AF%BB%E7%89%A9%EF%BC%9A%E6%88%91%E4%B8%BA%E4%BD%95%E8%80%8COI/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://yoursite.com/2019/08/03/%E7%9D%A1%E5%89%8D%E8%AF%BB%E7%89%A9%EF%BC%9A%E6%88%91%E4%B8%BA%E4%BD%95%E8%80%8COI/","path":"2019/08/03/睡前读物：我为何而OI/","title":"睡前读物：我为何而OI"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>睡前读物：我为何而OI | yltx's blog</title>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
   </div>
 
-{% endblock %}
+  <div class="site-meta">
 
-{% block sidebar %}
-  {{ sidebar_template.render(true) }}
-{% endblock %}
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">yltx's blog</h1>
+      <i class="logo-line"></i>
+    </a>
+  </div>
 
-{% block script_extra %}
-  {% include '_scripts/pages/post-details.swig' %}
-{% endblock %}
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+        <li class="menu-item menu-item-games"><a href="/Games/" rel="section"><i class="fa fa-gamepad fa-fw"></i>Games</a></li>
+        <li class="menu-item menu-item-visit-map"><a href="/Visit-map/" rel="section"><i class="fa fa-map-signs fa-fw"></i>Visit-map</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#OI%E9%BB%91%E5%8E%86%E5%8F%B2"><span class="nav-number">2.</span> <span class="nav-text">OI黑历史</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%E5%B9%B4%E7%BA%A7-2014"><span class="nav-number">2.1.</span> <span class="nav-text">四年级&#x2F;2014</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%94%E5%B9%B4%E7%BA%A7-2015"><span class="nav-number">2.2.</span> <span class="nav-text">五年级&#x2F;2015</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%AD%E5%B9%B4%E7%BA%A7-2016"><span class="nav-number">2.3.</span> <span class="nav-text">六年级&#x2F;2016</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9D%E4%B8%80-2017"><span class="nav-number">2.4.</span> <span class="nav-text">初一&#x2F;2017</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9D%E4%BA%8C-2018"><span class="nav-number">2.5.</span> <span class="nav-text">初二&#x2F;2018</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9D%E4%B8%89"><span class="nav-number">2.6.</span> <span class="nav-text">初三</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%AB%98%E4%B8%80"><span class="nav-number">2.7.</span> <span class="nav-text">高一</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%90%8E%E8%AE%B0"><span class="nav-number">3.</span> <span class="nav-text">后记</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-overview">
+            <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="引领天下"
+      src="/images/39863.png">
+  <p class="site-author-name" itemprop="name">引领天下</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">101</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/yltx" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;yltx" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:mvp.bxbl@gmail.com" title="E-Mail → mailto:mvp.bxbl@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://plus.google.com/mvp.bxbl" title="Google → https:&#x2F;&#x2F;plus.google.com&#x2F;mvp.bxbl" rel="noopener" target="_blank"><i class="fab fa-google fa-fw"></i>Google</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.luogu.org/space/show?uid=39863" title="洛谷 → https:&#x2F;&#x2F;www.luogu.org&#x2F;space&#x2F;show?uid&#x3D;39863" rel="noopener" target="_blank"><i class="code fa-fw"></i>洛谷</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.codeforces.com/profile/yltx" title="Codeforces → https:&#x2F;&#x2F;www.codeforces.com&#x2F;profile&#x2F;yltx" rel="noopener" target="_blank"><i class="code fa-fw"></i>Codeforces</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/394872265" title="b站 → https:&#x2F;&#x2F;space.bilibili.com&#x2F;394872265" rel="noopener" target="_blank"><i class="tv fa-fw"></i>b站</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll site-overview-item animated">
+    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+      友链
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://froldh.github.io/" title="https:&#x2F;&#x2F;froldh.github.io&#x2F;" rel="noopener" target="_blank">froldH</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://https//www.javiblog.top/" title="https:&#x2F;&#x2F;https:&#x2F;&#x2F;www.javiblog.top&#x2F;" rel="noopener" target="_blank">Javi</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.backroad.site/" title="https:&#x2F;&#x2F;www.backroad.site" rel="noopener" target="_blank">归·程</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.cnblogs.com/Sai0511/" title="https:&#x2F;&#x2F;www.cnblogs.com&#x2F;Sai0511&#x2F;" rel="noopener" target="_blank">connect</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://studyingfather.com/" title="https:&#x2F;&#x2F;studyingfather.com&#x2F;" rel="noopener" target="_blank">StudyingFather</a>
+        </li>
+    </ul>
+  </div>
+
+          </div>
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="返回顶部">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <a href="https://github.com/yltx" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/03/%E7%9D%A1%E5%89%8D%E8%AF%BB%E7%89%A9%EF%BC%9A%E6%88%91%E4%B8%BA%E4%BD%95%E8%80%8COI/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/39863.png">
+      <meta itemprop="name" content="引领天下">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="yltx's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          睡前读物：我为何而OI
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-08-03 22:03:21" itemprop="dateCreated datePublished" datetime="2019-08-03T22:03:21+08:00">2019-08-03</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-01-28 11:04:18" itemprop="dateModified" datetime="2021-01-28T11:04:18+08:00">2021-01-28</time>
+      </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+      </div>
+      <div class="post-meta">
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>2.6k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>2 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>为了获得最佳的阅读体验，请在睡前阅读</p>
+<p>有时候，我会莫名思考一些事情，于是有了这篇口胡的文章。</p>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>我为何而OI？</p>
+<p>我不清楚。</p>
+<p>但我知道，我搞OI</p>
+<p>我也应该去搞OI</p>
+<p>哪怕没有别人的帮助</p>
+<p>哪怕一个人孤独</p>
+<p>我 注定OI</p>
+<h1 id="OI黑历史"><a href="#OI黑历史" class="headerlink" title="OI黑历史"></a>OI黑历史</h1><p>为了您的阅读体验，本部分使用上帝视角。</p>
+<h2 id="四年级-2014"><a href="#四年级-2014" class="headerlink" title="四年级/2014"></a>四年级/2014</h2><p>四年级那个暑假，我爸问我：</p>
+<blockquote>
+<p>你喜欢电脑吗？<br>喜欢。<br>那你叫你妈带你去市里报名。<br>哦。</p>
+</blockquote>
+<p>然后我就去市里报了名，然后参加了市里组织的免费的logo班，然后碰到了我的几个同学，然后就开始入坑logo，然后不停的考试，考试，考试。最后我愣是考进了最后的班……</p>
+<p><del>怎么全都是然后</del></p>
+<h2 id="五年级-2015"><a href="#五年级-2015" class="headerlink" title="五年级/2015"></a>五年级/2015</h2><p>当时在某市的计算机水平考试之前，我像疯了一样的搞补全程序，然后不知道的去问老师</p>
+<p>我老师奇怪的问我：</p>
+<blockquote>
+<p>你研究这个干啥</p>
+</blockquote>
+<p>我抬起头，很无语的说</p>
+<blockquote>
+<p>拿分啊。</p>
+</blockquote>
+<p>于是在最后一次考试中，我考进了某市的小C班。</p>
+<p>并且得知我是某区唯一一个考进去的。</p>
+<p><del>后来我才知道小C招不算6年级的rk前50，logo提高班招算6年级的rk前100</del></p>
+<p><del>于是我不算6年级rk50，算6年级rk100</del></p>
+<p><del>这擦边球打的真™好</del></p>
+<p>其实能成为某区唯一一个进小C班的人不是因为我有多强，有很大一部分原因是因为这个区没有初中搞OI，没前途。</p>
+<p>然而当时的我怎么会知道这些？</p>
+<p>反正，尽力吧，既然选择了，那么爬也要走完。</p>
+<h2 id="六年级-2016"><a href="#六年级-2016" class="headerlink" title="六年级/2016"></a>六年级/2016</h2><p>进了小C班，认识了现在OI上的一批朋友。</p>
+<p>记得第一次课的时候，老师让我们上去写一个判断奇偶的程序。</p>
+<p>然后我上去了，写下了一个老师没看懂的东西。</p>
+<p>老师教了10年小C，然后我写了一个用<code>TEST</code>实现的logo。</p>
+<p><del>不知道<code>TEST</code>是什么的请自行百度</del></p>
+<p><del>看来我的想法奇怪是有传统的</del></p>
+<p>然后就跟在后面很认真的学，学了1年去打NOIP2016。</p>
+<p>当时那个激动啊。。。</p>
+<p>过了初赛，感觉自己真是个人才。</p>
+<p>那个时候连爆搜都不会，冲上去打了T1T2，然后回去相当开心。</p>
+<p><del>丝毫没有意识到T2会TLE</del></p>
+<p>于是测出来<code>165</code>，拿了个省二。</p>
+<p><del>其实165已经过了PJ1=分数线了，只是因为ah人太多被挤出去了</del></p>
+<p>并参加了AHOI2016的小学组，T3傻逼一样的dp没打出来，省二回去滚粗了。</p>
+<p>暑假里出了第一道题：<a target="_blank" rel="noopener" href="https://www.luogu.org/problem/P4907">洛谷P4907</a></p>
+<p>这个暑假快活，天天颓废，刷题，算是最快活的日子了。</p>
+<h2 id="初一-2017"><a href="#初一-2017" class="headerlink" title="初一/2017"></a>初一/2017</h2><p>初一或许算我OI历史最多的一年？</p>
+<p>先是以为某个众所周知的原因进了某所并不重视OI的学校。报名的时候，我把我的市三好学生、NOIP省二等等奖状一摆，招生处的老师说：你这个情况，我们会在会议上优先讨论。</p>
+<p>没说出来的意思是：你进某个重点班基本上是稳了。</p>
+<p>于是等到分班考试的时候，我极其淡定，三张卷子全部做完了。</p>
+<p>监考老师看我的表情一脸懵逼：你又做完了？</p>
+<p><del>23333333</del></p>
+<p><del>其实我的分数过了所有3个重点班的分数线</del></p>
+<p>然后开始了在这个学校的OI征程……</p>
+<p>本来学校说要请老师辅导我们，然而我反正没看到</p>
+<p>最搞笑的是我们生物老师什么都不懂，非要来插一杠子，讲我们班同学都可以去参加一下初赛试试，然后被我怼了回去，劝我们班同学别白送钱给CCF。</p>
+<p><del>之后我们生物老师就再也没有在我们班提过这个事儿了</del></p>
+<p><del>幸亏我之后的生物考试成绩不是rk1就是rk2，不然估计我会死的很惨</del></p>
+<p>报着保2冲1的心态，我去考了NOIP2017。</p>
+<p>还好，考的还不错，拿了个PJ省一。</p>
+<p>后来的<a target="_blank" rel="noopener" href="https://yltx.cf/2019/01/12/%E7%9C%81%E8%B5%9B%E4%B9%8B%E6%97%85/#more">AHOI2018</a>考的就很差了，只拿了两个省三，<del>还被班主任教育了一顿</del></p>
+<p>然后初一的日子，就这么溜走了。</p>
+<h2 id="初二-2018"><a href="#初二-2018" class="headerlink" title="初二/2018"></a>初二/2018</h2><p>初二的历史就比较少了</p>
+<p>由于从第一次月考一来，我的文化课一直在下滑，而且一直没有突破第一次月考的成绩，家长要求我如果初二再下滑的话要停OI了。</p>
+<p><del>人家停文化课搞OI，我停OI搞文化课</del></p>
+<p>然后我当时就很火大，老子尽力了好吧</p>
+<p>于是月考rk58-&gt;期中rk20-&gt;期末rk3</p>
+<p>家长终于不说话了。</p>
+<p>不过，由于自己学习的问题，而且也不想打省赛了，AHOI2019就没有参加。</p>
+<p>然后去打了<a target="_blank" rel="noopener" href="https://yltx.cf/2019/01/12/NOIP2018%E9%A2%93%E5%BA%9F%E4%B9%8B%E8%B7%AF/">NOIP2018</a>，拿了一个很差的省一回来。</p>
+<h2 id="初三"><a href="#初三" class="headerlink" title="初三"></a>初三</h2><p>主要是个文化课选手。</p>
+<p>参加了CSP-S2019，幸好过了初赛。进考场的时候信心满满，心想老子总能冲个TG1=了吧？结果。。。大家都知道。D1T2挂70pts，1=-&gt;2=，OIer-&gt;whker。</p>
+<p>游记以后再补</p>
+<h2 id="高一"><a href="#高一" class="headerlink" title="高一"></a>高一</h2><p>幸而，两个PJ1=+还能看的数理化保我进了某重高的重点班。</p>
+<p>终于有了梦寐以求的在机房里做题的机会，然而还是肝不过人家有基础的。</p>
+<p>CSP和NOIP相继白给，对没马出题人的区分度已经不想再说些什么。</p>
+<p>想想，自己真的没在AH拿省一的水平么？我现在自己都不清楚了。</p>
+<p>也许有点时候差的不是实力，而是运气吧。</p>
+<h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><p>有时候，我都在想，我到底是为了什么而OI？</p>
+<p>肯定不是为了兴趣。</p>
+<p>如果是为了兴趣，我绝不可能专注于C++，而应该更多关注Java和Python这些更实用的语言。</p>
+<p>而且上一次我写个程序测试生命游戏，我妈问我，你研究这个东西对你学电脑有帮助吗？</p>
+<p>我能怎么回答？</p>
+<p>我只能说，没有。</p>
+<p>然后我妈说，那你想好了，你时间不多。</p>
+<p>我默然。</p>
+<p>尽管我父母认同我学OI是为了兴趣，但没说出来的话是，要是搞OI对学业一点帮助都没有，又怎么可能让我放心搞OI？</p>
+<p>但我学OI不是为了兴趣又是为了什么？</p>
+<p>在一个不在乎OI的学校一个人孤独的搞OI，那种感觉不好的。</p>
+<p>人，就是这么纠结。想为了自己所爱的东西而奋斗，却从不曾拜托生活的控制。</p>
+<p>只能说，我入坑OI，是偶然，更是必然。</p>
+<p>时代的潮流将我推入OI的大坑，而我甘心爬不出来。</p>
+<p>我不后悔。</p>
+<blockquote>
+<p>不忘初心，继续前进。</p>
+</blockquote>
+<p>然而我学OI的初心究竟是为了什么？</p>
+<p>我希望，我的OI，是为了兴趣，而不是为了升学。</p>
+<p>时代导致为兴趣而学的人很少，当家长看到我拿省一时，羡慕的说，你可以去签约了。</p>
+<p>我只能惨然的笑笑。大多数人都为了升学而学，把OI当成一种工具，一种升学手段，而不是一种生活方式。在这种学校，又有谁能理解我？</p>
+<p>孤独。</p>
+<p>进入初三，我AFO了一年，因为对于我来说，中考仍是我唯一的出路。</p>
+<p>我希望，当然也希望你，若干年之后，仍能骄傲的说</p>
+<blockquote>
+<p>我为了兴趣而OI。</p>
+</blockquote>
+<p>这，或许就算是我OI的初心吧。只是，升学的压力过于沉重，兴趣真的是个不值得一提的东西。那就愿你不会被生活左右吧。</p>
+<blockquote>
+<p>仰望星空，脚踏实地。</p>
+</blockquote>
+<p>OI剩下来的路，如果我没办法陪你走，你也要坚持走下去。</p>
+<p>自己选的路，就要坚持到底。</p>
+<blockquote>
+<p>再见，或许再也不见。</p>
+</blockquote>
+<p>祝您OI一帆风顺，也祝我NOIP2020后可以不用AFO。（AFO了）</p>
+<p>再见吧。</p>
+<hr>
+<p align="right">Updated on 2020.8.30 19:48.</p>
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E5%85%B6%E4%BB%96/" rel="tag"><i class="fa fa-tag"></i> 其他</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2019/07/29/%E9%A2%98%E8%A7%A3-P1335-%E3%80%90-NOI2013-%E5%B0%8FQ%E7%9A%84%E4%BF%AE%E7%82%BC%E3%80%91/" rel="prev" title="题解 P1335 【[NOI2013]小Q的修炼】">
+                  <i class="fa fa-chevron-left"></i> 题解 P1335 【[NOI2013]小Q的修炼】
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2019/08/06/%E9%A2%98%E8%A7%A3-P1801-%E3%80%90%E9%BB%91%E5%8C%A3%E5%AD%90-NOI%E5%AF%BC%E5%88%8A2010%E6%8F%90%E9%AB%98%EF%BC%8806%EF%BC%89%E3%80%91/" rel="next" title="题解 P1801 【黑匣子_NOI导刊2010提高（06）】">
+                  题解 P1801 【黑匣子_NOI导刊2010提高（06）】 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2015 – 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">引领天下</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">201k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">3:03</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@next-theme/pjax@0.5.0/pjax.min.js" integrity="sha256-3NkoLDrmHLTYj7csHIZSr0MHAFTXth7Ua/DDt4MRUAg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script><script src="/js/pjax.js"></script>
+
+  
+<script src="/js/third-party/search/local-search.js"></script>
+
+  <script class="next-config" data-name="pdf" type="application/json">{"object_url":{"url":"https://cdn.jsdelivr.net/npm/pdfobject@2.2.5/pdfobject.min.js","integrity":"sha256-YuNlP9i6s/WH7EaU2kErloo9Vc85C3WVqhoMDgsEVpY="},"url":"/lib/pdf/web/viewer.html"}</script>
+  <script src="/js/third-party/tags/pdf.js"></script>
+
+  <script class="next-config" data-name="mermaid" type="application/json">{"enable":true,"theme":"forest","js":{"url":"https://cdn.jsdelivr.net/npm/mermaid@8.11.0/dist/mermaid.min.js","integrity":"sha256-sVAx+v/Q7v0Q2xm5vN7h5ccSna6gaLREhG9sF8pKT6I="}}</script>
+  <script src="/js/third-party/tags/mermaid.js"></script>
+
+
+  
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"all","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"yltx","repo":"yltx.github.io","client_id":"6d1778894840fddd5843","client_secret":"3eb8e6632f05711541482ef1815f1439ec922a6b","admin_user":"yltx","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"87032e0a5e7fb90945da6fe63e587d00"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>

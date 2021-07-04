@@ -1,23 +1,500 @@
-{% extends '_layout.swig' %}
-{% import '_macro/post.swig' as post_template %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
 
-{% block title %}{{ page.title }} | {{ title }}{% endblock %}
 
-{% block page_class %}page-post-detail{% endblock %}
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
-{% block content %}
+<link rel="stylesheet" href="/css/main.css">
 
-  <div id="posts" class="posts-expand">
-    {{ post_template.render(page) }}
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/all.min.css" integrity="sha256-2H3fkXt6FEmrReK448mDVGKb3WW2ZZw35gI7vqHOE4Y=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"yoursite.com","root":"/","images":"/images","scheme":"Mist","version":"8.6.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<meta name="description" content="我要写一篇省赛的游记 Day1周四。晚上疯狂地写完作业，到洛谷上颓了2小时。哎，明天就走，不能不刷题了，何况还报了高中。 Day2周五上午早上下起了小雨，心情有点忧伤。本来请的是下午的假，现在因为怕堵车把上午3、4两节也请了。后来才发现我逃了一个听写 第三节英语课。果断地收拾书包离开，先跟英语老师再见，然后觉得这样走很奇怪，于是又跟同学们再见了一下。英语老师说我有领导气质？什么鬼……只是模仿领导人">
+<meta property="og:type" content="article">
+<meta property="og:title" content="省赛之旅">
+<meta property="og:url" content="http://yoursite.com/2019/01/12/%E7%9C%81%E8%B5%9B%E4%B9%8B%E6%97%85/index.html">
+<meta property="og:site_name" content="yltx&#39;s blog">
+<meta property="og:description" content="我要写一篇省赛的游记 Day1周四。晚上疯狂地写完作业，到洛谷上颓了2小时。哎，明天就走，不能不刷题了，何况还报了高中。 Day2周五上午早上下起了小雨，心情有点忧伤。本来请的是下午的假，现在因为怕堵车把上午3、4两节也请了。后来才发现我逃了一个听写 第三节英语课。果断地收拾书包离开，先跟英语老师再见，然后觉得这样走很奇怪，于是又跟同学们再见了一下。英语老师说我有领导气质？什么鬼……只是模仿领导人">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-01-12T05:57:00.000Z">
+<meta property="article:modified_time" content="2019-01-17T08:34:50.943Z">
+<meta property="article:author" content="引领天下">
+<meta property="article:tag" content="游记">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://yoursite.com/2019/01/12/%E7%9C%81%E8%B5%9B%E4%B9%8B%E6%97%85/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://yoursite.com/2019/01/12/%E7%9C%81%E8%B5%9B%E4%B9%8B%E6%97%85/","path":"2019/01/12/省赛之旅/","title":"省赛之旅"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>省赛之旅 | yltx's blog</title>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
   </div>
 
-{% endblock %}
+  <div class="site-meta">
 
-{% block sidebar %}
-  {{ sidebar_template.render(true) }}
-{% endblock %}
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">yltx's blog</h1>
+      <i class="logo-line"></i>
+    </a>
+  </div>
 
-{% block script_extra %}
-  {% include '_scripts/pages/post-details.swig' %}
-{% endblock %}
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+        <li class="menu-item menu-item-games"><a href="/Games/" rel="section"><i class="fa fa-gamepad fa-fw"></i>Games</a></li>
+        <li class="menu-item menu-item-visit-map"><a href="/Visit-map/" rel="section"><i class="fa fa-map-signs fa-fw"></i>Visit-map</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Day1"><span class="nav-number">1.</span> <span class="nav-text">Day1</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%91%A8%E5%9B%9B%E3%80%82"><span class="nav-number">1.1.</span> <span class="nav-text">周四。</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Day2"><span class="nav-number">2.</span> <span class="nav-text">Day2</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%91%A8%E4%BA%94"><span class="nav-number">2.1.</span> <span class="nav-text">周五</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8A%E5%8D%88"><span class="nav-number">2.1.1.</span> <span class="nav-text">上午</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%AD%E5%8D%88%E6%B2%A1%E6%9C%89%E4%BA%8B%EF%BC%8C%E5%90%83%E5%AE%8C%E5%B0%B1%E5%87%BA%E5%8F%91%E4%BA%86%E3%80%82"><span class="nav-number">2.1.2.</span> <span class="nav-text">中午没有事，吃完就出发了。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8B%E5%8D%88"><span class="nav-number">2.1.3.</span> <span class="nav-text">下午</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AF%95%E6%9C%BA"><span class="nav-number">2.1.3.1.</span> <span class="nav-text">试机</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Day3"><span class="nav-number">3.</span> <span class="nav-text">Day3</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%91%A8%E5%85%AD"><span class="nav-number">3.1.</span> <span class="nav-text">周六</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8A%E5%8D%88-1"><span class="nav-number">3.1.1.</span> <span class="nav-text">上午</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#AHOI%E9%AB%98%E4%B8%AD%E7%BB%84"><span class="nav-number">3.1.1.1.</span> <span class="nav-text">AHOI高中组</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#7z%E6%96%87%E4%BB%B6%EF%BC%81"><span class="nav-number">3.1.1.1.1.</span> <span class="nav-text">.7z文件！</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8B%E5%8D%88-1"><span class="nav-number">3.1.2.</span> <span class="nav-text">下午</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#AHOI%E5%88%9D%E4%B8%AD%E7%BB%84"><span class="nav-number">3.1.2.1.</span> <span class="nav-text">AHOI初中组</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%99%9A%E4%B8%8A"><span class="nav-number">3.1.3.</span> <span class="nav-text">晚上</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Day4"><span class="nav-number">4.</span> <span class="nav-text">Day4</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8A%E5%8D%88-2"><span class="nav-number">4.1.</span> <span class="nav-text">上午</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-overview">
+            <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="引领天下"
+      src="/images/39863.png">
+  <p class="site-author-name" itemprop="name">引领天下</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">101</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/yltx" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;yltx" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:mvp.bxbl@gmail.com" title="E-Mail → mailto:mvp.bxbl@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://plus.google.com/mvp.bxbl" title="Google → https:&#x2F;&#x2F;plus.google.com&#x2F;mvp.bxbl" rel="noopener" target="_blank"><i class="fab fa-google fa-fw"></i>Google</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.luogu.org/space/show?uid=39863" title="洛谷 → https:&#x2F;&#x2F;www.luogu.org&#x2F;space&#x2F;show?uid&#x3D;39863" rel="noopener" target="_blank"><i class="code fa-fw"></i>洛谷</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.codeforces.com/profile/yltx" title="Codeforces → https:&#x2F;&#x2F;www.codeforces.com&#x2F;profile&#x2F;yltx" rel="noopener" target="_blank"><i class="code fa-fw"></i>Codeforces</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/394872265" title="b站 → https:&#x2F;&#x2F;space.bilibili.com&#x2F;394872265" rel="noopener" target="_blank"><i class="tv fa-fw"></i>b站</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll site-overview-item animated">
+    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+      友链
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://froldh.github.io/" title="https:&#x2F;&#x2F;froldh.github.io&#x2F;" rel="noopener" target="_blank">froldH</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://https//www.javiblog.top/" title="https:&#x2F;&#x2F;https:&#x2F;&#x2F;www.javiblog.top&#x2F;" rel="noopener" target="_blank">Javi</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.backroad.site/" title="https:&#x2F;&#x2F;www.backroad.site" rel="noopener" target="_blank">归·程</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.cnblogs.com/Sai0511/" title="https:&#x2F;&#x2F;www.cnblogs.com&#x2F;Sai0511&#x2F;" rel="noopener" target="_blank">connect</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://studyingfather.com/" title="https:&#x2F;&#x2F;studyingfather.com&#x2F;" rel="noopener" target="_blank">StudyingFather</a>
+        </li>
+    </ul>
+  </div>
+
+          </div>
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="返回顶部">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <a href="https://github.com/yltx" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/12/%E7%9C%81%E8%B5%9B%E4%B9%8B%E6%97%85/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/39863.png">
+      <meta itemprop="name" content="引领天下">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="yltx's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          省赛之旅
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-01-12 13:57:00" itemprop="dateCreated datePublished" datetime="2019-01-12T13:57:00+08:00">2019-01-12</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2019-01-17 16:34:50" itemprop="dateModified" datetime="2019-01-17T16:34:50+08:00">2019-01-17</time>
+      </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+      </div>
+      <div class="post-meta">
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>820</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>我要写一篇省赛的游记</p>
+<h1 id="Day1"><a href="#Day1" class="headerlink" title="Day1"></a>Day1</h1><h2 id="周四。"><a href="#周四。" class="headerlink" title="周四。"></a>周四。</h2><p>晚上疯狂地写完作业，到洛谷上颓了2小时。哎，明天就走，不能不刷题了，何况还报了高中。</p>
+<h1 id="Day2"><a href="#Day2" class="headerlink" title="Day2"></a>Day2</h1><h2 id="周五"><a href="#周五" class="headerlink" title="周五"></a>周五</h2><h3 id="上午"><a href="#上午" class="headerlink" title="上午"></a>上午</h3><p>早上下起了小雨，心情有点忧伤。本来请的是下午的假，现在因为怕堵车把上午3、4两节也请了。<del>后来才发现我逃了一个听写</del></p>
+<p>第三节英语课。果断地收拾书包离开，先跟英语老师再见，然后觉得这样走很奇怪，于是又跟同学们再见了一下。<del>英语老师说我有领导气质？什么鬼……只是模仿领导人挥了一下手而已</del></p>
+<h3 id="中午没有事，吃完就出发了。"><a href="#中午没有事，吃完就出发了。" class="headerlink" title="中午没有事，吃完就出发了。"></a>中午没有事，吃完就出发了。</h3><h3 id="下午"><a href="#下午" class="headerlink" title="下午"></a>下午</h3><p>到了省城。仍然是工作人员找不到准考证</p>
+<h4 id="试机"><a href="#试机" class="headerlink" title="试机"></a>试机</h4><p>先试高中组。旁边两个大佬的对话如下：</p>
+<blockquote>
+<p>大佬A：昨天写了一个网络流。你说我要不要再写一遍？</p>
+</blockquote>
+<blockquote>
+<p>大佬B：早上写了一个费用流，我觉得我不一定能AK</p>
+</blockquote>
+<p>我在一旁被完全碾压</p>
+<p>初中组就完全不一样了</p>
+<p>一群人大喊：啊，这个DP怎么这么难啊</p>
+<blockquote>
+<p>别人：我要不要写一个DP呢？</p>
+</blockquote>
+<blockquote>
+<p>我：哼。DP？多简单啊，反正我有模板……我还是研究一下随机数算法吧。然而编译并没有过……</p>
+</blockquote>
+<p>晚上回宾馆颓</p>
+<h1 id="Day3"><a href="#Day3" class="headerlink" title="Day3"></a>Day3</h1><h2 id="周六"><a href="#周六" class="headerlink" title="周六"></a>周六</h2><h3 id="上午-1"><a href="#上午-1" class="headerlink" title="上午"></a>上午</h3><h4 id="AHOI高中组"><a href="#AHOI高中组" class="headerlink" title="AHOI高中组"></a>AHOI高中组</h4><p>本来是7：40进考场，但是由于要排队，竟然拖到8:05还没有进考场。</p>
+<p>好不容易进了，然后发现发了一个假的zip？</p>
+<p>传说中的</p>
+<h5 id="7z文件！"><a href="#7z文件！" class="headerlink" title=".7z文件！"></a>.7z文件！</h5><p>什么鬼……</p>
+<p>先打第一题。疯狂地打了98行的找规律，最后发现愉快的WA了。</p>
+<p>果断改成递归。</p>
+<p>此时已过去2hours。</p>
+<p>第二题本来以为很难，环形模拟？40分get</p>
+<p>第三题根本看不懂，于是愉快地递归</p>
+<p><a target="_blank" rel="noopener" href="https://www.luogu.org/problemnew/lists?name=&orderitem=pid&tag=48%7C35%7C92&content=0&type=">此三题在洛谷上：</a></p>
+<p>估分：30+40+30=100</p>
+<p>实际：？+？+？=30</p>
+<h3 id="下午-1"><a href="#下午-1" class="headerlink" title="下午"></a>下午</h3><h4 id="AHOI初中组"><a href="#AHOI初中组" class="headerlink" title="AHOI初中组"></a>AHOI初中组</h4><p>前三题愉快地AC了样例，开始做最后一题</p>
+<p>此时还剩2：55分</p>
+<p>结果是，第四题拿了30分质数点后，手打字典序，可惜我忘了STL那个命令叫什么。</p>
+<p>于是估分100+100+100+30=330</p>
+<p>结果：100+0+30+0=130</p>
+<h3 id="晚上"><a href="#晚上" class="headerlink" title="晚上"></a>晚上</h3><p>回宾馆发现我橙了</p>
+<hr>
+<h1 id="Day4"><a href="#Day4" class="headerlink" title="Day4"></a>Day4</h1><h2 id="上午-2"><a href="#上午-2" class="headerlink" title="上午"></a>上午</h2><p>仍然是搞事情的.7z文件</p>
+<p>结果，我打了一个第一题的模拟，可能得了30分。</p>
+<p>回去发现两天加起来才60分。。。</p>
+<p>我还是太渣了，回去练练吧。</p>
+<hr>
+<p>谨以此纪念我逝去的初一OI</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%B8%B8%E8%AE%B0/" rel="tag"><i class="fa fa-tag"></i> 游记</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2019/01/12/NOIP2018%E9%A2%93%E5%BA%9F%E4%B9%8B%E8%B7%AF/" rel="prev" title="NOIP2018颓废之路">
+                  <i class="fa fa-chevron-left"></i> NOIP2018颓废之路
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2019/01/12/%E9%A2%98%E8%A7%A3-CF479A-%E3%80%90Expression%E3%80%91/" rel="next" title="题解 CF479A 【Expression】 ">
+                  题解 CF479A 【Expression】  <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2015 – 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">引领天下</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">201k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">3:03</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@next-theme/pjax@0.5.0/pjax.min.js" integrity="sha256-3NkoLDrmHLTYj7csHIZSr0MHAFTXth7Ua/DDt4MRUAg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script><script src="/js/pjax.js"></script>
+
+  
+<script src="/js/third-party/search/local-search.js"></script>
+
+  <script class="next-config" data-name="pdf" type="application/json">{"object_url":{"url":"https://cdn.jsdelivr.net/npm/pdfobject@2.2.5/pdfobject.min.js","integrity":"sha256-YuNlP9i6s/WH7EaU2kErloo9Vc85C3WVqhoMDgsEVpY="},"url":"/lib/pdf/web/viewer.html"}</script>
+  <script src="/js/third-party/tags/pdf.js"></script>
+
+  <script class="next-config" data-name="mermaid" type="application/json">{"enable":true,"theme":"forest","js":{"url":"https://cdn.jsdelivr.net/npm/mermaid@8.11.0/dist/mermaid.min.js","integrity":"sha256-sVAx+v/Q7v0Q2xm5vN7h5ccSna6gaLREhG9sF8pKT6I="}}</script>
+  <script src="/js/third-party/tags/mermaid.js"></script>
+
+
+  
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"all","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"yltx","repo":"yltx.github.io","client_id":"6d1778894840fddd5843","client_secret":"3eb8e6632f05711541482ef1815f1439ec922a6b","admin_user":"yltx","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"4edaaaa05c45b61762f4950b8f9d406b"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>
